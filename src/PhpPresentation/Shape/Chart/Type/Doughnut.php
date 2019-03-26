@@ -15,65 +15,53 @@
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Style;
+namespace PhpOffice\PhpPresentation\Shape\Chart\Type;
+
+use PhpOffice\PhpPresentation\ComparableInterface;
 
 /**
- * \PhpOffice\PhpPresentation\Style\Outline
+ * self
  */
-class Outline
+class Doughnut extends AbstractTypePie implements ComparableInterface
 {
     /**
-     * @var Fill
-     */
-    protected $fill;
-    /**
+     * Hole Size
      * @var int
      */
-    protected $width;
-
-
-    /**
-     * Outline constructor.
-     */
-    public function __construct()
-    {
-        $this->fill = new Fill();
-    }
-
-    /**
-     * @return Fill
-     */
-    public function getFill()
-    {
-        return $this->fill;
-    }
-
-    /**
-     * @param Fill $fill
-     * @return Outline
-     */
-    public function setFill(Fill $fill)
-    {
-        $this->fill = $fill;
-        return $this;
-    }
+    protected $holeSize = 50;
 
     /**
      * @return int
      */
-    public function getWidth()
+    public function getHoleSize()
     {
-        return $this->width;
+        return $this->holeSize;
     }
 
     /**
-     * Value in points
-     * @param int $width
-     * @return Outline
+     * @param int $holeSize
+     * @return Doughnut
+     * @link https://msdn.microsoft.com/en-us/library/documentformat.openxml.drawing.charts.holesize(v=office.14).aspx
      */
-    public function setWidth($width)
+    public function setHoleSize($holeSize = 50)
     {
-        $this->width = intval($width);
+        if ($holeSize < 10) {
+            $holeSize = 10;
+        }
+        if ($holeSize > 90) {
+            $holeSize = 90;
+        }
+        $this->holeSize = $holeSize;
         return $this;
+    }
+
+    /**
+     * Get hash code
+     *
+     * @return string Hash code
+     */
+    public function getHashCode()
+    {
+        return md5(parent::getHashCode() . __CLASS__);
     }
 }

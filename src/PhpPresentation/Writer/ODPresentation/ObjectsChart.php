@@ -13,6 +13,7 @@ use PhpOffice\PhpPresentation\Shape\Chart\Type\AbstractTypePie;
 use PhpOffice\PhpPresentation\Shape\Chart\Type\Area;
 use PhpOffice\PhpPresentation\Shape\Chart\Type\Bar;
 use PhpOffice\PhpPresentation\Shape\Chart\Type\Bar3D;
+use PhpOffice\PhpPresentation\Shape\Chart\Type\Doughnut;
 use PhpOffice\PhpPresentation\Shape\Chart\Type\Line;
 use PhpOffice\PhpPresentation\Shape\Chart\Type\Pie3D;
 use PhpOffice\PhpPresentation\Shape\Chart\Type\Scatter;
@@ -48,6 +49,7 @@ class ObjectsChart extends AbstractDecoratorWriter
 
     /**
      * @return ZipInterface
+     * @throws \Exception
      */
     public function render()
     {
@@ -182,8 +184,11 @@ class ObjectsChart extends AbstractDecoratorWriter
         $this->xmlContent->writeAttribute('chart:style-name', 'styleChart');
         $this->xmlContent->writeAttributeIf($chartType instanceof Area, 'chart:class', 'chart:area');
         $this->xmlContent->writeAttributeIf($chartType instanceof AbstractTypeBar, 'chart:class', 'chart:bar');
+        if (!($chartType instanceof Doughnut)) {
+            $this->xmlContent->writeAttributeIf($chartType instanceof AbstractTypePie, 'chart:class', 'chart:circle');
+        }
+        $this->xmlContent->writeAttributeIf($chartType instanceof Doughnut, 'chart:class', 'chart:ring');
         $this->xmlContent->writeAttributeIf($chartType instanceof Line, 'chart:class', 'chart:line');
-        $this->xmlContent->writeAttributeIf($chartType instanceof AbstractTypePie, 'chart:class', 'chart:circle');
         $this->xmlContent->writeAttributeIf($chartType instanceof Scatter, 'chart:class', 'chart:scatter');
 
         //**** Title ****
@@ -212,6 +217,7 @@ class ObjectsChart extends AbstractDecoratorWriter
 
     /**
      * @param Chart $chart
+     * @throws \Exception
      */
     private function writeAxis(Chart $chart)
     {
@@ -270,6 +276,7 @@ class ObjectsChart extends AbstractDecoratorWriter
 
     /**
      * @param Chart $chart
+     * @throws \Exception
      * @todo Set function in \PhpPresentation\Shape\Chart\Axis for defining width and color of the axis
      */
     protected function writeAxisStyle(Chart $chart)
@@ -437,7 +444,25 @@ class ObjectsChart extends AbstractDecoratorWriter
     {
         // chart:legend
         $this->xmlContent->startElement('chart:legend');
-        $this->xmlContent->writeAttribute('chart:legend-position', 'end');
+        switch ($chart->getLegend()->getPosition()) {
+            case Chart\Legend::POSITION_BOTTOM:
+                $position = 'bottom';
+                break;
+            case Chart\Legend::POSITION_LEFT:
+                $position = 'start';
+                break;
+            case Chart\Legend::POSITION_TOP:
+                $position = 'top';
+                break;
+            case Chart\Legend::POSITION_TOPRIGHT:
+                $position = 'top-end';
+                break;
+            case Chart\Legend::POSITION_RIGHT:
+            default:
+                $position = 'end';
+                break;
+        }
+        $this->xmlContent->writeAttribute('chart:legend-position', $position);
         $this->xmlContent->writeAttribute('svg:x', Text::numberFormat(CommonDrawing::pixelsToCentimeters($chart->getLegend()->getOffsetX()), 3) . 'cm');
         $this->xmlContent->writeAttribute('svg:y', Text::numberFormat(CommonDrawing::pixelsToCentimeters($chart->getLegend()->getOffsetY()), 3) . 'cm');
         $this->xmlContent->writeAttribute('style:legend-expansion', 'high');
@@ -455,6 +480,11 @@ class ObjectsChart extends AbstractDecoratorWriter
         $this->xmlContent->startElement('style:style');
         $this->xmlContent->writeAttribute('style:name', 'styleLegend');
         $this->xmlContent->writeAttribute('style:family', 'chart');
+        // style:chart-properties
+        $this->xmlContent->startElement('style:chart-properties');
+        $this->xmlContent->writeAttribute('chart:auto-position', 'true');
+        // > style:chart-properties
+        $this->xmlContent->endElement();
         // style:text-properties
         $this->xmlContent->startElement('style:text-properties');
         $this->xmlContent->writeAttribute('fo:color', '#'.$chart->getLegend()->getFont()->getColor()->getRGB());
@@ -469,6 +499,7 @@ class ObjectsChart extends AbstractDecoratorWriter
 
     /**
      * @param Chart $chart
+     * @throws \Exception
      */
     private function writePlotArea(Chart $chart)
     {
@@ -524,6 +555,7 @@ class ObjectsChart extends AbstractDecoratorWriter
 
     /**
      * @param Chart $chart
+     * @throws \Exception
      * @link : http://books.evc-cit.info/odbook/ch08.html#chart-plot-area-section
      */
     private function writePlotAreaStyle(Chart $chart)
@@ -652,6 +684,7 @@ class ObjectsChart extends AbstractDecoratorWriter
     /**
      * @param Chart $chart
      * @param Chart\Series $series
+     * @throws \Exception
      */
     private function writeSeriesStyle(Chart $chart, Chart\Series $series)
     {
@@ -712,6 +745,19 @@ class ObjectsChart extends AbstractDecoratorWriter
                 $this->xmlContent->writeAttribute('chart:symbol-height', $symbolSize.'cm');
             }
         }
+
+        $separator = $series->getSeparator();
+        if (!empty($separator)) {
+            // style:chart-properties/chart:label-separator
+            $this->xmlContent->startElement('chart:label-separator');
+            if ($separator == PHP_EOL) {
+                $this->xmlContent->writeRaw('<text:p><text:line-break /></text:p>');
+            } else {
+                $this->xmlContent->writeElement('text:p', $separator);
+            }
+            $this->xmlContent->endElement();
+        }
+
         // > style:chart-properties
         $this->xmlContent->endElement();
         // style:graphic-properties
@@ -919,6 +965,7 @@ class ObjectsChart extends AbstractDecoratorWriter
 
     /**
      * @param Chart $chart
+     * @throws \Exception
      */
     private function writeWallStyle(Chart $chart)
     {
