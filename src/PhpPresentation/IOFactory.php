@@ -8,14 +8,14 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation;
+namespace TwilRoad\PhpPresentation;
 
 /**
  * IOFactory
@@ -34,12 +34,12 @@ class IOFactory
      *
      * @param PhpPresentation $phpPresentation
      * @param string $name
-     * @return \PhpOffice\PhpPresentation\Writer\WriterInterface
+     * @return \TwilRoad\PhpPresentation\Writer\WriterInterface
      * @throws \Exception
      */
     public static function createWriter(PhpPresentation $phpPresentation, $name = 'PowerPoint2007')
     {
-        $class = 'PhpOffice\\PhpPresentation\\Writer\\' . $name;
+        $class = 'TwilRoad\\PhpPresentation\\Writer\\' . $name;
         return self::loadClass($class, $name, 'writer', $phpPresentation);
     }
 
@@ -47,17 +47,17 @@ class IOFactory
      * Create reader
      *
      * @param  string $name
-     * @return \PhpOffice\PhpPresentation\Reader\ReaderInterface
+     * @return \TwilRoad\PhpPresentation\Reader\ReaderInterface
      * @throws \Exception
      */
     public static function createReader($name = '')
     {
-        $class = 'PhpOffice\\PhpPresentation\\Reader\\' . $name;
+        $class = 'TwilRoad\\PhpPresentation\\Reader\\' . $name;
         return self::loadClass($class, $name, 'reader');
     }
 
     /**
-     * Loads PhpPresentation from file using automatic \PhpOffice\PhpPresentation\Reader\ReaderInterface resolution
+     * Loads PhpPresentation from file using automatic \TwilRoad\PhpPresentation\Reader\ReaderInterface resolution
      *
      * @param  string        $pFilename
      * @return PhpPresentation
@@ -73,7 +73,7 @@ class IOFactory
             }
         }
 
-        throw new \Exception("Could not automatically determine \PhpOffice\PhpPresentation\Reader\ReaderInterface for file.");
+        throw new \Exception("Could not automatically determine \TwilRoad\PhpPresentation\Reader\ReaderInterface for file.");
     }
 
     /**
@@ -82,7 +82,7 @@ class IOFactory
      * @param string $class
      * @param string $name
      * @param string $type
-     * @param \PhpOffice\PhpPresentation\PhpPresentation $phpPresentation
+     * @param \TwilRoad\PhpPresentation\PhpPresentation $phpPresentation
      * @return mixed
      * @throws \ReflectionException
      */

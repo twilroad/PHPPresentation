@@ -8,18 +8,18 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation;
+namespace TwilRoad\PhpPresentation;
 
-use PhpOffice\PhpPresentation\Slide;
-use PhpOffice\PhpPresentation\Slide\Iterator;
-use PhpOffice\PhpPresentation\Slide\SlideMaster;
+use TwilRoad\PhpPresentation\Slide;
+use TwilRoad\PhpPresentation\Slide\Iterator;
+use TwilRoad\PhpPresentation\Slide\SlideMaster;
 
 /**
  * PhpPresentation
@@ -29,28 +29,28 @@ class PhpPresentation
     /**
      * Document properties
      *
-     * @var \PhpOffice\PhpPresentation\DocumentProperties
+     * @var \TwilRoad\PhpPresentation\DocumentProperties
      */
     protected $documentProperties;
 
     /**
      * Presentation properties
      *
-     * @var \PhpOffice\PhpPresentation\PresentationProperties
+     * @var \TwilRoad\PhpPresentation\PresentationProperties
      */
     protected $presentationProps;
 
     /**
      * Document layout
      *
-     * @var \PhpOffice\PhpPresentation\DocumentLayout
+     * @var \TwilRoad\PhpPresentation\DocumentLayout
      */
     protected $layout;
 
     /**
      * Collection of Slide objects
      *
-     * @var \PhpOffice\PhpPresentation\Slide[]
+     * @var \TwilRoad\PhpPresentation\Slide[]
      */
     protected $slideCollection = array();
 
@@ -63,7 +63,7 @@ class PhpPresentation
 
     /**
      * Collection of Master Slides
-     * @var \ArrayObject|\PhpOffice\PhpPresentation\Slide\SlideMaster[]
+     * @var \ArrayObject|\TwilRoad\PhpPresentation\Slide\SlideMaster[]
      */
     protected $slideMasters;
 
@@ -88,7 +88,7 @@ class PhpPresentation
     /**
      * Get properties
      *
-     * @return \PhpOffice\PhpPresentation\DocumentProperties
+     * @return \TwilRoad\PhpPresentation\DocumentProperties
      * @deprecated for getDocumentProperties
      */
     public function getProperties()
@@ -99,7 +99,7 @@ class PhpPresentation
     /**
      * Set properties
      *
-     * @param  \PhpOffice\PhpPresentation\DocumentProperties $value
+     * @param  \TwilRoad\PhpPresentation\DocumentProperties $value
      * @deprecated for setDocumentProperties
      * @return PhpPresentation
      */
@@ -111,7 +111,7 @@ class PhpPresentation
     /**
      * Get properties
      *
-     * @return \PhpOffice\PhpPresentation\DocumentProperties
+     * @return \TwilRoad\PhpPresentation\DocumentProperties
      */
     public function getDocumentProperties()
     {
@@ -121,7 +121,7 @@ class PhpPresentation
     /**
      * Set properties
      *
-     * @param  \PhpOffice\PhpPresentation\DocumentProperties $value
+     * @param  \TwilRoad\PhpPresentation\DocumentProperties $value
      * @return PhpPresentation
      */
     public function setDocumentProperties(DocumentProperties $value)
@@ -134,7 +134,7 @@ class PhpPresentation
     /**
      * Get presentation properties
      *
-     * @return \PhpOffice\PhpPresentation\PresentationProperties
+     * @return \TwilRoad\PhpPresentation\PresentationProperties
      */
     public function getPresentationProperties()
     {
@@ -144,7 +144,7 @@ class PhpPresentation
     /**
      * Set presentation properties
      *
-     * @param  \PhpOffice\PhpPresentation\PresentationProperties $value
+     * @param  \TwilRoad\PhpPresentation\PresentationProperties $value
      * @return PhpPresentation
      */
     public function setPresentationProperties(PresentationProperties $value)
@@ -156,7 +156,7 @@ class PhpPresentation
     /**
      * Get layout
      *
-     * @return \PhpOffice\PhpPresentation\DocumentLayout
+     * @return \TwilRoad\PhpPresentation\DocumentLayout
      */
     public function getLayout()
     {
@@ -166,7 +166,7 @@ class PhpPresentation
     /**
      * Set layout
      *
-     * @param  \PhpOffice\PhpPresentation\DocumentLayout $value
+     * @param  \TwilRoad\PhpPresentation\DocumentLayout $value
      * @return PhpPresentation
      */
     public function setLayout(DocumentLayout $value)
@@ -179,7 +179,7 @@ class PhpPresentation
     /**
      * Get active slide
      *
-     * @return \PhpOffice\PhpPresentation\Slide
+     * @return \TwilRoad\PhpPresentation\Slide
      */
     public function getActiveSlide()
     {
@@ -189,7 +189,7 @@ class PhpPresentation
     /**
      * Create slide and add it to this presentation
      *
-     * @return \PhpOffice\PhpPresentation\Slide
+     * @return \TwilRoad\PhpPresentation\Slide
      * @throws \Exception
      */
     public function createSlide()
@@ -202,9 +202,9 @@ class PhpPresentation
     /**
      * Add slide
      *
-     * @param  \PhpOffice\PhpPresentation\Slide $slide
+     * @param  \TwilRoad\PhpPresentation\Slide $slide
      * @throws \Exception
-     * @return \PhpOffice\PhpPresentation\Slide
+     * @return \TwilRoad\PhpPresentation\Slide
      */
     public function addSlide(Slide $slide = null)
     {
@@ -234,7 +234,7 @@ class PhpPresentation
      * Get slide by index
      *
      * @param  int $index Slide index
-     * @return \PhpOffice\PhpPresentation\Slide
+     * @return \TwilRoad\PhpPresentation\Slide
      * @throws \Exception
      */
     public function getSlide($index = 0)
@@ -248,7 +248,7 @@ class PhpPresentation
     /**
      * Get all slides
      *
-     * @return \PhpOffice\PhpPresentation\Slide[]
+     * @return \TwilRoad\PhpPresentation\Slide[]
      */
     public function getAllSlides()
     {
@@ -258,7 +258,7 @@ class PhpPresentation
     /**
      * Get index for slide
      *
-     * @param  \PhpOffice\PhpPresentation\Slide\AbstractSlide $slide
+     * @param  \TwilRoad\PhpPresentation\Slide\AbstractSlide $slide
      * @return int
      * @throws \Exception
      */
@@ -299,7 +299,7 @@ class PhpPresentation
      *
      * @param  int $index Active slide index
      * @throws \Exception
-     * @return \PhpOffice\PhpPresentation\Slide
+     * @return \TwilRoad\PhpPresentation\Slide
      */
     public function setActiveSlideIndex($index = 0)
     {
@@ -314,9 +314,9 @@ class PhpPresentation
     /**
      * Add external slide
      *
-     * @param  \PhpOffice\PhpPresentation\Slide $slide External slide to add
+     * @param  \TwilRoad\PhpPresentation\Slide $slide External slide to add
      * @throws \Exception
-     * @return \PhpOffice\PhpPresentation\Slide
+     * @return \TwilRoad\PhpPresentation\Slide
      */
     public function addExternalSlide(Slide $slide)
     {
@@ -330,7 +330,7 @@ class PhpPresentation
     /**
      * Get slide iterator
      *
-     * @return \PhpOffice\PhpPresentation\Slide\Iterator
+     * @return \TwilRoad\PhpPresentation\Slide\Iterator
      */
     public function getSlideIterator()
     {
@@ -340,7 +340,7 @@ class PhpPresentation
     /**
      * Create a masterslide and add it to this presentation
      *
-     * @return \PhpOffice\PhpPresentation\Slide\SlideMaster
+     * @return \TwilRoad\PhpPresentation\Slide\SlideMaster
      * @throws \Exception
      */
     public function createMasterSlide()
@@ -353,8 +353,8 @@ class PhpPresentation
     /**
      * Add masterslide
      *
-     * @param  \PhpOffice\PhpPresentation\Slide\SlideMaster $slide
-     * @return \PhpOffice\PhpPresentation\Slide\SlideMaster
+     * @param  \TwilRoad\PhpPresentation\Slide\SlideMaster $slide
+     * @return \TwilRoad\PhpPresentation\Slide\SlideMaster
      * @throws \Exception
      */
     public function addMasterSlide(SlideMaster $slide = null)

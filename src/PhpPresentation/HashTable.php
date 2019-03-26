@@ -8,17 +8,17 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation;
+namespace TwilRoad\PhpPresentation;
 
 /**
- * \PhpOffice\PhpPresentation\HashTable
+ * \TwilRoad\PhpPresentation\HashTable
  */
 class HashTable
 {
@@ -37,9 +37,9 @@ class HashTable
     public $keyMap = array();
 
     /**
-     * Create a new \PhpOffice\PhpPresentation\HashTable
+     * Create a new \TwilRoad\PhpPresentation\HashTable
      *
-     * @param  \PhpOffice\PhpPresentation\ComparableInterface[] $pSource Optional source array to create HashTable from
+     * @param  \TwilRoad\PhpPresentation\ComparableInterface[] $pSource Optional source array to create HashTable from
      * @throws \Exception
      */
     public function __construct(array $pSource = null)
@@ -53,7 +53,7 @@ class HashTable
     /**
      * Add HashTable items from source
      *
-     * @param  \PhpOffice\PhpPresentation\ComparableInterface[] $pSource Source array to create HashTable from
+     * @param  \TwilRoad\PhpPresentation\ComparableInterface[] $pSource Source array to create HashTable from
      * @throws \Exception
      */
     public function addFromSource($pSource = null)
@@ -73,14 +73,14 @@ class HashTable
     /**
      * Add HashTable item
      *
-     * @param \PhpOffice\PhpPresentation\ComparableInterface $pSource Item to add
+     * @param \TwilRoad\PhpPresentation\ComparableInterface $pSource Item to add
      */
     public function add(ComparableInterface $pSource)
     {
         // Determine hashcode
         $hashIndex = $pSource->getHashIndex();
         $hashCode = $pSource->getHashCode();
-        
+
         if (is_null($hashIndex)) {
             $hashCode = $pSource->getHashCode();
         } elseif (isset($this->keyMap[$hashIndex])) {
@@ -101,7 +101,7 @@ class HashTable
     /**
      * Remove HashTable item
      *
-     * @param  \PhpOffice\PhpPresentation\ComparableInterface $pSource Item to remove
+     * @param  \TwilRoad\PhpPresentation\ComparableInterface $pSource Item to remove
      * @throws \Exception
      */
     public function remove(ComparableInterface $pSource)
@@ -158,7 +158,7 @@ class HashTable
      * Get by index
      *
      * @param  int                       $pIndex
-     * @return \PhpOffice\PhpPresentation\ComparableInterface
+     * @return \TwilRoad\PhpPresentation\ComparableInterface
      *
      */
     public function getByIndex($pIndex = 0)
@@ -174,7 +174,7 @@ class HashTable
      * Get by hashcode
      *
      * @param  string                    $pHashCode
-     * @return \PhpOffice\PhpPresentation\ComparableInterface
+     * @return \TwilRoad\PhpPresentation\ComparableInterface
      *
      */
     public function getByHashCode($pHashCode = '')
@@ -189,7 +189,7 @@ class HashTable
     /**
      * HashTable to array
      *
-     * @return \PhpOffice\PhpPresentation\ComparableInterface[]
+     * @return \TwilRoad\PhpPresentation\ComparableInterface[]
      */
     public function toArray()
     {
