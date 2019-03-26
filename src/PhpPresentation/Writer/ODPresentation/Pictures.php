@@ -1,10 +1,10 @@
 <?php
 
-namespace PhpOffice\PhpPresentation\Writer\ODPresentation;
+namespace TwilRoad\PhpPresentation\Writer\ODPresentation;
 
-use PhpOffice\Common\Adapter\Zip\ZipInterface;
-use PhpOffice\PhpPresentation\Shape\Drawing;
-use PhpOffice\PhpPresentation\Slide\Background\Image;
+use TwilRoad\Common\Adapter\Zip\ZipInterface;
+use TwilRoad\PhpPresentation\Shape\Drawing;
+use TwilRoad\PhpPresentation\Slide\Background\Image;
 
 class Pictures extends AbstractDecoratorWriter
 {

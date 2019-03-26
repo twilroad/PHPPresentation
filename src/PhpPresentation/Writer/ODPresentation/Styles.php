@@ -1,16 +1,16 @@
 <?php
 
-namespace PhpOffice\PhpPresentation\Writer\ODPresentation;
+namespace TwilRoad\PhpPresentation\Writer\ODPresentation;
 
-use PhpOffice\Common\Drawing as CommonDrawing;
-use PhpOffice\Common\Text;
-use PhpOffice\Common\XMLWriter;
-use PhpOffice\PhpPresentation\Shape\Group;
-use PhpOffice\PhpPresentation\Shape\Table;
-use PhpOffice\PhpPresentation\Slide\Background\Image;
-use PhpOffice\PhpPresentation\Style\Fill;
-use PhpOffice\PhpPresentation\Shape\RichText;
-use PhpOffice\PhpPresentation\Style\Border;
+use TwilRoad\Common\Drawing as CommonDrawing;
+use TwilRoad\Common\Text;
+use TwilRoad\Common\XMLWriter;
+use TwilRoad\PhpPresentation\Shape\Group;
+use TwilRoad\PhpPresentation\Shape\Table;
+use TwilRoad\PhpPresentation\Slide\Background\Image;
+use TwilRoad\PhpPresentation\Style\Fill;
+use TwilRoad\PhpPresentation\Shape\RichText;
+use TwilRoad\PhpPresentation\Style\Border;
 
 class Styles extends AbstractDecoratorWriter
 {
@@ -28,7 +28,7 @@ class Styles extends AbstractDecoratorWriter
     protected $arrayStrokeDash = array();
 
     /**
-     * @return \PhpOffice\Common\Adapter\Zip\ZipInterface
+     * @return \TwilRoad\Common\Adapter\Zip\ZipInterface
      * @throws \Exception
      */
     public function render()

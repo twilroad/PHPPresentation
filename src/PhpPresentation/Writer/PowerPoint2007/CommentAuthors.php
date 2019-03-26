@@ -1,11 +1,11 @@
 <?php
 
-namespace PhpOffice\PhpPresentation\Writer\PowerPoint2007;
+namespace TwilRoad\PhpPresentation\Writer\PowerPoint2007;
 
-use PhpOffice\Common\Adapter\Zip\ZipInterface;
-use PhpOffice\Common\XMLWriter;
-use PhpOffice\PhpPresentation\Shape\Comment;
-use PhpOffice\PhpPresentation\Shape\Comment\Author;
+use TwilRoad\Common\Adapter\Zip\ZipInterface;
+use TwilRoad\Common\XMLWriter;
+use TwilRoad\PhpPresentation\Shape\Comment;
+use TwilRoad\PhpPresentation\Shape\Comment\Author;
 
 class CommentAuthors extends AbstractDecoratorWriter
 {

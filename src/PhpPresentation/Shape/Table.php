@@ -8,17 +8,17 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Shape;
+namespace TwilRoad\PhpPresentation\Shape;
 
-use PhpOffice\PhpPresentation\ComparableInterface;
-use PhpOffice\PhpPresentation\Shape\Table\Row;
+use TwilRoad\PhpPresentation\ComparableInterface;
+use TwilRoad\PhpPresentation\Shape\Table\Row;
 
 /**
  * Table shape
@@ -28,7 +28,7 @@ class Table extends AbstractGraphic implements ComparableInterface
     /**
      * Rows
      *
-     * @var \PhpOffice\PhpPresentation\Shape\Table\Row[]
+     * @var \TwilRoad\PhpPresentation\Shape\Table\Row[]
      */
     private $rows;
 
@@ -40,7 +40,7 @@ class Table extends AbstractGraphic implements ComparableInterface
     private $columnCount = 1;
 
     /**
-     * Create a new \PhpOffice\PhpPresentation\Shape\Table instance
+     * Create a new \TwilRoad\PhpPresentation\Shape\Table instance
      *
      * @param int $columns Number of columns
      */
@@ -63,7 +63,7 @@ class Table extends AbstractGraphic implements ComparableInterface
      * @param  int $row Row number
      * @param  boolean $exceptionAsNull Return a null value instead of an exception?
      * @throws \Exception
-     * @return \PhpOffice\PhpPresentation\Shape\Table\Row
+     * @return \TwilRoad\PhpPresentation\Shape\Table\Row
      */
     public function getRow($row = 0, $exceptionAsNull = false)
     {
@@ -80,7 +80,7 @@ class Table extends AbstractGraphic implements ComparableInterface
     /**
      * Get rows
      *
-     * @return \PhpOffice\PhpPresentation\Shape\Table\Row[]
+     * @return \TwilRoad\PhpPresentation\Shape\Table\Row[]
      */
     public function getRows()
     {
@@ -90,7 +90,7 @@ class Table extends AbstractGraphic implements ComparableInterface
     /**
      * Create row
      *
-     * @return \PhpOffice\PhpPresentation\Shape\Table\Row
+     * @return \TwilRoad\PhpPresentation\Shape\Table\Row
      */
     public function createRow()
     {

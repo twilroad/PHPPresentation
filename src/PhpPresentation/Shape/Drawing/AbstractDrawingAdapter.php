@@ -1,8 +1,8 @@
 <?php
 
-namespace PhpOffice\PhpPresentation\Shape\Drawing;
+namespace TwilRoad\PhpPresentation\Shape\Drawing;
 
-use PhpOffice\PhpPresentation\Shape\AbstractGraphic;
+use TwilRoad\PhpPresentation\Shape\AbstractGraphic;
 
 abstract class AbstractDrawingAdapter extends AbstractGraphic
 {

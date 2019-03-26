@@ -8,17 +8,17 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Shape\Table;
+namespace TwilRoad\PhpPresentation\Shape\Table;
 
-use PhpOffice\PhpPresentation\ComparableInterface;
-use PhpOffice\PhpPresentation\Style\Fill;
+use TwilRoad\PhpPresentation\ComparableInterface;
+use TwilRoad\PhpPresentation\Style\Fill;
 
 /**
  * Table row
@@ -28,14 +28,14 @@ class Row implements ComparableInterface
     /**
      * Cells
      *
-     * @var \PhpOffice\PhpPresentation\Shape\Table\Cell[]
+     * @var \TwilRoad\PhpPresentation\Shape\Table\Cell[]
      */
     private $cells;
 
     /**
      * Fill
      *
-     * @var \PhpOffice\PhpPresentation\Style\Fill
+     * @var \TwilRoad\PhpPresentation\Style\Fill
      */
     private $fill;
 
@@ -61,7 +61,7 @@ class Row implements ComparableInterface
     private $hashIndex;
 
     /**
-     * Create a new \PhpOffice\PhpPresentation\Shape\Table\Row instance
+     * Create a new \TwilRoad\PhpPresentation\Shape\Table\Row instance
      *
      * @param int $columns Number of columns
      */
@@ -83,7 +83,7 @@ class Row implements ComparableInterface
      * @param  int $cell Cell number
      * @param  boolean $exceptionAsNull Return a null value instead of an exception?
      * @throws \Exception
-     * @return \PhpOffice\PhpPresentation\Shape\Table\Cell
+     * @return \TwilRoad\PhpPresentation\Shape\Table\Cell
      */
     public function getCell($cell = 0, $exceptionAsNull = false)
     {
@@ -100,7 +100,7 @@ class Row implements ComparableInterface
     /**
      * Get cells
      *
-     * @return \PhpOffice\PhpPresentation\Shape\Table\Cell[]
+     * @return \TwilRoad\PhpPresentation\Shape\Table\Cell[]
      */
     public function getCells()
     {
@@ -110,7 +110,7 @@ class Row implements ComparableInterface
     /**
      * Next cell (moves one cell to the right)
      *
-     * @return \PhpOffice\PhpPresentation\Shape\Table\Cell
+     * @return \TwilRoad\PhpPresentation\Shape\Table\Cell
      * @throws \Exception
      */
     public function nextCell()
@@ -126,7 +126,7 @@ class Row implements ComparableInterface
     /**
      * Get fill
      *
-     * @return \PhpOffice\PhpPresentation\Style\Fill
+     * @return \TwilRoad\PhpPresentation\Style\Fill
      */
     public function getFill()
     {
@@ -136,8 +136,8 @@ class Row implements ComparableInterface
     /**
      * Set fill
      *
-     * @param  \PhpOffice\PhpPresentation\Style\Fill      $fill
-     * @return \PhpOffice\PhpPresentation\Shape\Table\Row
+     * @param  \TwilRoad\PhpPresentation\Style\Fill      $fill
+     * @return \TwilRoad\PhpPresentation\Shape\Table\Row
      */
     public function setFill(Fill $fill)
     {
@@ -160,7 +160,7 @@ class Row implements ComparableInterface
      * Set height
      *
      * @param  int                          $value
-     * @return \PhpOffice\PhpPresentation\Shape\Table\Row
+     * @return \TwilRoad\PhpPresentation\Shape\Table\Row
      */
     public function setHeight($value = 0)
     {

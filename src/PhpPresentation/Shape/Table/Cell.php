@@ -8,20 +8,20 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Shape\Table;
+namespace TwilRoad\PhpPresentation\Shape\Table;
 
-use PhpOffice\PhpPresentation\ComparableInterface;
-use PhpOffice\PhpPresentation\Shape\RichText\Paragraph;
-use PhpOffice\PhpPresentation\Shape\RichText\TextElementInterface;
-use PhpOffice\PhpPresentation\Style\Borders;
-use PhpOffice\PhpPresentation\Style\Fill;
+use TwilRoad\PhpPresentation\ComparableInterface;
+use TwilRoad\PhpPresentation\Shape\RichText\Paragraph;
+use TwilRoad\PhpPresentation\Shape\RichText\TextElementInterface;
+use TwilRoad\PhpPresentation\Style\Borders;
+use TwilRoad\PhpPresentation\Style\Fill;
 
 /**
  * Table cell
@@ -31,7 +31,7 @@ class Cell implements ComparableInterface
     /**
      * Rich text paragraphs
      *
-     * @var \PhpOffice\PhpPresentation\Shape\RichText\Paragraph[]
+     * @var \TwilRoad\PhpPresentation\Shape\RichText\Paragraph[]
      */
     private $richTextParagraphs;
 
@@ -45,14 +45,14 @@ class Cell implements ComparableInterface
     /**
      * Fill
      *
-     * @var \PhpOffice\PhpPresentation\Style\Fill
+     * @var \TwilRoad\PhpPresentation\Style\Fill
      */
     private $fill;
 
     /**
      * Borders
      *
-     * @var \PhpOffice\PhpPresentation\Style\Borders
+     * @var \TwilRoad\PhpPresentation\Style\Borders
      */
     private $borders;
 
@@ -85,7 +85,7 @@ class Cell implements ComparableInterface
     private $hashIndex;
 
     /**
-     * Create a new \PhpOffice\PhpPresentation\Shape\RichText instance
+     * Create a new \TwilRoad\PhpPresentation\Shape\RichText instance
      */
     public function __construct()
     {
@@ -115,7 +115,7 @@ class Cell implements ComparableInterface
     /**
      * Get active paragraph
      *
-     * @return \PhpOffice\PhpPresentation\Shape\RichText\Paragraph
+     * @return \TwilRoad\PhpPresentation\Shape\RichText\Paragraph
      */
     public function getActiveParagraph()
     {
@@ -127,7 +127,7 @@ class Cell implements ComparableInterface
      *
      * @param  int $index
      * @throws \Exception
-     * @return \PhpOffice\PhpPresentation\Shape\RichText\Paragraph
+     * @return \TwilRoad\PhpPresentation\Shape\RichText\Paragraph
      */
     public function setActiveParagraph($index = 0)
     {
@@ -145,7 +145,7 @@ class Cell implements ComparableInterface
      *
      * @param  int $index
      * @throws \Exception
-     * @return \PhpOffice\PhpPresentation\Shape\RichText\Paragraph
+     * @return \TwilRoad\PhpPresentation\Shape\RichText\Paragraph
      */
     public function getParagraph($index = 0)
     {
@@ -159,7 +159,7 @@ class Cell implements ComparableInterface
     /**
      * Create paragraph
      *
-     * @return \PhpOffice\PhpPresentation\Shape\RichText\Paragraph
+     * @return \TwilRoad\PhpPresentation\Shape\RichText\Paragraph
      * @throws \Exception
      */
     public function createParagraph()
@@ -183,9 +183,9 @@ class Cell implements ComparableInterface
     /**
      * Add text
      *
-     * @param  \PhpOffice\PhpPresentation\Shape\RichText\TextElementInterface $pText Rich text element
+     * @param  \TwilRoad\PhpPresentation\Shape\RichText\TextElementInterface $pText Rich text element
      * @throws \Exception
-     * @return \PhpOffice\PhpPresentation\Shape\Table\Cell
+     * @return \TwilRoad\PhpPresentation\Shape\Table\Cell
      */
     public function addText(TextElementInterface $pText = null)
     {
@@ -198,7 +198,7 @@ class Cell implements ComparableInterface
      * Create text (can not be formatted !)
      *
      * @param  string                                   $pText Text
-     * @return \PhpOffice\PhpPresentation\Shape\RichText\TextElement
+     * @return \TwilRoad\PhpPresentation\Shape\RichText\TextElement
      * @throws \Exception
      */
     public function createText($pText = '')
@@ -209,7 +209,7 @@ class Cell implements ComparableInterface
     /**
      * Create break
      *
-     * @return \PhpOffice\PhpPresentation\Shape\RichText\BreakElement
+     * @return \TwilRoad\PhpPresentation\Shape\RichText\BreakElement
      * @throws \Exception
      */
     public function createBreak()
@@ -221,7 +221,7 @@ class Cell implements ComparableInterface
      * Create text run (can be formatted)
      *
      * @param  string                           $pText Text
-     * @return \PhpOffice\PhpPresentation\Shape\RichText\Run
+     * @return \TwilRoad\PhpPresentation\Shape\RichText\Run
      * @throws \Exception
      */
     public function createTextRun($pText = '')
@@ -239,7 +239,7 @@ class Cell implements ComparableInterface
         // Return value
         $returnValue = '';
 
-        // Loop trough all \PhpOffice\PhpPresentation\Shape\RichText\Paragraph
+        // Loop trough all \TwilRoad\PhpPresentation\Shape\RichText\Paragraph
         foreach ($this->richTextParagraphs as $p) {
             $returnValue .= $p->getPlainText();
         }
@@ -261,7 +261,7 @@ class Cell implements ComparableInterface
     /**
      * Get paragraphs
      *
-     * @return \PhpOffice\PhpPresentation\Shape\RichText\Paragraph[]
+     * @return \TwilRoad\PhpPresentation\Shape\RichText\Paragraph[]
      */
     public function getParagraphs()
     {
@@ -271,14 +271,14 @@ class Cell implements ComparableInterface
     /**
      * Set paragraphs
      *
-     * @param  \PhpOffice\PhpPresentation\Shape\RichText\Paragraph[] $paragraphs Array of paragraphs
+     * @param  \TwilRoad\PhpPresentation\Shape\RichText\Paragraph[] $paragraphs Array of paragraphs
      * @throws \Exception
-     * @return \PhpOffice\PhpPresentation\Shape\Table\Cell
+     * @return \TwilRoad\PhpPresentation\Shape\Table\Cell
      */
     public function setParagraphs($paragraphs = null)
     {
         if (!is_array($paragraphs)) {
-            throw new \Exception("Invalid \PhpOffice\PhpPresentation\Shape\RichText\Paragraph[] array passed.");
+            throw new \Exception("Invalid \TwilRoad\PhpPresentation\Shape\RichText\Paragraph[] array passed.");
         }
         $this->richTextParagraphs = $paragraphs;
         $this->activeParagraph    = count($this->richTextParagraphs) - 1;
@@ -288,7 +288,7 @@ class Cell implements ComparableInterface
     /**
      * Get fill
      *
-     * @return \PhpOffice\PhpPresentation\Style\Fill
+     * @return \TwilRoad\PhpPresentation\Style\Fill
      */
     public function getFill()
     {
@@ -298,8 +298,8 @@ class Cell implements ComparableInterface
     /**
      * Set fill
      *
-     * @param  \PhpOffice\PhpPresentation\Style\Fill     $fill
-     * @return \PhpOffice\PhpPresentation\Shape\Table\Cell
+     * @param  \TwilRoad\PhpPresentation\Style\Fill     $fill
+     * @return \TwilRoad\PhpPresentation\Shape\Table\Cell
      */
     public function setFill(Fill $fill)
     {
@@ -311,7 +311,7 @@ class Cell implements ComparableInterface
     /**
      * Get borders
      *
-     * @return \PhpOffice\PhpPresentation\Style\Borders
+     * @return \TwilRoad\PhpPresentation\Style\Borders
      */
     public function getBorders()
     {
@@ -321,8 +321,8 @@ class Cell implements ComparableInterface
     /**
      * Set borders
      *
-     * @param  \PhpOffice\PhpPresentation\Style\Borders  $borders
-     * @return \PhpOffice\PhpPresentation\Shape\Table\Cell
+     * @param  \TwilRoad\PhpPresentation\Style\Borders  $borders
+     * @return \TwilRoad\PhpPresentation\Shape\Table\Cell
      */
     public function setBorders(Borders $borders)
     {
@@ -345,7 +345,7 @@ class Cell implements ComparableInterface
      * Set width
      *
      * @param  int                          $value
-     * @return \PhpOffice\PhpPresentation\Shape\Table\Cell
+     * @return \TwilRoad\PhpPresentation\Shape\Table\Cell
      */
     public function setWidth($value = 0)
     {
@@ -368,7 +368,7 @@ class Cell implements ComparableInterface
      * Set colSpan
      *
      * @param  int                          $value
-     * @return \PhpOffice\PhpPresentation\Shape\Table\Cell
+     * @return \TwilRoad\PhpPresentation\Shape\Table\Cell
      */
     public function setColSpan($value = 0)
     {
@@ -391,7 +391,7 @@ class Cell implements ComparableInterface
      * Set rowSpan
      *
      * @param  int                          $value
-     * @return \PhpOffice\PhpPresentation\Shape\Table\Cell
+     * @return \TwilRoad\PhpPresentation\Shape\Table\Cell
      */
     public function setRowSpan($value = 0)
     {

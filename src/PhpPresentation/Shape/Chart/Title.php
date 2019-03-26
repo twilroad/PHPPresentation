@@ -8,21 +8,21 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Shape\Chart;
+namespace TwilRoad\PhpPresentation\Shape\Chart;
 
-use PhpOffice\PhpPresentation\ComparableInterface;
-use PhpOffice\PhpPresentation\Style\Alignment;
-use PhpOffice\PhpPresentation\Style\Font;
+use TwilRoad\PhpPresentation\ComparableInterface;
+use TwilRoad\PhpPresentation\Style\Alignment;
+use TwilRoad\PhpPresentation\Style\Font;
 
 /**
- * \PhpOffice\PhpPresentation\Shape\Chart\Title
+ * \TwilRoad\PhpPresentation\Shape\Chart\Title
  */
 class Title implements ComparableInterface
 {
@@ -71,14 +71,14 @@ class Title implements ComparableInterface
     /**
      * Alignment
      *
-     * @var \PhpOffice\PhpPresentation\Style\Alignment
+     * @var \TwilRoad\PhpPresentation\Style\Alignment
      */
     private $alignment;
 
     /**
      * Font
      *
-     * @var \PhpOffice\PhpPresentation\Style\Font
+     * @var \TwilRoad\PhpPresentation\Style\Font
      */
     private $font;
 
@@ -90,7 +90,7 @@ class Title implements ComparableInterface
     private $hashIndex;
 
     /**
-     * Create a new \PhpOffice\PhpPresentation\Shape\Chart\Title instance
+     * Create a new \TwilRoad\PhpPresentation\Shape\Chart\Title instance
      */
     public function __construct()
     {
@@ -114,7 +114,7 @@ class Title implements ComparableInterface
      * Set Visible
      *
      * @param  boolean                         $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Title
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Title
      */
     public function setVisible($value = true)
     {
@@ -137,7 +137,7 @@ class Title implements ComparableInterface
      * Set Text
      *
      * @param  string                          $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Title
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Title
      */
     public function setText($value = null)
     {
@@ -160,7 +160,7 @@ class Title implements ComparableInterface
      * Set OffsetX (as a fraction of the chart)
      *
      * @param  float                           $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Title
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Title
      */
     public function setOffsetX($value = 0.01)
     {
@@ -183,7 +183,7 @@ class Title implements ComparableInterface
      * Set OffsetY (as a fraction of the chart)
      *
      * @param  float                           $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Title
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Title
      */
     public function setOffsetY($value = 0.01)
     {
@@ -206,7 +206,7 @@ class Title implements ComparableInterface
      * Set Width (as a fraction of the chart)
      *
      * @param float|int $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Title
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Title
      */
     public function setWidth($value = 0)
     {
@@ -229,7 +229,7 @@ class Title implements ComparableInterface
      * Set Height (as a fraction of the chart)
      *
      * @param float|int $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Title
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Title
      */
     public function setHeight($value = 0)
     {
@@ -241,7 +241,7 @@ class Title implements ComparableInterface
     /**
      * Get font
      *
-     * @return \PhpOffice\PhpPresentation\Style\Font
+     * @return \TwilRoad\PhpPresentation\Style\Font
      */
     public function getFont()
     {
@@ -251,9 +251,9 @@ class Title implements ComparableInterface
     /**
      * Set font
      *
-     * @param  \PhpOffice\PhpPresentation\Style\Font               $pFont Font
+     * @param  \TwilRoad\PhpPresentation\Style\Font               $pFont Font
      * @throws \Exception
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Title
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Title
      */
     public function setFont(Font $pFont = null)
     {
@@ -265,7 +265,7 @@ class Title implements ComparableInterface
     /**
      * Get alignment
      *
-     * @return \PhpOffice\PhpPresentation\Style\Alignment
+     * @return \TwilRoad\PhpPresentation\Style\Alignment
      */
     public function getAlignment()
     {
@@ -275,8 +275,8 @@ class Title implements ComparableInterface
     /**
      * Set alignment
      *
-     * @param  \PhpOffice\PhpPresentation\Style\Alignment   $alignment
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Title
+     * @param  \TwilRoad\PhpPresentation\Style\Alignment   $alignment
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Title
      */
     public function setAlignment(Alignment $alignment)
     {

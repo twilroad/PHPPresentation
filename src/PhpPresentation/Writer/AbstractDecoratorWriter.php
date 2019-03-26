@@ -1,10 +1,10 @@
 <?php
 
-namespace PhpOffice\PhpPresentation\Writer;
+namespace TwilRoad\PhpPresentation\Writer;
 
-use PhpOffice\Common\Adapter\Zip\ZipInterface;
-use PhpOffice\PhpPresentation\HashTable;
-use PhpOffice\PhpPresentation\PhpPresentation;
+use TwilRoad\Common\Adapter\Zip\ZipInterface;
+use TwilRoad\PhpPresentation\HashTable;
+use TwilRoad\PhpPresentation\PhpPresentation;
 
 abstract class AbstractDecoratorWriter
 {
@@ -14,7 +14,7 @@ abstract class AbstractDecoratorWriter
     abstract public function render();
 
     /**
-     * @var \PhpOffice\PhpPresentation\HashTable
+     * @var \TwilRoad\PhpPresentation\HashTable
      */
     protected $oHashTable;
 

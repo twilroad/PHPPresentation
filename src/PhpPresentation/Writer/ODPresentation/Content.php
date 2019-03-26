@@ -1,31 +1,31 @@
 <?php
 
-namespace PhpOffice\PhpPresentation\Writer\ODPresentation;
+namespace TwilRoad\PhpPresentation\Writer\ODPresentation;
 
-use PhpOffice\Common\Adapter\Zip\ZipInterface;
-use PhpOffice\Common\Drawing as CommonDrawing;
-use PhpOffice\Common\Text;
-use PhpOffice\Common\XMLWriter;
-use PhpOffice\PhpPresentation\Shape\Comment;
-use PhpOffice\PhpPresentation\Shape\Media;
-use PhpOffice\PhpPresentation\Slide;
-use PhpOffice\PhpPresentation\Shape\Chart;
-use PhpOffice\PhpPresentation\Shape\Drawing as ShapeDrawing;
-use PhpOffice\PhpPresentation\Shape\Drawing\AbstractDrawingAdapter;
-use PhpOffice\PhpPresentation\Shape\Group;
-use PhpOffice\PhpPresentation\Shape\Line;
-use PhpOffice\PhpPresentation\Shape\RichText\BreakElement;
-use PhpOffice\PhpPresentation\Shape\RichText\Run;
-use PhpOffice\PhpPresentation\Shape\RichText\TextElement;
-use PhpOffice\PhpPresentation\Shape\RichText;
-use PhpOffice\PhpPresentation\Shape\Table;
-use PhpOffice\PhpPresentation\Slide\Note;
-use PhpOffice\PhpPresentation\Slide\Transition;
-use PhpOffice\PhpPresentation\Style\Alignment;
-use PhpOffice\PhpPresentation\Style\Border;
-use PhpOffice\PhpPresentation\Style\Fill;
-use PhpOffice\PhpPresentation\Style\Shadow;
-use PhpOffice\PhpPresentation\Writer\ODPresentation;
+use TwilRoad\Common\Adapter\Zip\ZipInterface;
+use TwilRoad\Common\Drawing as CommonDrawing;
+use TwilRoad\Common\Text;
+use TwilRoad\Common\XMLWriter;
+use TwilRoad\PhpPresentation\Shape\Comment;
+use TwilRoad\PhpPresentation\Shape\Media;
+use TwilRoad\PhpPresentation\Slide;
+use TwilRoad\PhpPresentation\Shape\Chart;
+use TwilRoad\PhpPresentation\Shape\Drawing as ShapeDrawing;
+use TwilRoad\PhpPresentation\Shape\Drawing\AbstractDrawingAdapter;
+use TwilRoad\PhpPresentation\Shape\Group;
+use TwilRoad\PhpPresentation\Shape\Line;
+use TwilRoad\PhpPresentation\Shape\RichText\BreakElement;
+use TwilRoad\PhpPresentation\Shape\RichText\Run;
+use TwilRoad\PhpPresentation\Shape\RichText\TextElement;
+use TwilRoad\PhpPresentation\Shape\RichText;
+use TwilRoad\PhpPresentation\Shape\Table;
+use TwilRoad\PhpPresentation\Slide\Note;
+use TwilRoad\PhpPresentation\Slide\Transition;
+use TwilRoad\PhpPresentation\Style\Alignment;
+use TwilRoad\PhpPresentation\Style\Border;
+use TwilRoad\PhpPresentation\Style\Fill;
+use TwilRoad\PhpPresentation\Style\Shadow;
+use TwilRoad\PhpPresentation\Writer\ODPresentation;
 
 class Content extends AbstractDecoratorWriter
 {
@@ -322,8 +322,8 @@ class Content extends AbstractDecoratorWriter
     /**
      * Write picture
      *
-     * @param \PhpOffice\Common\XMLWriter $objWriter
-     * @param \PhpOffice\PhpPresentation\Shape\Media $shape
+     * @param \TwilRoad\Common\XMLWriter $objWriter
+     * @param \TwilRoad\PhpPresentation\Shape\Media $shape
      */
     public function writeShapeMedia(XMLWriter $objWriter, Media $shape)
     {
@@ -370,7 +370,7 @@ class Content extends AbstractDecoratorWriter
     /**
      * Write picture
      *
-     * @param \PhpOffice\Common\XMLWriter $objWriter
+     * @param \TwilRoad\Common\XMLWriter $objWriter
      * @param AbstractDrawingAdapter $shape
      * @throws \Exception
      */
@@ -418,8 +418,8 @@ class Content extends AbstractDecoratorWriter
     /**
      * Write text
      *
-     * @param \PhpOffice\Common\XMLWriter $objWriter
-     * @param \PhpOffice\PhpPresentation\Shape\RichText $shape
+     * @param \TwilRoad\Common\XMLWriter $objWriter
+     * @param \TwilRoad\PhpPresentation\Shape\RichText $shape
      * @throws \Exception
      */
     public function writeShapeTxt(XMLWriter $objWriter, RichText $shape)
@@ -803,8 +803,8 @@ class Content extends AbstractDecoratorWriter
     /**
      * Write the default style information for a RichText shape
      *
-     * @param \PhpOffice\Common\XMLWriter $objWriter
-     * @param \PhpOffice\PhpPresentation\Shape\RichText $shape
+     * @param \TwilRoad\Common\XMLWriter $objWriter
+     * @param \TwilRoad\PhpPresentation\Shape\RichText $shape
      */
     public function writeTxtStyle(XMLWriter $objWriter, RichText $shape)
     {
@@ -913,7 +913,7 @@ class Content extends AbstractDecoratorWriter
     /**
      * Write the default style information for an AbstractDrawingAdapter
      *
-     * @param \PhpOffice\Common\XMLWriter $objWriter
+     * @param \TwilRoad\Common\XMLWriter $objWriter
      * @param AbstractDrawingAdapter $shape
      */
     public function writeDrawingStyle(XMLWriter $objWriter, AbstractDrawingAdapter $shape)
@@ -1081,7 +1081,7 @@ class Content extends AbstractDecoratorWriter
     /**
      * Write the slide note
      * @param XMLWriter $objWriter
-     * @param \PhpOffice\PhpPresentation\Slide\Note $note
+     * @param \TwilRoad\PhpPresentation\Slide\Note $note
      * @throws \Exception
      */
     public function writeSlideNote(XMLWriter $objWriter, Note $note)

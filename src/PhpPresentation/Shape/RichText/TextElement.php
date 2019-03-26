@@ -8,16 +8,16 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Shape\RichText;
+namespace TwilRoad\PhpPresentation\Shape\RichText;
 
-use PhpOffice\PhpPresentation\Shape\Hyperlink;
+use TwilRoad\PhpPresentation\Shape\Hyperlink;
 
 /**
  * Rich text text element
@@ -39,12 +39,12 @@ class TextElement implements TextElementInterface
     /**
      * Hyperlink
      *
-     * @var \PhpOffice\PhpPresentation\Shape\Hyperlink
+     * @var \TwilRoad\PhpPresentation\Shape\Hyperlink
      */
     protected $hyperlink;
 
     /**
-     * Create a new \PhpOffice\PhpPresentation\Shape\RichText\TextElement instance
+     * Create a new \TwilRoad\PhpPresentation\Shape\RichText\TextElement instance
      *
      * @param string $pText Text
      */
@@ -68,7 +68,7 @@ class TextElement implements TextElementInterface
      * Set text
      *
      * @param                                            $pText string   Text
-     * @return \PhpOffice\PhpPresentation\Shape\RichText\TextElementInterface
+     * @return \TwilRoad\PhpPresentation\Shape\RichText\TextElementInterface
      */
     public function setText($pText = '')
     {
@@ -80,7 +80,7 @@ class TextElement implements TextElementInterface
     /**
      * Get font
      *
-     * @return \PhpOffice\PhpPresentation\Style\Font
+     * @return \TwilRoad\PhpPresentation\Style\Font
      */
     public function getFont()
     {
@@ -100,7 +100,7 @@ class TextElement implements TextElementInterface
     /**
      * Get Hyperlink
      *
-     * @return \PhpOffice\PhpPresentation\Shape\Hyperlink
+     * @return \TwilRoad\PhpPresentation\Shape\Hyperlink
      * @throws \Exception
      */
     public function getHyperlink()
@@ -115,9 +115,9 @@ class TextElement implements TextElementInterface
     /**
      * Set Hyperlink
      *
-     * @param  \PhpOffice\PhpPresentation\Shape\Hyperlink $pHyperlink
+     * @param  \TwilRoad\PhpPresentation\Shape\Hyperlink $pHyperlink
      * @throws \Exception
-     * @return \PhpOffice\PhpPresentation\Shape\RichText\TextElement
+     * @return \TwilRoad\PhpPresentation\Shape\RichText\TextElement
      */
     public function setHyperlink(Hyperlink $pHyperlink = null)
     {

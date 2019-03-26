@@ -8,21 +8,21 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Shape\Chart;
+namespace TwilRoad\PhpPresentation\Shape\Chart;
 
-use PhpOffice\PhpPresentation\ComparableInterface;
-use PhpOffice\PhpPresentation\Style\Font;
-use PhpOffice\PhpPresentation\Style\Outline;
+use TwilRoad\PhpPresentation\ComparableInterface;
+use TwilRoad\PhpPresentation\Style\Font;
+use TwilRoad\PhpPresentation\Style\Outline;
 
 /**
- * \PhpOffice\PhpPresentation\Shape\Chart\Axis
+ * \TwilRoad\PhpPresentation\Shape\Chart\Axis
  */
 class Axis implements ComparableInterface
 {
@@ -51,7 +51,7 @@ class Axis implements ComparableInterface
     /**
      * Font
      *
-     * @var \PhpOffice\PhpPresentation\Style\Font
+     * @var \TwilRoad\PhpPresentation\Style\Font
      */
     private $font;
 
@@ -106,7 +106,7 @@ class Axis implements ComparableInterface
     protected $isVisible = true;
 
     /**
-     * Create a new \PhpOffice\PhpPresentation\Shape\Chart\Axis instance
+     * Create a new \TwilRoad\PhpPresentation\Shape\Chart\Axis instance
      *
      * @param string $title Title
      */
@@ -131,7 +131,7 @@ class Axis implements ComparableInterface
      * Set Title
      *
      * @param  string                         $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Axis
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Axis
      */
     public function setTitle($value = 'Axis Title')
     {
@@ -143,7 +143,7 @@ class Axis implements ComparableInterface
     /**
      * Get font
      *
-     * @return \PhpOffice\PhpPresentation\Style\Font
+     * @return \TwilRoad\PhpPresentation\Style\Font
      */
     public function getFont()
     {
@@ -153,9 +153,9 @@ class Axis implements ComparableInterface
     /**
      * Set font
      *
-     * @param  \PhpOffice\PhpPresentation\Style\Font               $pFont Font
+     * @param  \TwilRoad\PhpPresentation\Style\Font               $pFont Font
      * @throws \Exception
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Axis
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Axis
      */
     public function setFont(Font $pFont = null)
     {
@@ -177,7 +177,7 @@ class Axis implements ComparableInterface
      * Set Format Code
      *
      * @param  string                         $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Axis
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Axis
      */
     public function setFormatCode($value = '')
     {

@@ -1,8 +1,8 @@
 <?php
 
-namespace PhpOffice\PhpPresentation\Shape\Drawing;
+namespace TwilRoad\PhpPresentation\Shape\Drawing;
 
-use PhpOffice\Common\File as CommonFile;
+use TwilRoad\Common\File as CommonFile;
 
 class ZipFile extends AbstractDrawingAdapter
 {
@@ -25,7 +25,7 @@ class ZipFile extends AbstractDrawingAdapter
      * Set Path
      *
      * @param  string                      $pValue      File path
-     * @return \PhpOffice\PhpPresentation\Shape\Drawing\ZipFile
+     * @return \TwilRoad\PhpPresentation\Shape\Drawing\ZipFile
      */
     public function setPath($pValue = '')
     {

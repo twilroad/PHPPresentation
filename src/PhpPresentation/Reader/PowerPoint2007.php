@@ -8,35 +8,35 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Reader;
+namespace TwilRoad\PhpPresentation\Reader;
 
-use PhpOffice\PhpPresentation\DocumentLayout;
-use PhpOffice\PhpPresentation\PhpPresentation;
-use PhpOffice\PhpPresentation\Shape\Placeholder;
-use PhpOffice\PhpPresentation\Shape\RichText;
-use PhpOffice\PhpPresentation\Shape\RichText\Paragraph;
-use PhpOffice\PhpPresentation\Shape\Table\Cell;
-use PhpOffice\PhpPresentation\Slide;
-use PhpOffice\PhpPresentation\Slide\AbstractSlide;
-use PhpOffice\PhpPresentation\Slide\SlideLayout;
-use PhpOffice\PhpPresentation\Slide\SlideMaster;
-use PhpOffice\PhpPresentation\Shape\Drawing\Gd;
-use PhpOffice\PhpPresentation\Style\Bullet;
-use PhpOffice\PhpPresentation\Style\Border;
-use PhpOffice\PhpPresentation\Style\Borders;
-use PhpOffice\PhpPresentation\Style\Color;
-use PhpOffice\PhpPresentation\Style\Fill;
-use PhpOffice\PhpPresentation\Style\SchemeColor;
-use PhpOffice\PhpPresentation\Style\TextStyle;
-use PhpOffice\Common\XMLReader;
-use PhpOffice\Common\Drawing as CommonDrawing;
+use TwilRoad\PhpPresentation\DocumentLayout;
+use TwilRoad\PhpPresentation\PhpPresentation;
+use TwilRoad\PhpPresentation\Shape\Placeholder;
+use TwilRoad\PhpPresentation\Shape\RichText;
+use TwilRoad\PhpPresentation\Shape\RichText\Paragraph;
+use TwilRoad\PhpPresentation\Shape\Table\Cell;
+use TwilRoad\PhpPresentation\Slide;
+use TwilRoad\PhpPresentation\Slide\AbstractSlide;
+use TwilRoad\PhpPresentation\Slide\SlideLayout;
+use TwilRoad\PhpPresentation\Slide\SlideMaster;
+use TwilRoad\PhpPresentation\Shape\Drawing\Gd;
+use TwilRoad\PhpPresentation\Style\Bullet;
+use TwilRoad\PhpPresentation\Style\Border;
+use TwilRoad\PhpPresentation\Style\Borders;
+use TwilRoad\PhpPresentation\Style\Color;
+use TwilRoad\PhpPresentation\Style\Fill;
+use TwilRoad\PhpPresentation\Style\SchemeColor;
+use TwilRoad\PhpPresentation\Style\TextStyle;
+use TwilRoad\Common\XMLReader;
+use TwilRoad\Common\Drawing as CommonDrawing;
 use ZipArchive;
 
 /**
@@ -72,7 +72,7 @@ class PowerPoint2007 implements ReaderInterface
     protected $fileRels;
 
     /**
-     * Can the current \PhpOffice\PhpPresentation\Reader\ReaderInterface read the file?
+     * Can the current \TwilRoad\PhpPresentation\Reader\ReaderInterface read the file?
      *
      * @param  string $pFilename
      * @throws \Exception
@@ -113,14 +113,14 @@ class PowerPoint2007 implements ReaderInterface
      * Loads PhpPresentation Serialized file
      *
      * @param  string $pFilename
-     * @return \PhpOffice\PhpPresentation\PhpPresentation
+     * @return \TwilRoad\PhpPresentation\PhpPresentation
      * @throws \Exception
      */
     public function load($pFilename)
     {
         // Unserialize... First make sure the file supports it!
         if (!$this->fileSupportsUnserializePhpPresentation($pFilename)) {
-            throw new \Exception("Invalid file format for PhpOffice\PhpPresentation\Reader\PowerPoint2007: " . $pFilename . ".");
+            throw new \Exception("Invalid file format for TwilRoad\PhpPresentation\Reader\PowerPoint2007: " . $pFilename . ".");
         }
 
         return $this->loadFile($pFilename);
@@ -130,7 +130,7 @@ class PowerPoint2007 implements ReaderInterface
      * Load PhpPresentation Serialized file
      *
      * @param  string $pFilename
-     * @return \PhpOffice\PhpPresentation\PhpPresentation
+     * @return \TwilRoad\PhpPresentation\PhpPresentation
      * @throws \Exception
      */
     protected function loadFile($pFilename)

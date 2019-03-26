@@ -8,24 +8,24 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Writer;
+namespace TwilRoad\PhpPresentation\Writer;
 
 use DirectoryIterator;
-use PhpOffice\Common\Adapter\Zip\ZipArchiveAdapter;
-use PhpOffice\PhpPresentation\HashTable;
-use PhpOffice\PhpPresentation\PhpPresentation;
-use PhpOffice\PhpPresentation\Writer\PowerPoint2007\LayoutPack\AbstractLayoutPack;
-use PhpOffice\PhpPresentation\Writer\PowerPoint2007\LayoutPack\PackDefault;
+use TwilRoad\Common\Adapter\Zip\ZipArchiveAdapter;
+use TwilRoad\PhpPresentation\HashTable;
+use TwilRoad\PhpPresentation\PhpPresentation;
+use TwilRoad\PhpPresentation\Writer\PowerPoint2007\LayoutPack\AbstractLayoutPack;
+use TwilRoad\PhpPresentation\Writer\PowerPoint2007\LayoutPack\PackDefault;
 
 /**
- * \PhpOffice\PhpPresentation\Writer\PowerPoint2007
+ * \TwilRoad\PhpPresentation\Writer\PowerPoint2007
  */
 class PowerPoint2007 extends AbstractWriter implements WriterInterface
 {
@@ -46,7 +46,7 @@ class PowerPoint2007 extends AbstractWriter implements WriterInterface
     /**
      * Layout pack to use
      * @deprecated 0.7
-     * @var \PhpOffice\PhpPresentation\Writer\PowerPoint2007\LayoutPack\AbstractLayoutPack
+     * @var \TwilRoad\PhpPresentation\Writer\PowerPoint2007\LayoutPack\AbstractLayoutPack
      */
     protected $layoutPack;
 
@@ -111,7 +111,7 @@ class PowerPoint2007 extends AbstractWriter implements WriterInterface
             $class = __NAMESPACE__ . '\\PowerPoint2007\\' . $oFile->getBasename('.php');
             $o = new \ReflectionClass($class);
 
-            if ($o->isAbstract() || !$o->isSubclassOf('PhpOffice\PhpPresentation\Writer\PowerPoint2007\AbstractDecoratorWriter')) {
+            if ($o->isAbstract() || !$o->isSubclassOf('TwilRoad\PhpPresentation\Writer\PowerPoint2007\AbstractDecoratorWriter')) {
                 continue;
             }
             $arrayFiles[$oFile->getBasename('.php')] = $o;
@@ -158,7 +158,7 @@ class PowerPoint2007 extends AbstractWriter implements WriterInterface
      * @param  boolean $pValue
      * @param  string $pDirectory Disk caching directory
      * @throws \Exception
-     * @return \PhpOffice\PhpPresentation\Writer\PowerPoint2007
+     * @return \TwilRoad\PhpPresentation\Writer\PowerPoint2007
      */
     public function setUseDiskCaching($pValue = false, $pDirectory = null)
     {
@@ -188,7 +188,7 @@ class PowerPoint2007 extends AbstractWriter implements WriterInterface
      * Get layout pack to use
      *
      * @deprecated 0.7
-     * @return \PhpOffice\PhpPresentation\Writer\PowerPoint2007\LayoutPack\AbstractLayoutPack
+     * @return \TwilRoad\PhpPresentation\Writer\PowerPoint2007\LayoutPack\AbstractLayoutPack
      */
     public function getLayoutPack()
     {
@@ -199,8 +199,8 @@ class PowerPoint2007 extends AbstractWriter implements WriterInterface
      * Set layout pack to use
      *
      * @deprecated 0.7
-     * @param \PhpOffice\PhpPresentation\Writer\PowerPoint2007\LayoutPack\AbstractLayoutPack $pValue
-     * @return \PhpOffice\PhpPresentation\Writer\PowerPoint2007
+     * @param \TwilRoad\PhpPresentation\Writer\PowerPoint2007\LayoutPack\AbstractLayoutPack $pValue
+     * @return \TwilRoad\PhpPresentation\Writer\PowerPoint2007
      */
     public function setLayoutPack(AbstractLayoutPack $pValue = null)
     {

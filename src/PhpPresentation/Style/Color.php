@@ -8,19 +8,19 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Style;
+namespace TwilRoad\PhpPresentation\Style;
 
-use PhpOffice\PhpPresentation\ComparableInterface;
+use TwilRoad\PhpPresentation\ComparableInterface;
 
 /**
- * \PhpOffice\PhpPresentation\Style\Color
+ * \TwilRoad\PhpPresentation\Style\Color
  */
 class Color implements ComparableInterface
 {
@@ -51,7 +51,7 @@ class Color implements ComparableInterface
     private $hashIndex;
 
     /**
-     * Create a new \PhpOffice\PhpPresentation\Style\Color
+     * Create a new \TwilRoad\PhpPresentation\Style\Color
      *
      * @param string $pARGB
      */
@@ -75,7 +75,7 @@ class Color implements ComparableInterface
      * Set ARGB
      *
      * @param  string                    $pValue
-     * @return \PhpOffice\PhpPresentation\Style\Color
+     * @return \TwilRoad\PhpPresentation\Style\Color
      */
     public function setARGB($pValue = self::COLOR_BLACK)
     {
@@ -141,7 +141,7 @@ class Color implements ComparableInterface
      *
      * @param  string $pValue
      * @param  string $pAlpha
-     * @return \PhpOffice\PhpPresentation\Style\Color
+     * @return \TwilRoad\PhpPresentation\Style\Color
      */
     public function setRGB($pValue = '000000', $pAlpha = 'FF')
     {

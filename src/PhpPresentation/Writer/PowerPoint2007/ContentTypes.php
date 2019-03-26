@@ -8,28 +8,28 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Writer\PowerPoint2007;
+namespace TwilRoad\PhpPresentation\Writer\PowerPoint2007;
 
-use PhpOffice\PhpPresentation\Shape\Chart as ShapeChart;
-use PhpOffice\PhpPresentation\Shape\Comment;
-use PhpOffice\PhpPresentation\Shape\Drawing as ShapeDrawing;
-use PhpOffice\Common\XMLWriter;
-use PhpOffice\PhpPresentation\Writer\PowerPoint2007;
+use TwilRoad\PhpPresentation\Shape\Chart as ShapeChart;
+use TwilRoad\PhpPresentation\Shape\Comment;
+use TwilRoad\PhpPresentation\Shape\Drawing as ShapeDrawing;
+use TwilRoad\Common\XMLWriter;
+use TwilRoad\PhpPresentation\Writer\PowerPoint2007;
 
 /**
- * \PhpOffice\PhpPresentation\Writer\PowerPoint2007\ContentTypes
+ * \TwilRoad\PhpPresentation\Writer\PowerPoint2007\ContentTypes
  */
 class ContentTypes extends AbstractDecoratorWriter
 {
     /**
-     * @return \PhpOffice\Common\Adapter\Zip\ZipInterface
+     * @return \TwilRoad\Common\Adapter\Zip\ZipInterface
      * @throws \Exception
      */
     public function render()
@@ -143,7 +143,7 @@ class ContentTypes extends AbstractDecoratorWriter
     /**
      * Write Default content type
      *
-     * @param  \PhpOffice\Common\XMLWriter $objWriter    XML Writer
+     * @param  \TwilRoad\Common\XMLWriter $objWriter    XML Writer
      * @param  string                         $pPartname    Part name
      * @param  string                         $pContentType Content type
      * @throws \Exception
@@ -163,7 +163,7 @@ class ContentTypes extends AbstractDecoratorWriter
     /**
      * Write Override content type
      *
-     * @param  \PhpOffice\Common\XMLWriter $objWriter    XML Writer
+     * @param  \TwilRoad\Common\XMLWriter $objWriter    XML Writer
      * @param  string                         $pPartname    Part name
      * @param  string                         $pContentType Content type
      * @throws \Exception

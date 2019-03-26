@@ -1,22 +1,22 @@
 <?php
-namespace PhpOffice\PhpPresentation\Writer\PowerPoint2007;
+namespace TwilRoad\PhpPresentation\Writer\PowerPoint2007;
 
-use PhpOffice\Common\Drawing as CommonDrawing;
-use PhpOffice\Common\XMLWriter;
-use PhpOffice\PhpPresentation\Shape\AbstractDrawing;
-use PhpOffice\PhpPresentation\Shape\Chart as ShapeChart;
-use PhpOffice\PhpPresentation\Shape\Comment;
-use PhpOffice\PhpPresentation\Shape\RichText;
-use PhpOffice\PhpPresentation\Shape\Table as ShapeTable;
-use PhpOffice\PhpPresentation\Slide;
-use PhpOffice\PhpPresentation\Slide\SlideMaster;
-use PhpOffice\PhpPresentation\Style\SchemeColor;
-use PhpOffice\PhpPresentation\Slide\Background\Image;
+use TwilRoad\Common\Drawing as CommonDrawing;
+use TwilRoad\Common\XMLWriter;
+use TwilRoad\PhpPresentation\Shape\AbstractDrawing;
+use TwilRoad\PhpPresentation\Shape\Chart as ShapeChart;
+use TwilRoad\PhpPresentation\Shape\Comment;
+use TwilRoad\PhpPresentation\Shape\RichText;
+use TwilRoad\PhpPresentation\Shape\Table as ShapeTable;
+use TwilRoad\PhpPresentation\Slide;
+use TwilRoad\PhpPresentation\Slide\SlideMaster;
+use TwilRoad\PhpPresentation\Style\SchemeColor;
+use TwilRoad\PhpPresentation\Slide\Background\Image;
 
 class PptSlideMasters extends AbstractSlide
 {
     /**
-     * @return \PhpOffice\Common\Adapter\Zip\ZipInterface
+     * @return \TwilRoad\Common\Adapter\Zip\ZipInterface
      * @throws \Exception
      */
     public function render()
@@ -87,7 +87,7 @@ class PptSlideMasters extends AbstractSlide
     /**
      * Write slide to XML format
      *
-     * @param  \PhpOffice\PhpPresentation\Slide\SlideMaster $pSlide
+     * @param  \TwilRoad\PhpPresentation\Slide\SlideMaster $pSlide
      * @return string XML Output
      * @throws \Exception
      */

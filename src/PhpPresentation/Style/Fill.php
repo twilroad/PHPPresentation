@@ -8,19 +8,19 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Style;
+namespace TwilRoad\PhpPresentation\Style;
 
-use PhpOffice\PhpPresentation\ComparableInterface;
+use TwilRoad\PhpPresentation\ComparableInterface;
 
 /**
- * \PhpOffice\PhpPresentation\Style\Fill
+ * \TwilRoad\PhpPresentation\Style\Fill
  */
 class Fill implements ComparableInterface
 {
@@ -64,14 +64,14 @@ class Fill implements ComparableInterface
     /**
      * Start color
      *
-     * @var \PhpOffice\PhpPresentation\Style\Color
+     * @var \TwilRoad\PhpPresentation\Style\Color
      */
     private $startColor;
 
     /**
      * End color
      *
-     * @var \PhpOffice\PhpPresentation\Style\Color
+     * @var \TwilRoad\PhpPresentation\Style\Color
      */
     private $endColor;
 
@@ -83,7 +83,7 @@ class Fill implements ComparableInterface
     private $hashIndex;
 
     /**
-     * Create a new \PhpOffice\PhpPresentation\Style\Fill
+     * Create a new \TwilRoad\PhpPresentation\Style\Fill
      */
     public function __construct()
     {
@@ -107,8 +107,8 @@ class Fill implements ComparableInterface
     /**
      * Set Fill Type
      *
-     * @param  string                   $pValue \PhpOffice\PhpPresentation\Style\Fill fill type
-     * @return \PhpOffice\PhpPresentation\Style\Fill
+     * @param  string                   $pValue \TwilRoad\PhpPresentation\Style\Fill fill type
+     * @return \TwilRoad\PhpPresentation\Style\Fill
      */
     public function setFillType($pValue = self::FILL_NONE)
     {
@@ -131,7 +131,7 @@ class Fill implements ComparableInterface
      * Set Rotation
      *
      * @param float|int $pValue
-     * @return \PhpOffice\PhpPresentation\Style\Fill
+     * @return \TwilRoad\PhpPresentation\Style\Fill
      */
     public function setRotation($pValue = 0)
     {
@@ -143,7 +143,7 @@ class Fill implements ComparableInterface
     /**
      * Get Start Color
      *
-     * @return \PhpOffice\PhpPresentation\Style\Color
+     * @return \TwilRoad\PhpPresentation\Style\Color
      */
     public function getStartColor()
     {
@@ -155,9 +155,9 @@ class Fill implements ComparableInterface
     /**
      * Set Start Color
      *
-     * @param  \PhpOffice\PhpPresentation\Style\Color $pValue
+     * @param  \TwilRoad\PhpPresentation\Style\Color $pValue
      * @throws \Exception
-     * @return \PhpOffice\PhpPresentation\Style\Fill
+     * @return \TwilRoad\PhpPresentation\Style\Fill
      */
     public function setStartColor(Color $pValue = null)
     {
@@ -169,7 +169,7 @@ class Fill implements ComparableInterface
     /**
      * Get End Color
      *
-     * @return \PhpOffice\PhpPresentation\Style\Color
+     * @return \TwilRoad\PhpPresentation\Style\Color
      */
     public function getEndColor()
     {
@@ -181,9 +181,9 @@ class Fill implements ComparableInterface
     /**
      * Set End Color
      *
-     * @param  \PhpOffice\PhpPresentation\Style\Color $pValue
+     * @param  \TwilRoad\PhpPresentation\Style\Color $pValue
      * @throws \Exception
-     * @return \PhpOffice\PhpPresentation\Style\Fill
+     * @return \TwilRoad\PhpPresentation\Style\Fill
      */
     public function setEndColor(Color $pValue = null)
     {

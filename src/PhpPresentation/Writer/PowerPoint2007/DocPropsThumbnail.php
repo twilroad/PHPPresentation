@@ -1,11 +1,11 @@
 <?php
 
-namespace PhpOffice\PhpPresentation\Writer\PowerPoint2007;
+namespace TwilRoad\PhpPresentation\Writer\PowerPoint2007;
 
 class DocPropsThumbnail extends AbstractDecoratorWriter
 {
     /**
-     * @return \PhpOffice\Common\Adapter\Zip\ZipInterface
+     * @return \TwilRoad\Common\Adapter\Zip\ZipInterface
      * @throws \Exception
      */
     public function render()

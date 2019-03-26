@@ -8,20 +8,20 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Shape;
+namespace TwilRoad\PhpPresentation\Shape;
 
-use PhpOffice\PhpPresentation\ComparableInterface;
-use PhpOffice\PhpPresentation\Shape\Chart\Legend;
-use PhpOffice\PhpPresentation\Shape\Chart\PlotArea;
-use PhpOffice\PhpPresentation\Shape\Chart\Title;
-use PhpOffice\PhpPresentation\Shape\Chart\View3D;
+use TwilRoad\PhpPresentation\ComparableInterface;
+use TwilRoad\PhpPresentation\Shape\Chart\Legend;
+use TwilRoad\PhpPresentation\Shape\Chart\PlotArea;
+use TwilRoad\PhpPresentation\Shape\Chart\Title;
+use TwilRoad\PhpPresentation\Shape\Chart\View3D;
 
 /**
  * Chart element
@@ -31,28 +31,28 @@ class Chart extends AbstractGraphic implements ComparableInterface
     /**
      * Title
      *
-     * @var \PhpOffice\PhpPresentation\Shape\Chart\Title
+     * @var \TwilRoad\PhpPresentation\Shape\Chart\Title
      */
     private $title;
 
     /**
      * Legend
      *
-     * @var \PhpOffice\PhpPresentation\Shape\Chart\Legend
+     * @var \TwilRoad\PhpPresentation\Shape\Chart\Legend
      */
     private $legend;
 
     /**
      * Plot area
      *
-     * @var \PhpOffice\PhpPresentation\Shape\Chart\PlotArea
+     * @var \TwilRoad\PhpPresentation\Shape\Chart\PlotArea
      */
     private $plotArea;
 
     /**
      * View 3D
      *
-     * @var \PhpOffice\PhpPresentation\Shape\Chart\View3D
+     * @var \TwilRoad\PhpPresentation\Shape\Chart\View3D
      */
     private $view3D;
 
@@ -77,11 +77,11 @@ class Chart extends AbstractGraphic implements ComparableInterface
         // Initialize parent
         parent::__construct();
     }
-    
+
     public function __clone()
     {
         parent::__clone();
-        
+
         $this->title     = clone $this->title;
         $this->legend    = clone $this->legend;
         $this->plotArea  = clone $this->plotArea;
@@ -91,7 +91,7 @@ class Chart extends AbstractGraphic implements ComparableInterface
     /**
      * Get Title
      *
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Title
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Title
      */
     public function getTitle()
     {
@@ -101,7 +101,7 @@ class Chart extends AbstractGraphic implements ComparableInterface
     /**
      * Get Legend
      *
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Legend
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Legend
      */
     public function getLegend()
     {
@@ -111,7 +111,7 @@ class Chart extends AbstractGraphic implements ComparableInterface
     /**
      * Get PlotArea
      *
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\PlotArea
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\PlotArea
      */
     public function getPlotArea()
     {
@@ -121,7 +121,7 @@ class Chart extends AbstractGraphic implements ComparableInterface
     /**
      * Get View3D
      *
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\View3D
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\View3D
      */
     public function getView3D()
     {
@@ -142,7 +142,7 @@ class Chart extends AbstractGraphic implements ComparableInterface
      * Include spreadsheet for editing data? Requires PHPExcel in the same folder as PhpPresentation
      *
      * @param  boolean                   $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart
+     * @return \TwilRoad\PhpPresentation\Shape\Chart
      */
     public function setIncludeSpreadsheet($value = false)
     {

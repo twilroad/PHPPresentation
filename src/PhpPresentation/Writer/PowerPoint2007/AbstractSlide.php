@@ -8,39 +8,39 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
-namespace PhpOffice\PhpPresentation\Writer\PowerPoint2007;
+namespace TwilRoad\PhpPresentation\Writer\PowerPoint2007;
 
-use PhpOffice\Common\Drawing as CommonDrawing;
-use PhpOffice\Common\Text;
-use PhpOffice\Common\XMLWriter;
-use PhpOffice\PhpPresentation\Shape\AbstractGraphic;
-use PhpOffice\PhpPresentation\Shape\Chart as ShapeChart;
-use PhpOffice\PhpPresentation\Shape\Comment;
-use PhpOffice\PhpPresentation\Shape\Drawing\Gd as ShapeDrawingGd;
-use PhpOffice\PhpPresentation\Shape\Drawing\File as ShapeDrawingFile;
-use PhpOffice\PhpPresentation\Shape\Group;
-use PhpOffice\PhpPresentation\Shape\Line;
-use PhpOffice\PhpPresentation\Shape\Media;
-use PhpOffice\PhpPresentation\Shape\Placeholder;
-use PhpOffice\PhpPresentation\Shape\RichText;
-use PhpOffice\PhpPresentation\Shape\RichText\BreakElement;
-use PhpOffice\PhpPresentation\Shape\RichText\Run;
-use PhpOffice\PhpPresentation\Shape\RichText\TextElement;
-use PhpOffice\PhpPresentation\Shape\Table as ShapeTable;
-use PhpOffice\PhpPresentation\Slide;
-use PhpOffice\PhpPresentation\Slide\Note;
-use PhpOffice\PhpPresentation\Style\Alignment;
-use PhpOffice\PhpPresentation\Style\Bullet;
-use PhpOffice\PhpPresentation\Style\Border;
-use PhpOffice\PhpPresentation\Style\Color;
-use PhpOffice\PhpPresentation\Style\Shadow;
-use PhpOffice\PhpPresentation\Slide\AbstractSlide as AbstractSlideAlias;
+use TwilRoad\Common\Drawing as CommonDrawing;
+use TwilRoad\Common\Text;
+use TwilRoad\Common\XMLWriter;
+use TwilRoad\PhpPresentation\Shape\AbstractGraphic;
+use TwilRoad\PhpPresentation\Shape\Chart as ShapeChart;
+use TwilRoad\PhpPresentation\Shape\Comment;
+use TwilRoad\PhpPresentation\Shape\Drawing\Gd as ShapeDrawingGd;
+use TwilRoad\PhpPresentation\Shape\Drawing\File as ShapeDrawingFile;
+use TwilRoad\PhpPresentation\Shape\Group;
+use TwilRoad\PhpPresentation\Shape\Line;
+use TwilRoad\PhpPresentation\Shape\Media;
+use TwilRoad\PhpPresentation\Shape\Placeholder;
+use TwilRoad\PhpPresentation\Shape\RichText;
+use TwilRoad\PhpPresentation\Shape\RichText\BreakElement;
+use TwilRoad\PhpPresentation\Shape\RichText\Run;
+use TwilRoad\PhpPresentation\Shape\RichText\TextElement;
+use TwilRoad\PhpPresentation\Shape\Table as ShapeTable;
+use TwilRoad\PhpPresentation\Slide;
+use TwilRoad\PhpPresentation\Slide\Note;
+use TwilRoad\PhpPresentation\Style\Alignment;
+use TwilRoad\PhpPresentation\Style\Bullet;
+use TwilRoad\PhpPresentation\Style\Border;
+use TwilRoad\PhpPresentation\Style\Color;
+use TwilRoad\PhpPresentation\Style\Shadow;
+use TwilRoad\PhpPresentation\Slide\AbstractSlide as AbstractSlideAlias;
 
 abstract class AbstractSlide extends AbstractDecoratorWriter
 {
@@ -115,7 +115,7 @@ abstract class AbstractSlide extends AbstractDecoratorWriter
 
     /**
      * @param XMLWriter $objWriter
-     * @param \ArrayObject|\PhpOffice\PhpPresentation\AbstractShape[] $shapes
+     * @param \ArrayObject|\TwilRoad\PhpPresentation\AbstractShape[] $shapes
      * @param int $shapeId
      * @throws \Exception
      */
@@ -150,8 +150,8 @@ abstract class AbstractSlide extends AbstractDecoratorWriter
     /**
      * Write txt
      *
-     * @param  \PhpOffice\Common\XMLWriter $objWriter XML Writer
-     * @param  \PhpOffice\PhpPresentation\Shape\RichText $shape
+     * @param  \TwilRoad\Common\XMLWriter $objWriter XML Writer
+     * @param  \TwilRoad\PhpPresentation\Shape\RichText $shape
      * @param  int $shapeId
      * @throws \Exception
      */
@@ -300,8 +300,8 @@ abstract class AbstractSlide extends AbstractDecoratorWriter
     /**
      * Write table
      *
-     * @param  \PhpOffice\Common\XMLWriter $objWriter XML Writer
-     * @param  \PhpOffice\PhpPresentation\Shape\Table $shape
+     * @param  \TwilRoad\Common\XMLWriter $objWriter XML Writer
+     * @param  \TwilRoad\PhpPresentation\Shape\Table $shape
      * @param  int $shapeId
      * @throws \Exception
      */
@@ -500,8 +500,8 @@ abstract class AbstractSlide extends AbstractDecoratorWriter
     /**
      * Write paragraphs
      *
-     * @param  \PhpOffice\Common\XMLWriter $objWriter XML Writer
-     * @param  \PhpOffice\PhpPresentation\Shape\RichText\Paragraph[] $paragraphs
+     * @param  \TwilRoad\Common\XMLWriter $objWriter XML Writer
+     * @param  \TwilRoad\PhpPresentation\Shape\RichText\Paragraph[] $paragraphs
      * @param  bool $bIsPlaceholder
      * @throws \Exception
      */
@@ -629,8 +629,8 @@ abstract class AbstractSlide extends AbstractDecoratorWriter
     /**
      * Write Line Shape
      *
-     * @param  \PhpOffice\Common\XMLWriter $objWriter XML Writer
-     * @param \PhpOffice\PhpPresentation\Shape\Line $shape
+     * @param  \TwilRoad\Common\XMLWriter $objWriter XML Writer
+     * @param \TwilRoad\PhpPresentation\Shape\Line $shape
      * @param  int $shapeId
      * @throws \Exception
      */
@@ -757,8 +757,8 @@ abstract class AbstractSlide extends AbstractDecoratorWriter
     /**
      * Write hyperlink
      *
-     * @param \PhpOffice\Common\XMLWriter $objWriter XML Writer
-     * @param \PhpOffice\PhpPresentation\AbstractShape|\PhpOffice\PhpPresentation\Shape\RichText\TextElement $shape
+     * @param \TwilRoad\Common\XMLWriter $objWriter XML Writer
+     * @param \TwilRoad\PhpPresentation\AbstractShape|\TwilRoad\PhpPresentation\Shape\RichText\TextElement $shape
      * @throws \Exception
      */
     protected function writeHyperlink(XMLWriter $objWriter, $shape)
@@ -1066,8 +1066,8 @@ abstract class AbstractSlide extends AbstractDecoratorWriter
     /**
      * Write chart
      *
-     * @param \PhpOffice\Common\XMLWriter $objWriter XML Writer
-     * @param \PhpOffice\PhpPresentation\Shape\Chart $shape
+     * @param \TwilRoad\Common\XMLWriter $objWriter XML Writer
+     * @param \TwilRoad\PhpPresentation\Shape\Chart $shape
      * @param  int $shapeId
      */
     protected function writeShapeChart(XMLWriter $objWriter, ShapeChart $shape, $shapeId)
@@ -1126,8 +1126,8 @@ abstract class AbstractSlide extends AbstractDecoratorWriter
     /**
      * Write pic
      *
-     * @param  \PhpOffice\Common\XMLWriter $objWriter XML Writer
-     * @param  \PhpOffice\PhpPresentation\Shape\AbstractGraphic $shape
+     * @param  \TwilRoad\Common\XMLWriter $objWriter XML Writer
+     * @param  \TwilRoad\PhpPresentation\Shape\AbstractGraphic $shape
      * @param  int $shapeId
      * @throws \Exception
      */
@@ -1228,8 +1228,8 @@ abstract class AbstractSlide extends AbstractDecoratorWriter
     /**
      * Write group
      *
-     * @param \PhpOffice\Common\XMLWriter $objWriter XML Writer
-     * @param \PhpOffice\PhpPresentation\Shape\Group $group
+     * @param \TwilRoad\Common\XMLWriter $objWriter XML Writer
+     * @param \TwilRoad\PhpPresentation\Shape\Group $group
      * @param  int $shapeId
      * @throws \Exception
      */
@@ -1283,7 +1283,7 @@ abstract class AbstractSlide extends AbstractDecoratorWriter
     }
 
     /**
-     * @param \PhpOffice\PhpPresentation\Slide\AbstractSlide $pSlide
+     * @param \TwilRoad\PhpPresentation\Slide\AbstractSlide $pSlide
      * @param $objWriter
      */
     protected function writeSlideBackground(AbstractSlideAlias $pSlide, XMLWriter $objWriter)

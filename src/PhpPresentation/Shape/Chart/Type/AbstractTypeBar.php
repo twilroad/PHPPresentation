@@ -8,17 +8,17 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Shape\Chart\Type;
+namespace TwilRoad\PhpPresentation\Shape\Chart\Type;
 
 /**
- * \PhpOffice\PhpPresentation\Shape\Chart\Type\Bar
+ * \TwilRoad\PhpPresentation\Shape\Chart\Type\Bar
  */
 class AbstractTypeBar extends AbstractType
 {
@@ -60,7 +60,7 @@ class AbstractTypeBar extends AbstractType
      * Set bar orientation
      *
      * @param string                          $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Type\AbstractTypeBar
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Type\AbstractTypeBar
      */
     public function setBarDirection($value = self::DIRECTION_VERTICAL)
     {
@@ -82,7 +82,7 @@ class AbstractTypeBar extends AbstractType
      * Set bar grouping (stack or expanded style bar)
      *
      * @param string                          $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Type\AbstractTypeBar
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Type\AbstractTypeBar
      */
     public function setBarGrouping($value = self::GROUPING_CLUSTERED)
     {

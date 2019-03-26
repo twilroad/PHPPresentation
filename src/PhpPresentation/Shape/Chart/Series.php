@@ -8,22 +8,22 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Shape\Chart;
+namespace TwilRoad\PhpPresentation\Shape\Chart;
 
-use PhpOffice\PhpPresentation\ComparableInterface;
-use PhpOffice\PhpPresentation\Style\Fill;
-use PhpOffice\PhpPresentation\Style\Font;
-use PhpOffice\PhpPresentation\Style\Outline;
+use TwilRoad\PhpPresentation\ComparableInterface;
+use TwilRoad\PhpPresentation\Style\Fill;
+use TwilRoad\PhpPresentation\Style\Font;
+use TwilRoad\PhpPresentation\Style\Outline;
 
 /**
- * \PhpOffice\PhpPresentation\Shape\Chart\Series
+ * \TwilRoad\PhpPresentation\Shape\Chart\Series
  */
 class Series implements ComparableInterface
 {
@@ -58,13 +58,13 @@ class Series implements ComparableInterface
 
     /**
      * Fill
-     * @var \PhpOffice\PhpPresentation\Style\Fill
+     * @var \TwilRoad\PhpPresentation\Style\Fill
      */
     protected $fill;
 
     /**
      * Font
-     * @var \PhpOffice\PhpPresentation\Style\Font
+     * @var \TwilRoad\PhpPresentation\Style\Font
      */
     protected $font;
 
@@ -139,7 +139,7 @@ class Series implements ComparableInterface
     private $hashIndex;
 
     /**
-     * Create a new \PhpOffice\PhpPresentation\Shape\Chart\Series instance
+     * Create a new \TwilRoad\PhpPresentation\Shape\Chart\Series instance
      *
      * @param string $title  Title
      * @param array  $values Values
@@ -169,7 +169,7 @@ class Series implements ComparableInterface
      * Set Title
      *
      * @param  string                           $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Series
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Series
      */
     public function setTitle($value = 'Series Title')
     {
@@ -202,7 +202,7 @@ class Series implements ComparableInterface
      * Set Data Label NumFormat
      *
      * @param  string $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Series
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Series
      */
     public function setDlblNumFormat($value = '')
     {
@@ -213,7 +213,7 @@ class Series implements ComparableInterface
     /**
      * Get Fill
      *
-     * @return \PhpOffice\PhpPresentation\Style\Fill
+     * @return \TwilRoad\PhpPresentation\Style\Fill
      */
     public function getFill()
     {
@@ -223,7 +223,7 @@ class Series implements ComparableInterface
     /**
      * Set Fill
      *
-     * @param \PhpOffice\PhpPresentation\Style\Fill $fill
+     * @param \TwilRoad\PhpPresentation\Style\Fill $fill
      * @return Series
      */
     public function setFill(Fill $fill = null)
@@ -236,7 +236,7 @@ class Series implements ComparableInterface
      * Get DataPointFill
      *
      * @param  int                      $dataPointIndex Data point index.
-     * @return \PhpOffice\PhpPresentation\Style\Fill
+     * @return \TwilRoad\PhpPresentation\Style\Fill
      */
     public function getDataPointFill($dataPointIndex)
     {
@@ -271,7 +271,7 @@ class Series implements ComparableInterface
      * Set Values
      *
      * @param  array                            $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Series
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Series
      */
     public function setValues($value = array())
     {
@@ -285,7 +285,7 @@ class Series implements ComparableInterface
      *
      * @param  mixed                            $key
      * @param  mixed                            $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Series
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Series
      */
     public function addValue($key, $value)
     {
@@ -308,7 +308,7 @@ class Series implements ComparableInterface
      * Set ShowSeriesName
      *
      * @param  boolean                          $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Series
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Series
      */
     public function setShowSeriesName($value)
     {
@@ -331,7 +331,7 @@ class Series implements ComparableInterface
      * Set ShowCategoryName
      *
      * @param  boolean                          $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Series
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Series
      */
     public function setShowCategoryName($value)
     {
@@ -354,7 +354,7 @@ class Series implements ComparableInterface
      * Set ShowValue
      *
      * @param  boolean                          $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Series
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Series
      */
     public function setShowLegendKey($value)
     {
@@ -377,7 +377,7 @@ class Series implements ComparableInterface
      * Set ShowValue
      *
      * @param  boolean $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Series
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Series
      */
     public function setShowValue($value)
     {
@@ -400,7 +400,7 @@ class Series implements ComparableInterface
      * Set ShowPercentage
      *
      * @param  boolean                          $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Series
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Series
      */
     public function setShowPercentage($value)
     {
@@ -422,7 +422,7 @@ class Series implements ComparableInterface
     /**
      * Set Separator
      * @param  string $pValue
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Series
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Series
      */
     public function setSeparator($pValue)
     {
@@ -453,7 +453,7 @@ class Series implements ComparableInterface
      * Set ShowLeaderLines
      *
      * @param  boolean                          $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Series
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Series
      */
     public function setShowLeaderLines($value)
     {
@@ -465,7 +465,7 @@ class Series implements ComparableInterface
     /**
      * Get font
      *
-     * @return \PhpOffice\PhpPresentation\Style\Font
+     * @return \TwilRoad\PhpPresentation\Style\Font
      */
     public function getFont()
     {
@@ -475,9 +475,9 @@ class Series implements ComparableInterface
     /**
      * Set font
      *
-     * @param  \PhpOffice\PhpPresentation\Style\Font               $pFont Font
+     * @param  \TwilRoad\PhpPresentation\Style\Font               $pFont Font
      * @throws \Exception
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Series
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Series
      */
     public function setFont(Font $pFont = null)
     {
@@ -500,7 +500,7 @@ class Series implements ComparableInterface
      * Set label position
      *
      * @param  string                           $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Series
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Series
      */
     public function setLabelPosition($value)
     {
@@ -519,7 +519,7 @@ class Series implements ComparableInterface
 
     /**
      * @param Marker $marker
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Series
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Series
      */
     public function setMarker(Marker $marker)
     {
@@ -537,7 +537,7 @@ class Series implements ComparableInterface
 
     /**
      * @param Outline $outline
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Series
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Series
      */
     public function setOutline(Outline $outline)
     {
@@ -575,7 +575,7 @@ class Series implements ComparableInterface
      * while doing a write of a workbook and when changes are not allowed.
      *
      * @param string $value Hash index
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Series
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Series
      */
     public function setHashIndex($value)
     {

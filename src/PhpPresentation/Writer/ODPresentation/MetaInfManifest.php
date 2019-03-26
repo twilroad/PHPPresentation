@@ -1,12 +1,12 @@
 <?php
 
-namespace PhpOffice\PhpPresentation\Writer\ODPresentation;
+namespace TwilRoad\PhpPresentation\Writer\ODPresentation;
 
-use PhpOffice\Common\Adapter\Zip\ZipInterface;
-use PhpOffice\Common\XMLWriter;
-use PhpOffice\PhpPresentation\Shape\Drawing as ShapeDrawing;
-use PhpOffice\PhpPresentation\Slide\Background\Image;
-use PhpOffice\PhpPresentation\Writer\ODPresentation;
+use TwilRoad\Common\Adapter\Zip\ZipInterface;
+use TwilRoad\Common\XMLWriter;
+use TwilRoad\PhpPresentation\Shape\Drawing as ShapeDrawing;
+use TwilRoad\PhpPresentation\Slide\Background\Image;
+use TwilRoad\PhpPresentation\Writer\ODPresentation;
 
 class MetaInfManifest extends AbstractDecoratorWriter
 {

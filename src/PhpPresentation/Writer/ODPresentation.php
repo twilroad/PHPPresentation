@@ -8,20 +8,20 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Writer;
+namespace TwilRoad\PhpPresentation\Writer;
 
-use PhpOffice\Common\Adapter\Zip\ZipArchiveAdapter;
-use PhpOffice\PhpPresentation\HashTable;
-use PhpOffice\PhpPresentation\PhpPresentation;
-use PhpOffice\PhpPresentation\Shape\AbstractDrawing;
-use PhpOffice\PhpPresentation\Shape\Table;
+use TwilRoad\Common\Adapter\Zip\ZipArchiveAdapter;
+use TwilRoad\PhpPresentation\HashTable;
+use TwilRoad\PhpPresentation\PhpPresentation;
+use TwilRoad\PhpPresentation\Shape\AbstractDrawing;
+use TwilRoad\PhpPresentation\Shape\Table;
 use DirectoryIterator;
 
 /**
@@ -30,7 +30,7 @@ use DirectoryIterator;
 class ODPresentation extends AbstractWriter implements WriterInterface
 {
     /**
-     * @var \PhpOffice\PhpPresentation\Shape\Chart[]
+     * @var \TwilRoad\PhpPresentation\Shape\Chart[]
      */
     public $chartArray = array();
 
@@ -49,7 +49,7 @@ class ODPresentation extends AbstractWriter implements WriterInterface
     private $diskCachingDirectory;
 
     /**
-     * Create a new \PhpOffice\PhpPresentation\Writer\ODPresentation
+     * Create a new \TwilRoad\PhpPresentation\Writer\ODPresentation
      *
      * @param PhpPresentation $pPhpPresentation
      * @throws \Exception
@@ -109,7 +109,7 @@ class ODPresentation extends AbstractWriter implements WriterInterface
             $class = __NAMESPACE__ . '\\ODPresentation\\' . $oFile->getBasename('.php');
             $o = new \ReflectionClass($class);
 
-            if ($o->isAbstract() || !$o->isSubclassOf('PhpOffice\PhpPresentation\Writer\ODPresentation\AbstractDecoratorWriter')) {
+            if ($o->isAbstract() || !$o->isSubclassOf('TwilRoad\PhpPresentation\Writer\ODPresentation\AbstractDecoratorWriter')) {
                 continue;
             }
             $arrayFiles[$oFile->getBasename('.php')] = $o;
@@ -158,7 +158,7 @@ class ODPresentation extends AbstractWriter implements WriterInterface
      * @param  boolean $pValue
      * @param  string $pDirectory Disk caching directory
      * @throws \Exception
-     * @return \PhpOffice\PhpPresentation\Writer\ODPresentation
+     * @return \TwilRoad\PhpPresentation\Writer\ODPresentation
      */
     public function setUseDiskCaching($pValue = false, $pDirectory = null)
     {

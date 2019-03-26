@@ -8,21 +8,21 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Slide;
+namespace TwilRoad\PhpPresentation\Slide;
 
-use PhpOffice\PhpPresentation\AbstractShape;
-use PhpOffice\PhpPresentation\ComparableInterface;
-use PhpOffice\PhpPresentation\GeometryCalculator;
-use PhpOffice\PhpPresentation\ShapeContainerInterface;
-use PhpOffice\PhpPresentation\Slide;
-use PhpOffice\PhpPresentation\Shape\RichText;
+use TwilRoad\PhpPresentation\AbstractShape;
+use TwilRoad\PhpPresentation\ComparableInterface;
+use TwilRoad\PhpPresentation\GeometryCalculator;
+use TwilRoad\PhpPresentation\ShapeContainerInterface;
+use TwilRoad\PhpPresentation\Slide;
+use TwilRoad\PhpPresentation\Shape\RichText;
 
 /**
  * Note class
@@ -39,7 +39,7 @@ class Note implements ComparableInterface, ShapeContainerInterface
     /**
      * Collection of shapes
      *
-     * @var \ArrayObject|\PhpOffice\PhpPresentation\AbstractShape[]
+     * @var \ArrayObject|\TwilRoad\PhpPresentation\AbstractShape[]
      */
     private $shapeCollection = null;
 
@@ -105,7 +105,7 @@ class Note implements ComparableInterface, ShapeContainerInterface
     /**
      * Get collection of shapes
      *
-     * @return \ArrayObject|\PhpOffice\PhpPresentation\AbstractShape[]
+     * @return \ArrayObject|\TwilRoad\PhpPresentation\AbstractShape[]
      */
     public function getShapeCollection()
     {
@@ -115,8 +115,8 @@ class Note implements ComparableInterface, ShapeContainerInterface
     /**
      * Add shape to slide
      *
-     * @param  \PhpOffice\PhpPresentation\AbstractShape $shape
-     * @return \PhpOffice\PhpPresentation\AbstractShape
+     * @param  \TwilRoad\PhpPresentation\AbstractShape $shape
+     * @return \TwilRoad\PhpPresentation\AbstractShape
      * @throws \Exception
      */
     public function addShape(AbstractShape $shape)
@@ -129,7 +129,7 @@ class Note implements ComparableInterface, ShapeContainerInterface
     /**
      * Create rich text shape
      *
-     * @return \PhpOffice\PhpPresentation\Shape\RichText
+     * @return \TwilRoad\PhpPresentation\Shape\RichText
      * @throws \Exception
      */
     public function createRichTextShape()
@@ -161,7 +161,7 @@ class Note implements ComparableInterface, ShapeContainerInterface
         $this->parent = $parent;
         return $this;
     }
-    
+
 
     /**
      * Get X Offset
@@ -177,7 +177,7 @@ class Note implements ComparableInterface, ShapeContainerInterface
         }
         return $this->offsetX;
     }
-    
+
     /**
      * Get Y Offset
      *
@@ -192,7 +192,7 @@ class Note implements ComparableInterface, ShapeContainerInterface
         }
         return $this->offsetY;
     }
-    
+
     /**
      * Get X Extent
      *
@@ -207,7 +207,7 @@ class Note implements ComparableInterface, ShapeContainerInterface
         }
         return $this->extentX;
     }
-    
+
     /**
      * Get Y Extent
      *

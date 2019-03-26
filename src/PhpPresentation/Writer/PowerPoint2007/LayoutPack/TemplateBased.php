@@ -8,23 +8,23 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Writer\PowerPoint2007\LayoutPack;
+namespace TwilRoad\PhpPresentation\Writer\PowerPoint2007\LayoutPack;
 
 /**
- * \PhpOffice\PhpPresentation\Writer\PowerPoint2007\LayoutPack\TemplateBased
+ * \TwilRoad\PhpPresentation\Writer\PowerPoint2007\LayoutPack\TemplateBased
  * @deprecated 0.7
  */
 class TemplateBased extends AbstractLayoutPack
 {
     /**
-     * \PhpOffice\PhpPresentation\Writer\PowerPoint2007\LayoutPack\TemplateBased
+     * \TwilRoad\PhpPresentation\Writer\PowerPoint2007\LayoutPack\TemplateBased
      *
      * @param string $fileName
      * @throws \Exception
@@ -149,7 +149,7 @@ class TemplateBased extends AbstractLayoutPack
 
         // Sort master slides
         usort($this->masterSlides, array(
-            "\PhpOffice\PhpPresentation\Writer\PowerPoint2007\LayoutPack\TemplateBased",
+            "\TwilRoad\PhpPresentation\Writer\PowerPoint2007\LayoutPack\TemplateBased",
             "cmpMaster"
         ));
 

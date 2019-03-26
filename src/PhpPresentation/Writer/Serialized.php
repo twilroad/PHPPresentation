@@ -8,29 +8,29 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Writer;
+namespace TwilRoad\PhpPresentation\Writer;
 
-use PhpOffice\Common\Adapter\Zip\ZipArchiveAdapter;
-use PhpOffice\Common\XMLWriter;
-use PhpOffice\PhpPresentation\PhpPresentation;
-use PhpOffice\PhpPresentation\Shape\Drawing\AbstractDrawingAdapter;
+use TwilRoad\Common\Adapter\Zip\ZipArchiveAdapter;
+use TwilRoad\Common\XMLWriter;
+use TwilRoad\PhpPresentation\PhpPresentation;
+use TwilRoad\PhpPresentation\Shape\Drawing\AbstractDrawingAdapter;
 
 /**
- * \PhpOffice\PhpPresentation\Writer\Serialized
+ * \TwilRoad\PhpPresentation\Writer\Serialized
  */
 class Serialized extends AbstractWriter implements WriterInterface
 {
     /**
-     * Create a new \PhpOffice\PhpPresentation\Writer\Serialized
+     * Create a new \TwilRoad\PhpPresentation\Writer\Serialized
      *
-     * @param \PhpOffice\PhpPresentation\PhpPresentation $pPhpPresentation
+     * @param \TwilRoad\PhpPresentation\PhpPresentation $pPhpPresentation
      * @throws \Exception
      */
     public function __construct(PhpPresentation $pPhpPresentation = null)
@@ -115,7 +115,7 @@ class Serialized extends AbstractWriter implements WriterInterface
         $objWriter->writeAttribute('version', '##VERSION##');
 
         // Comment
-        $objWriter->writeComment('This file has been generated using PhpPresentation v##VERSION## (http://github.com/PHPOffice/PhpPresentation). It contains a base64 encoded serialized version of the PhpPresentation internal object.');
+        $objWriter->writeComment('This file has been generated using PhpPresentation v##VERSION## (http://github.com/TwilRoad/PhpPresentation). It contains a base64 encoded serialized version of the PhpPresentation internal object.');
 
         // Data
         $objWriter->startElement('data');

@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpOffice\PhpPresentation\Shape\Comment;
+namespace TwilRoad\PhpPresentation\Shape\Comment;
 
 class Author
 {

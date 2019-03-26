@@ -1,14 +1,14 @@
 <?php
 
-namespace PhpOffice\PhpPresentation\Writer\PowerPoint2007;
+namespace TwilRoad\PhpPresentation\Writer\PowerPoint2007;
 
-use PhpOffice\PhpPresentation\Slide;
-use PhpOffice\Common\XMLWriter;
+use TwilRoad\PhpPresentation\Slide;
+use TwilRoad\Common\XMLWriter;
 
 class PptTheme extends AbstractDecoratorWriter
 {
     /**
-     * @return \PhpOffice\Common\Adapter\Zip\ZipInterface
+     * @return \TwilRoad\Common\Adapter\Zip\ZipInterface
      * @throws \Exception
      */
     public function render()

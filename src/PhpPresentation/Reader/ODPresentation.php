@@ -8,29 +8,29 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Reader;
+namespace TwilRoad\PhpPresentation\Reader;
 
 use ZipArchive;
-use PhpOffice\Common\XMLReader;
-use PhpOffice\Common\Drawing as CommonDrawing;
-use PhpOffice\PhpPresentation\PhpPresentation;
-use PhpOffice\PhpPresentation\Shape\Drawing\Gd;
-use PhpOffice\PhpPresentation\Shape\RichText;
-use PhpOffice\PhpPresentation\Shape\RichText\Paragraph;
-use PhpOffice\PhpPresentation\Slide\Background\Image;
-use PhpOffice\PhpPresentation\Style\Bullet;
-use PhpOffice\PhpPresentation\Style\Color;
-use PhpOffice\PhpPresentation\Style\Fill;
-use PhpOffice\PhpPresentation\Style\Font;
-use PhpOffice\PhpPresentation\Style\Shadow;
-use PhpOffice\PhpPresentation\Style\Alignment;
+use TwilRoad\Common\XMLReader;
+use TwilRoad\Common\Drawing as CommonDrawing;
+use TwilRoad\PhpPresentation\PhpPresentation;
+use TwilRoad\PhpPresentation\Shape\Drawing\Gd;
+use TwilRoad\PhpPresentation\Shape\RichText;
+use TwilRoad\PhpPresentation\Shape\RichText\Paragraph;
+use TwilRoad\PhpPresentation\Slide\Background\Image;
+use TwilRoad\PhpPresentation\Style\Bullet;
+use TwilRoad\PhpPresentation\Style\Color;
+use TwilRoad\PhpPresentation\Style\Fill;
+use TwilRoad\PhpPresentation\Style\Font;
+use TwilRoad\PhpPresentation\Style\Shadow;
+use TwilRoad\PhpPresentation\Style\Alignment;
 
 /**
  * Serialized format reader
@@ -56,12 +56,12 @@ class ODPresentation implements ReaderInterface
      */
     protected $arrayCommonStyles = array();
     /**
-     * @var \PhpOffice\Common\XMLReader
+     * @var \TwilRoad\Common\XMLReader
      */
     protected $oXMLReader;
 
     /**
-     * Can the current \PhpOffice\PhpPresentation\Reader\ReaderInterface read the file?
+     * Can the current \TwilRoad\PhpPresentation\Reader\ReaderInterface read the file?
      *
      * @param  string $pFilename
      * @throws \Exception
@@ -102,14 +102,14 @@ class ODPresentation implements ReaderInterface
      * Loads PhpPresentation Serialized file
      *
      * @param  string        $pFilename
-     * @return \PhpOffice\PhpPresentation\PhpPresentation
+     * @return \TwilRoad\PhpPresentation\PhpPresentation
      * @throws \Exception
      */
     public function load($pFilename)
     {
         // Unserialize... First make sure the file supports it!
         if (!$this->fileSupportsUnserializePhpPresentation($pFilename)) {
-            throw new \Exception("Invalid file format for PhpOffice\PhpPresentation\Reader\ODPresentation: " . $pFilename . ".");
+            throw new \Exception("Invalid file format for TwilRoad\PhpPresentation\Reader\ODPresentation: " . $pFilename . ".");
         }
 
         return $this->loadFile($pFilename);
@@ -119,7 +119,7 @@ class ODPresentation implements ReaderInterface
      * Load PhpPresentation Serialized file
      *
      * @param  string $pFilename
-     * @return \PhpOffice\PhpPresentation\PhpPresentation
+     * @return \TwilRoad\PhpPresentation\PhpPresentation
      * @throws \Exception
      */
     protected function loadFile($pFilename)
@@ -207,7 +207,7 @@ class ODPresentation implements ReaderInterface
         if ($nodeDrawingPageProps instanceof \DOMElement) {
             // Read Background Color
             if ($nodeDrawingPageProps->hasAttribute('draw:fill-color') && $nodeDrawingPageProps->getAttribute('draw:fill') == 'solid') {
-                $oBackground = new \PhpOffice\PhpPresentation\Slide\Background\Color();
+                $oBackground = new \TwilRoad\PhpPresentation\Slide\Background\Color();
                 $oColor = new Color();
                 $oColor->setRGB(substr($nodeDrawingPageProps->getAttribute('draw:fill-color'), -6));
                 $oBackground->setColor($oColor);

@@ -8,19 +8,19 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Slide;
+namespace TwilRoad\PhpPresentation\Slide;
 
-use PhpOffice\PhpPresentation\PhpPresentation;
+use TwilRoad\PhpPresentation\PhpPresentation;
 
 /**
- * \PhpOffice\PhpPresentation\Slide\Iterator
+ * \TwilRoad\PhpPresentation\Slide\Iterator
  *
  * Used to iterate slides in PhpPresentation
  */
@@ -29,7 +29,7 @@ class Iterator extends \IteratorIterator
     /**
      * Presentation to iterate
      *
-     * @var \PhpOffice\PhpPresentation\PhpPresentation
+     * @var \TwilRoad\PhpPresentation\PhpPresentation
      */
     private $subject;
 
@@ -68,9 +68,9 @@ class Iterator extends \IteratorIterator
     }
 
     /**
-     * Current \PhpOffice\PhpPresentation\Slide
+     * Current \TwilRoad\PhpPresentation\Slide
      *
-     * @return \PhpOffice\PhpPresentation\Slide
+     * @return \TwilRoad\PhpPresentation\Slide
      * @throws \Exception
      */
     public function current()
@@ -97,7 +97,7 @@ class Iterator extends \IteratorIterator
     }
 
     /**
-     * More \PhpOffice\PhpPresentation\Slide instances available?
+     * More \TwilRoad\PhpPresentation\Slide instances available?
      *
      * @return boolean
      */

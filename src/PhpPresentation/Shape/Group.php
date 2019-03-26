@@ -8,28 +8,28 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Shape;
+namespace TwilRoad\PhpPresentation\Shape;
 
-use PhpOffice\PhpPresentation\AbstractShape;
-use PhpOffice\PhpPresentation\GeometryCalculator;
-use PHPOffice\PhpPresentation\ShapeContainerInterface;
-use PhpOffice\PhpPresentation\Shape\Drawing;
-use PhpOffice\PhpPresentation\Shape\RichText;
-use PhpOffice\PhpPresentation\Shape\Table;
+use TwilRoad\PhpPresentation\AbstractShape;
+use TwilRoad\PhpPresentation\GeometryCalculator;
+use TwilRoad\PhpPresentation\ShapeContainerInterface;
+use TwilRoad\PhpPresentation\Shape\Drawing;
+use TwilRoad\PhpPresentation\Shape\RichText;
+use TwilRoad\PhpPresentation\Shape\Table;
 
 class Group extends AbstractShape implements ShapeContainerInterface
 {
     /**
     * Collection of shapes
     *
-    * @var \ArrayObject|\PhpOffice\PhpPresentation\AbstractShape[]
+    * @var \ArrayObject|\TwilRoad\PhpPresentation\AbstractShape[]
     */
     private $shapeCollection = null;
 
@@ -72,8 +72,8 @@ class Group extends AbstractShape implements ShapeContainerInterface
     /**
      * Add shape to slide
      *
-     * @param  \PhpOffice\PhpPresentation\AbstractShape $shape
-     * @return \PhpOffice\PhpPresentation\AbstractShape
+     * @param  \TwilRoad\PhpPresentation\AbstractShape $shape
+     * @return \TwilRoad\PhpPresentation\AbstractShape
      * @throws \Exception
      */
     public function addShape(AbstractShape $shape)
@@ -194,7 +194,7 @@ class Group extends AbstractShape implements ShapeContainerInterface
     /**
      * Create rich text shape
      *
-     * @return \PhpOffice\PhpPresentation\Shape\RichText
+     * @return \TwilRoad\PhpPresentation\Shape\RichText
      * @throws \Exception
      */
     public function createRichTextShape()
@@ -212,7 +212,7 @@ class Group extends AbstractShape implements ShapeContainerInterface
      * @param  int $fromY Starting point y offset
      * @param  int $toX Ending point x offset
      * @param  int $toY Ending point y offset
-     * @return \PhpOffice\PhpPresentation\Shape\Line
+     * @return \TwilRoad\PhpPresentation\Shape\Line
      * @throws \Exception
      */
     public function createLineShape($fromX, $fromY, $toX, $toY)
@@ -226,7 +226,7 @@ class Group extends AbstractShape implements ShapeContainerInterface
     /**
      * Create chart shape
      *
-     * @return \PhpOffice\PhpPresentation\Shape\Chart
+     * @return \TwilRoad\PhpPresentation\Shape\Chart
      * @throws \Exception
      */
     public function createChartShape()
@@ -240,7 +240,7 @@ class Group extends AbstractShape implements ShapeContainerInterface
     /**
      * Create drawing shape
      *
-     * @return \PhpOffice\PhpPresentation\Shape\Drawing\File
+     * @return \TwilRoad\PhpPresentation\Shape\Drawing\File
      * @throws \Exception
      */
     public function createDrawingShape()
@@ -255,7 +255,7 @@ class Group extends AbstractShape implements ShapeContainerInterface
      * Create table shape
      *
      * @param  int $columns Number of columns
-     * @return \PhpOffice\PhpPresentation\Shape\Table
+     * @return \TwilRoad\PhpPresentation\Shape\Table
      * @throws \Exception
      */
     public function createTableShape($columns = 1)

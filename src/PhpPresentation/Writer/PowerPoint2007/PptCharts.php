@@ -1,30 +1,30 @@
 <?php
 
-namespace PhpOffice\PhpPresentation\Writer\PowerPoint2007;
+namespace TwilRoad\PhpPresentation\Writer\PowerPoint2007;
 
-use PhpOffice\Common\Drawing as CommonDrawing;
-use PhpOffice\Common\XMLWriter;
-use PhpOffice\PhpPresentation\PhpPresentation;
-use PhpOffice\PhpPresentation\Shape\Chart;
-use PhpOffice\PhpPresentation\Shape\Chart\Gridlines;
-use PhpOffice\PhpPresentation\Shape\Chart\Legend;
-use PhpOffice\PhpPresentation\Shape\Chart\PlotArea;
-use PhpOffice\PhpPresentation\Shape\Chart\Title;
-use PhpOffice\PhpPresentation\Shape\Chart\Type\Area;
-use PhpOffice\PhpPresentation\Shape\Chart\Type\Bar;
-use PhpOffice\PhpPresentation\Shape\Chart\Type\Bar3D;
-use PhpOffice\PhpPresentation\Shape\Chart\Type\Doughnut;
-use PhpOffice\PhpPresentation\Shape\Chart\Type\Line;
-use PhpOffice\PhpPresentation\Shape\Chart\Type\Pie;
-use PhpOffice\PhpPresentation\Shape\Chart\Type\Pie3D;
-use PhpOffice\PhpPresentation\Shape\Chart\Type\Scatter;
-use PhpOffice\PhpPresentation\Style\Border;
-use PhpOffice\PhpPresentation\Style\Fill;
+use TwilRoad\Common\Drawing as CommonDrawing;
+use TwilRoad\Common\XMLWriter;
+use TwilRoad\PhpPresentation\PhpPresentation;
+use TwilRoad\PhpPresentation\Shape\Chart;
+use TwilRoad\PhpPresentation\Shape\Chart\Gridlines;
+use TwilRoad\PhpPresentation\Shape\Chart\Legend;
+use TwilRoad\PhpPresentation\Shape\Chart\PlotArea;
+use TwilRoad\PhpPresentation\Shape\Chart\Title;
+use TwilRoad\PhpPresentation\Shape\Chart\Type\Area;
+use TwilRoad\PhpPresentation\Shape\Chart\Type\Bar;
+use TwilRoad\PhpPresentation\Shape\Chart\Type\Bar3D;
+use TwilRoad\PhpPresentation\Shape\Chart\Type\Doughnut;
+use TwilRoad\PhpPresentation\Shape\Chart\Type\Line;
+use TwilRoad\PhpPresentation\Shape\Chart\Type\Pie;
+use TwilRoad\PhpPresentation\Shape\Chart\Type\Pie3D;
+use TwilRoad\PhpPresentation\Shape\Chart\Type\Scatter;
+use TwilRoad\PhpPresentation\Style\Border;
+use TwilRoad\PhpPresentation\Style\Fill;
 
 class PptCharts extends AbstractDecoratorWriter
 {
     /**
-     * @return \PhpOffice\Common\Adapter\Zip\ZipInterface
+     * @return \TwilRoad\Common\Adapter\Zip\ZipInterface
      * @throws \Exception
      */
     public function render()
@@ -53,7 +53,7 @@ class PptCharts extends AbstractDecoratorWriter
     /**
      * Write chart to XML format
      *
-     * @param  \PhpOffice\PhpPresentation\Shape\Chart $chart
+     * @param  \TwilRoad\PhpPresentation\Shape\Chart $chart
      * @return string                    XML Output
      * @throws \Exception
      */
@@ -202,7 +202,7 @@ class PptCharts extends AbstractDecoratorWriter
      * Write chart to XML format
      *
      * @param  PhpPresentation $presentation
-     * @param  \PhpOffice\PhpPresentation\Shape\Chart $chart
+     * @param  \TwilRoad\PhpPresentation\Shape\Chart $chart
      * @param  string $tempName
      * @return string                    String output
      * @throws \Exception
@@ -272,7 +272,7 @@ class PptCharts extends AbstractDecoratorWriter
     /**
      * Write element with value attribute
      *
-     * @param \PhpOffice\Common\XMLWriter $objWriter XML Writer
+     * @param \TwilRoad\Common\XMLWriter $objWriter XML Writer
      * @param string $elementName
      * @param string $value
      */
@@ -286,7 +286,7 @@ class PptCharts extends AbstractDecoratorWriter
     /**
      * Write single value or reference
      *
-     * @param \PhpOffice\Common\XMLWriter $objWriter XML Writer
+     * @param \TwilRoad\Common\XMLWriter $objWriter XML Writer
      * @param boolean $isReference
      * @param mixed $value
      * @param string $reference
@@ -318,7 +318,7 @@ class PptCharts extends AbstractDecoratorWriter
     /**
      * Write series value or reference
      *
-     * @param \PhpOffice\Common\XMLWriter $objWriter XML Writer
+     * @param \TwilRoad\Common\XMLWriter $objWriter XML Writer
      * @param boolean $isReference
      * @param mixed $values
      * @param string $reference
@@ -379,8 +379,8 @@ class PptCharts extends AbstractDecoratorWriter
     /**
      * Write Title
      *
-     * @param  \PhpOffice\Common\XMLWriter $objWriter XML Writer
-     * @param  \PhpOffice\PhpPresentation\Shape\Chart\Title $subject
+     * @param  \TwilRoad\Common\XMLWriter $objWriter XML Writer
+     * @param  \TwilRoad\PhpPresentation\Shape\Chart\Title $subject
      * @throws \Exception
      */
     protected function writeTitle(XMLWriter $objWriter, Title $subject)
@@ -478,9 +478,9 @@ class PptCharts extends AbstractDecoratorWriter
     /**
      * Write Plot Area
      *
-     * @param  \PhpOffice\Common\XMLWriter $objWriter XML Writer
-     * @param  \PhpOffice\PhpPresentation\Shape\Chart\PlotArea $subject
-     * @param  \PhpOffice\PhpPresentation\Shape\Chart $chart
+     * @param  \TwilRoad\Common\XMLWriter $objWriter XML Writer
+     * @param  \TwilRoad\PhpPresentation\Shape\Chart\PlotArea $subject
+     * @param  \TwilRoad\PhpPresentation\Shape\Chart $chart
      * @throws \Exception
      */
     protected function writePlotArea(XMLWriter $objWriter, PlotArea $subject, Chart $chart)
@@ -529,8 +529,8 @@ class PptCharts extends AbstractDecoratorWriter
     /**
      * Write Legend
      *
-     * @param  \PhpOffice\Common\XMLWriter $objWriter XML Writer
-     * @param  \PhpOffice\PhpPresentation\Shape\Chart\Legend $subject
+     * @param  \TwilRoad\Common\XMLWriter $objWriter XML Writer
+     * @param  \TwilRoad\PhpPresentation\Shape\Chart\Legend $subject
      * @throws \Exception
      */
     protected function writeLegend(XMLWriter $objWriter, Legend $subject)
@@ -628,7 +628,7 @@ class PptCharts extends AbstractDecoratorWriter
     /**
      * Write Layout
      *
-     * @param  \PhpOffice\Common\XMLWriter $objWriter XML Writer
+     * @param  \TwilRoad\Common\XMLWriter $objWriter XML Writer
      * @param  mixed $subject
      * @throws \Exception
      */
@@ -684,8 +684,8 @@ class PptCharts extends AbstractDecoratorWriter
     /**
      * Write Type Area
      *
-     * @param  \PhpOffice\Common\XMLWriter $objWriter XML Writer
-     * @param  \PhpOffice\PhpPresentation\Shape\Chart\Type\Area $subject
+     * @param  \TwilRoad\Common\XMLWriter $objWriter XML Writer
+     * @param  \TwilRoad\PhpPresentation\Shape\Chart\Type\Area $subject
      * @param  boolean $includeSheet
      * @throws \Exception
      */
@@ -787,8 +787,8 @@ class PptCharts extends AbstractDecoratorWriter
     /**
      * Write Type Bar
      *
-     * @param  \PhpOffice\Common\XMLWriter $objWriter XML Writer
-     * @param  \PhpOffice\PhpPresentation\Shape\Chart\Type\Bar $subject
+     * @param  \TwilRoad\Common\XMLWriter $objWriter XML Writer
+     * @param  \TwilRoad\PhpPresentation\Shape\Chart\Type\Bar $subject
      * @param  boolean $includeSheet
      * @throws \Exception
      */
@@ -1009,8 +1009,8 @@ class PptCharts extends AbstractDecoratorWriter
     /**
      * Write Type Bar3D
      *
-     * @param  \PhpOffice\Common\XMLWriter $objWriter XML Writer
-     * @param  \PhpOffice\PhpPresentation\Shape\Chart\Type\Bar3D $subject
+     * @param  \TwilRoad\Common\XMLWriter $objWriter XML Writer
+     * @param  \TwilRoad\PhpPresentation\Shape\Chart\Type\Bar3D $subject
      * @param  boolean $includeSheet
      * @throws \Exception
      */
@@ -1211,8 +1211,8 @@ class PptCharts extends AbstractDecoratorWriter
     /**
      * Write Type Pie
      *
-     * @param  \PhpOffice\Common\XMLWriter $objWriter XML Writer
-     * @param  \PhpOffice\PhpPresentation\Shape\Chart\Type\Doughnut $subject
+     * @param  \TwilRoad\Common\XMLWriter $objWriter XML Writer
+     * @param  \TwilRoad\PhpPresentation\Shape\Chart\Type\Doughnut $subject
      * @param  boolean $includeSheet
      * @throws \Exception
      */
@@ -1369,8 +1369,8 @@ class PptCharts extends AbstractDecoratorWriter
     /**
      * Write Type Pie
      *
-     * @param  \PhpOffice\Common\XMLWriter $objWriter XML Writer
-     * @param  \PhpOffice\PhpPresentation\Shape\Chart\Type\Pie $subject
+     * @param  \TwilRoad\Common\XMLWriter $objWriter XML Writer
+     * @param  \TwilRoad\PhpPresentation\Shape\Chart\Type\Pie $subject
      * @param  boolean $includeSheet
      * @throws \Exception
      */
@@ -1538,8 +1538,8 @@ class PptCharts extends AbstractDecoratorWriter
     /**
      * Write Type Pie3D
      *
-     * @param  \PhpOffice\Common\XMLWriter $objWriter XML Writer
-     * @param  \PhpOffice\PhpPresentation\Shape\Chart\Type\Pie3D $subject
+     * @param  \TwilRoad\Common\XMLWriter $objWriter XML Writer
+     * @param  \TwilRoad\PhpPresentation\Shape\Chart\Type\Pie3D $subject
      * @param  boolean $includeSheet
      * @throws \Exception
      */
@@ -1701,8 +1701,8 @@ class PptCharts extends AbstractDecoratorWriter
     /**
      * Write Type Line
      *
-     * @param  \PhpOffice\Common\XMLWriter $objWriter XML Writer
-     * @param  \PhpOffice\PhpPresentation\Shape\Chart\Type\Line $subject
+     * @param  \TwilRoad\Common\XMLWriter $objWriter XML Writer
+     * @param  \TwilRoad\PhpPresentation\Shape\Chart\Type\Line $subject
      * @param  boolean $includeSheet
      * @throws \Exception
      */
@@ -1874,8 +1874,8 @@ class PptCharts extends AbstractDecoratorWriter
     /**
      * Write Type Scatter
      *
-     * @param  \PhpOffice\Common\XMLWriter $objWriter XML Writer
-     * @param  \PhpOffice\PhpPresentation\Shape\Chart\Type\Scatter $subject
+     * @param  \TwilRoad\Common\XMLWriter $objWriter XML Writer
+     * @param  \TwilRoad\PhpPresentation\Shape\Chart\Type\Scatter $subject
      * @param  boolean $includeSheet
      * @throws \Exception
      */
@@ -2049,7 +2049,7 @@ class PptCharts extends AbstractDecoratorWriter
     /**
      * Write chart relationships to XML format
      *
-     * @param  \PhpOffice\PhpPresentation\Shape\Chart $pChart
+     * @param  \TwilRoad\PhpPresentation\Shape\Chart $pChart
      * @return string                    XML Output
      * @throws \Exception
      */

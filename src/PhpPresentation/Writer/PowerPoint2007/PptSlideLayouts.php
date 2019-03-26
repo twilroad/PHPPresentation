@@ -1,17 +1,17 @@
 <?php
 
-namespace PhpOffice\PhpPresentation\Writer\PowerPoint2007;
+namespace TwilRoad\PhpPresentation\Writer\PowerPoint2007;
 
-use PhpOffice\Common\Drawing as CommonDrawing;
-use PhpOffice\Common\XMLWriter;
-use PhpOffice\PhpPresentation\Slide;
-use PhpOffice\PhpPresentation\Slide\SlideLayout;
-use PhpOffice\PhpPresentation\Style\ColorMap;
+use TwilRoad\Common\Drawing as CommonDrawing;
+use TwilRoad\Common\XMLWriter;
+use TwilRoad\PhpPresentation\Slide;
+use TwilRoad\PhpPresentation\Slide\SlideLayout;
+use TwilRoad\PhpPresentation\Style\ColorMap;
 
 class PptSlideLayouts extends AbstractSlide
 {
     /**
-     * @return \PhpOffice\Common\Adapter\Zip\ZipInterface
+     * @return \TwilRoad\Common\Adapter\Zip\ZipInterface
      * @throws \Exception
      */
     public function render()
@@ -58,7 +58,7 @@ class PptSlideLayouts extends AbstractSlide
     /**
      * Write slide to XML format
      *
-     * @param  \PhpOffice\PhpPresentation\Slide\SlideLayout $pSlideLayout
+     * @param  \TwilRoad\PhpPresentation\Slide\SlideLayout $pSlideLayout
      * @return string XML Output
      * @throws \Exception
      */

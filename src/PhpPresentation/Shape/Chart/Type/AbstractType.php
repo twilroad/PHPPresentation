@@ -8,20 +8,20 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Shape\Chart\Type;
+namespace TwilRoad\PhpPresentation\Shape\Chart\Type;
 
-use PhpOffice\PhpPresentation\ComparableInterface;
-use PhpOffice\PhpPresentation\Shape\Chart\Series;
+use TwilRoad\PhpPresentation\ComparableInterface;
+use TwilRoad\PhpPresentation\Shape\Chart\Series;
 
 /**
- * \PhpOffice\PhpPresentation\Shape\Chart\Type
+ * \TwilRoad\PhpPresentation\Shape\Chart\Type
  */
 abstract class AbstractType implements ComparableInterface
 {
@@ -104,7 +104,7 @@ abstract class AbstractType implements ComparableInterface
     /**
      * Add Series
      *
-     * @param  \PhpOffice\PhpPresentation\Shape\Chart\Series $value
+     * @param  \TwilRoad\PhpPresentation\Shape\Chart\Series $value
      * @return self
      */
     public function addSeries(Series $value)
@@ -116,7 +116,7 @@ abstract class AbstractType implements ComparableInterface
     /**
      * Get Series
      *
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Series[]
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Series[]
      */
     public function getSeries()
     {
@@ -126,7 +126,7 @@ abstract class AbstractType implements ComparableInterface
     /**
      * Set Series
      *
-     * @param  array $value Array of \PhpOffice\PhpPresentation\Shape\Chart\Series
+     * @param  array $value Array of \TwilRoad\PhpPresentation\Shape\Chart\Series
      * @return self
      */
     public function setSeries($value = array())

@@ -8,16 +8,16 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
-namespace PhpOffice\PhpPresentation;
+namespace TwilRoad\PhpPresentation;
 
 /**
- * \PhpOffice\PhpPresentation\PresentationProperties
+ * \TwilRoad\PhpPresentation\PresentationProperties
  */
 class PresentationProperties
 {
@@ -72,7 +72,7 @@ class PresentationProperties
      * @var boolean
      */
     protected $isCommentVisible = false;
-    
+
     /**
      * @return bool
      */
@@ -80,10 +80,10 @@ class PresentationProperties
     {
         return $this->isLoopUntilEsc;
     }
-    
+
     /**
      * @param bool $value
-     * @return \PhpOffice\PhpPresentation\PresentationProperties
+     * @return \TwilRoad\PhpPresentation\PresentationProperties
      */
     public function setLoopContinuouslyUntilEsc($value = false)
     {
@@ -92,7 +92,7 @@ class PresentationProperties
         }
         return $this;
     }
-    
+
     /**
      * Return the thumbnail file path
      * @return string
@@ -101,11 +101,11 @@ class PresentationProperties
     {
         return $this->thumbnail;
     }
-    
+
     /**
      * Define the path for the thumbnail file / preview picture
      * @param string $path
-     * @return \PhpOffice\PhpPresentation\PresentationProperties
+     * @return \TwilRoad\PhpPresentation\PresentationProperties
      */
     public function setThumbnailPath($path = '')
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpOffice\PhpPresentation\Slide;
+namespace TwilRoad\PhpPresentation\Slide;
 
 class AbstractBackground
 {

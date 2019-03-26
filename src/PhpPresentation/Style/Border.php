@@ -10,17 +10,17 @@
  * file that was distributed with this source code. For the full list of
  * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Style;
+namespace TwilRoad\PhpPresentation\Style;
 
-use PhpOffice\PhpPresentation\ComparableInterface;
+use TwilRoad\PhpPresentation\ComparableInterface;
 
 /**
- * \PhpOffice\PhpPresentation\Style\Border
+ * \TwilRoad\PhpPresentation\Style\Border
  */
 class Border implements ComparableInterface
 {
@@ -69,7 +69,7 @@ class Border implements ComparableInterface
     /**
      * Border color
      *
-     * @var \PhpOffice\PhpPresentation\Style\Color
+     * @var \TwilRoad\PhpPresentation\Style\Color
      */
     private $color;
 
@@ -81,7 +81,7 @@ class Border implements ComparableInterface
     private $hashIndex;
 
     /**
-     * Create a new \PhpOffice\PhpPresentation\Style\Border
+     * Create a new \TwilRoad\PhpPresentation\Style\Border
      */
     public function __construct()
     {
@@ -106,7 +106,7 @@ class Border implements ComparableInterface
      * Set line width (in points)
      *
      * @param  int                        $pValue
-     * @return \PhpOffice\PhpPresentation\Style\Border
+     * @return \TwilRoad\PhpPresentation\Style\Border
      */
     public function setLineWidth($pValue = 1)
     {
@@ -129,7 +129,7 @@ class Border implements ComparableInterface
      * Set line style
      *
      * @param  string                     $pValue
-     * @return \PhpOffice\PhpPresentation\Style\Border
+     * @return \TwilRoad\PhpPresentation\Style\Border
      */
     public function setLineStyle($pValue = self::LINE_SINGLE)
     {
@@ -155,7 +155,7 @@ class Border implements ComparableInterface
      * Set dash style
      *
      * @param  string                     $pValue
-     * @return \PhpOffice\PhpPresentation\Style\Border
+     * @return \TwilRoad\PhpPresentation\Style\Border
      */
     public function setDashStyle($pValue = self::DASH_SOLID)
     {
@@ -170,7 +170,7 @@ class Border implements ComparableInterface
     /**
      * Get Border Color
      *
-     * @return \PhpOffice\PhpPresentation\Style\Color
+     * @return \TwilRoad\PhpPresentation\Style\Color
      */
     public function getColor()
     {
@@ -180,9 +180,9 @@ class Border implements ComparableInterface
     /**
      * Set Border Color
      *
-     * @param  \PhpOffice\PhpPresentation\Style\Color  $color
+     * @param  \TwilRoad\PhpPresentation\Style\Color  $color
      * @throws \Exception
-     * @return \PhpOffice\PhpPresentation\Style\Border
+     * @return \TwilRoad\PhpPresentation\Style\Border
      */
     public function setColor(Color $color = null)
     {

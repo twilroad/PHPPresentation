@@ -1,12 +1,12 @@
 <?php
 
-namespace PhpOffice\PhpPresentation\Writer\PowerPoint2007;
+namespace TwilRoad\PhpPresentation\Writer\PowerPoint2007;
 
-use PhpOffice\Common\Adapter\Zip\ZipInterface;
-use PhpOffice\Common\Drawing as CommonDrawing;
-use PhpOffice\Common\XMLWriter;
-use PhpOffice\PhpPresentation\Shape\Comment;
-use PhpOffice\PhpPresentation\Slide;
+use TwilRoad\Common\Adapter\Zip\ZipInterface;
+use TwilRoad\Common\Drawing as CommonDrawing;
+use TwilRoad\Common\XMLWriter;
+use TwilRoad\PhpPresentation\Shape\Comment;
+use TwilRoad\PhpPresentation\Slide;
 
 class PptComments extends AbstractDecoratorWriter
 {

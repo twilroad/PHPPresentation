@@ -1,26 +1,26 @@
 <?php
 
-namespace PhpOffice\PhpPresentation\Writer;
+namespace TwilRoad\PhpPresentation\Writer;
 
-use PhpOffice\Common\Adapter\Zip\ZipInterface;
-use PhpOffice\PhpPresentation\PhpPresentation;
-use PhpOffice\PhpPresentation\Shape\Chart;
-use PhpOffice\PhpPresentation\Shape\Drawing\AbstractDrawingAdapter;
-use PhpOffice\PhpPresentation\Shape\Group;
+use TwilRoad\Common\Adapter\Zip\ZipInterface;
+use TwilRoad\PhpPresentation\PhpPresentation;
+use TwilRoad\PhpPresentation\Shape\Chart;
+use TwilRoad\PhpPresentation\Shape\Drawing\AbstractDrawingAdapter;
+use TwilRoad\PhpPresentation\Shape\Group;
 
 abstract class AbstractWriter
 {
     /**
      * Private unique hash table
      *
-     * @var \PhpOffice\PhpPresentation\HashTable
+     * @var \TwilRoad\PhpPresentation\HashTable
      */
     protected $oDrawingHashTable;
 
     /**
      * Private PhpPresentation
      *
-     * @var PhpPresentation
+     * @var \TwilRoad\PhpPresentation\PhpPresentation
      */
     protected $oPresentation;
 
@@ -32,7 +32,7 @@ abstract class AbstractWriter
     /**
      * Get drawing hash table
      *
-     * @return \PhpOffice\PhpPresentation\HashTable
+     * @return \TwilRoad\PhpPresentation\HashTable
      */
     public function getDrawingHashTable()
     {
@@ -58,7 +58,7 @@ abstract class AbstractWriter
      *
      * @param  PhpPresentation                       $pPhpPresentation PhpPresentation object
      * @throws \Exception
-     * @return \PhpOffice\PhpPresentation\Writer\AbstractWriter
+     * @return \TwilRoad\PhpPresentation\Writer\AbstractWriter
      */
     public function setPhpPresentation(PhpPresentation $pPhpPresentation = null)
     {
@@ -88,7 +88,7 @@ abstract class AbstractWriter
     /**
      * Get an array of all drawings
      *
-     * @return \PhpOffice\PhpPresentation\Shape\AbstractDrawing[] All drawings in PhpPresentation
+     * @return \TwilRoad\PhpPresentation\Shape\AbstractDrawing[] All drawings in PhpPresentation
      * @throws \Exception
      */
     protected function allDrawings()

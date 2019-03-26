@@ -8,14 +8,14 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Shape;
+namespace TwilRoad\PhpPresentation\Shape;
 
 /**
  * Hyperlink element
@@ -58,7 +58,7 @@ class Hyperlink
     private $hashIndex;
 
     /**
-     * Create a new \PhpOffice\PhpPresentation\Shape\Hyperlink
+     * Create a new \TwilRoad\PhpPresentation\Shape\Hyperlink
      *
      * @param  string    $pUrl     Url to link the shape to
      * @param  string    $pTooltip Tooltip to display on the hyperlink
@@ -85,7 +85,7 @@ class Hyperlink
      * Set URL
      *
      * @param  string                        $value
-     * @return \PhpOffice\PhpPresentation\Shape\Hyperlink
+     * @return \TwilRoad\PhpPresentation\Shape\Hyperlink
      */
     public function setUrl($value = '')
     {
@@ -108,7 +108,7 @@ class Hyperlink
      * Set tooltip
      *
      * @param  string                        $value
-     * @return \PhpOffice\PhpPresentation\Shape\Hyperlink
+     * @return \TwilRoad\PhpPresentation\Shape\Hyperlink
      */
     public function setTooltip($value = '')
     {
@@ -131,7 +131,7 @@ class Hyperlink
      * Set slide number
      *
      * @param  int                           $value
-     * @return \PhpOffice\PhpPresentation\Shape\Hyperlink
+     * @return \TwilRoad\PhpPresentation\Shape\Hyperlink
      */
     public function setSlideNumber($value = 1)
     {

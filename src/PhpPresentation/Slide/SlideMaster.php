@@ -8,22 +8,22 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
-namespace PhpOffice\PhpPresentation\Slide;
+namespace TwilRoad\PhpPresentation\Slide;
 
-use PhpOffice\PhpPresentation\ComparableInterface;
-use PhpOffice\PhpPresentation\PhpPresentation;
-use PhpOffice\PhpPresentation\ShapeContainerInterface;
-use PhpOffice\PhpPresentation\Slide\Background\Color as BackgroundColor;
-use PhpOffice\PhpPresentation\Style\Color;
-use PhpOffice\PhpPresentation\Style\ColorMap;
-use PhpOffice\PhpPresentation\Style\SchemeColor;
-use PhpOffice\PhpPresentation\Style\TextStyle;
+use TwilRoad\PhpPresentation\ComparableInterface;
+use TwilRoad\PhpPresentation\PhpPresentation;
+use TwilRoad\PhpPresentation\ShapeContainerInterface;
+use TwilRoad\PhpPresentation\Slide\Background\Color as BackgroundColor;
+use TwilRoad\PhpPresentation\Style\Color;
+use TwilRoad\PhpPresentation\Style\ColorMap;
+use TwilRoad\PhpPresentation\Style\SchemeColor;
+use TwilRoad\PhpPresentation\Style\TextStyle;
 
 /**
  * Class SlideMaster
@@ -33,21 +33,21 @@ class SlideMaster extends AbstractSlide implements ComparableInterface, ShapeCon
     /**
      * Collection of Slide objects
      *
-     * @var \PhpOffice\PhpPresentation\Slide\SlideLayout[]
+     * @var \TwilRoad\PhpPresentation\Slide\SlideLayout[]
      */
     protected $slideLayouts = array();
     /**
      * Mapping of colors to the theme
      *
-     * @var \PhpOffice\PhpPresentation\Style\ColorMap
+     * @var \TwilRoad\PhpPresentation\Style\ColorMap
      */
     public $colorMap;
     /**
-     * @var \PhpOffice\PhpPresentation\Style\TextStyle
+     * @var \TwilRoad\PhpPresentation\Style\TextStyle
      */
     protected $textStyles;
     /**
-     * @var \PhpOffice\PhpPresentation\Style\SchemeColor[]
+     * @var \TwilRoad\PhpPresentation\Style\SchemeColor[]
      */
     protected $arraySchemeColor = array();
     /**
@@ -101,7 +101,7 @@ class SlideMaster extends AbstractSlide implements ComparableInterface, ShapeCon
     /**
      * Create a slideLayout and add it to this presentation
      *
-     * @return \PhpOffice\PhpPresentation\Slide\SlideLayout
+     * @return \TwilRoad\PhpPresentation\Slide\SlideLayout
      * @throws \Exception
      */
     public function createSlideLayout()
@@ -114,9 +114,9 @@ class SlideMaster extends AbstractSlide implements ComparableInterface, ShapeCon
     /**
      * Add slideLayout
      *
-     * @param  \PhpOffice\PhpPresentation\Slide\SlideLayout $slideLayout
+     * @param  \TwilRoad\PhpPresentation\Slide\SlideLayout $slideLayout
      * @throws \Exception
-     * @return \PhpOffice\PhpPresentation\Slide\SlideLayout
+     * @return \TwilRoad\PhpPresentation\Slide\SlideLayout
      */
     public function addSlideLayout(SlideLayout $slideLayout = null)
     {
@@ -161,7 +161,7 @@ class SlideMaster extends AbstractSlide implements ComparableInterface, ShapeCon
     }
 
     /**
-     * @return \PhpOffice\PhpPresentation\Style\SchemeColor[]
+     * @return \TwilRoad\PhpPresentation\Style\SchemeColor[]
      */
     public function getAllSchemeColors()
     {

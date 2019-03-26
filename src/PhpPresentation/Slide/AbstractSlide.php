@@ -8,26 +8,26 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
-namespace PhpOffice\PhpPresentation\Slide;
+namespace TwilRoad\PhpPresentation\Slide;
 
-use PhpOffice\PhpPresentation\AbstractShape;
-use PhpOffice\PhpPresentation\ComparableInterface;
-use PhpOffice\PhpPresentation\GeometryCalculator;
-use PhpOffice\PhpPresentation\PhpPresentation;
-use PhpOffice\PhpPresentation\Shape\Chart;
-use PhpOffice\PhpPresentation\Shape\Drawing\File;
-use PhpOffice\PhpPresentation\Shape\Group;
-use PhpOffice\PhpPresentation\Shape\Line;
-use PhpOffice\PhpPresentation\Shape\RichText;
-use PhpOffice\PhpPresentation\Shape\Table;
-use PhpOffice\PhpPresentation\ShapeContainerInterface;
-use PhpOffice\PhpPresentation\Slide;
+use TwilRoad\PhpPresentation\AbstractShape;
+use TwilRoad\PhpPresentation\ComparableInterface;
+use TwilRoad\PhpPresentation\GeometryCalculator;
+use TwilRoad\PhpPresentation\PhpPresentation;
+use TwilRoad\PhpPresentation\Shape\Chart;
+use TwilRoad\PhpPresentation\Shape\Drawing\File;
+use TwilRoad\PhpPresentation\Shape\Group;
+use TwilRoad\PhpPresentation\Shape\Line;
+use TwilRoad\PhpPresentation\Shape\RichText;
+use TwilRoad\PhpPresentation\Shape\Table;
+use TwilRoad\PhpPresentation\ShapeContainerInterface;
+use TwilRoad\PhpPresentation\Slide;
 
 abstract class AbstractSlide implements ComparableInterface, ShapeContainerInterface
 {
@@ -37,14 +37,14 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
     protected $relsIndex;
     /**
      *
-     * @var \PhpOffice\PhpPresentation\Slide\Transition
+     * @var \TwilRoad\PhpPresentation\Slide\Transition
      */
     protected $slideTransition;
 
     /**
      * Collection of shapes
      *
-     * @var \ArrayObject|\PhpOffice\PhpPresentation\AbstractShape[]
+     * @var \ArrayObject|\TwilRoad\PhpPresentation\AbstractShape[]
      */
     protected $shapeCollection = null;
     /**
@@ -99,7 +99,7 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
     /**
      * Get collection of shapes
      *
-     * @return \ArrayObject|\PhpOffice\PhpPresentation\AbstractShape[]
+     * @return \ArrayObject|\TwilRoad\PhpPresentation\AbstractShape[]
      */
     public function getShapeCollection()
     {
@@ -121,8 +121,8 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
     /**
      * Add shape to slide
      *
-     * @param  \PhpOffice\PhpPresentation\AbstractShape $shape
-     * @return \PhpOffice\PhpPresentation\AbstractShape
+     * @param  \TwilRoad\PhpPresentation\AbstractShape $shape
+     * @return \TwilRoad\PhpPresentation\AbstractShape
      * @throws \Exception
      */
     public function addShape(AbstractShape $shape)
@@ -230,7 +230,7 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
     /**
      * Create rich text shape
      *
-     * @return \PhpOffice\PhpPresentation\Shape\RichText
+     * @return \TwilRoad\PhpPresentation\Shape\RichText
      * @throws \Exception
      */
     public function createRichTextShape()
@@ -247,7 +247,7 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
      * @param  int $fromY Starting point y offset
      * @param  int $toX Ending point x offset
      * @param  int $toY Ending point y offset
-     * @return \PhpOffice\PhpPresentation\Shape\Line
+     * @return \TwilRoad\PhpPresentation\Shape\Line
      * @throws \Exception
      */
     public function createLineShape($fromX, $fromY, $toX, $toY)
@@ -260,7 +260,7 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
     /**
      * Create chart shape
      *
-     * @return \PhpOffice\PhpPresentation\Shape\Chart
+     * @return \TwilRoad\PhpPresentation\Shape\Chart
      * @throws \Exception
      */
     public function createChartShape()
@@ -273,7 +273,7 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
     /**
      * Create drawing shape
      *
-     * @return \PhpOffice\PhpPresentation\Shape\Drawing\File
+     * @return \TwilRoad\PhpPresentation\Shape\Drawing\File
      * @throws \Exception
      */
     public function createDrawingShape()
@@ -287,7 +287,7 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
      * Create table shape
      *
      * @param  int $columns Number of columns
-     * @return \PhpOffice\PhpPresentation\Shape\Table
+     * @return \TwilRoad\PhpPresentation\Shape\Table
      * @throws \Exception
      */
     public function createTableShape($columns = 1)
@@ -300,7 +300,7 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
     /**
      * Creates a group within this slide
      *
-     * @return \PhpOffice\PhpPresentation\Shape\Group
+     * @return \TwilRoad\PhpPresentation\Shape\Group
      * @throws \Exception
      */
     public function createGroup()
@@ -323,8 +323,8 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
     /**
      * Re-bind parent
      *
-     * @param  \PhpOffice\PhpPresentation\PhpPresentation $parent
-     * @return \PhpOffice\PhpPresentation\Slide\AbstractSlide
+     * @param  \TwilRoad\PhpPresentation\PhpPresentation $parent
+     * @return \TwilRoad\PhpPresentation\Slide\AbstractSlide
      * @throws \Exception
      */
     public function rebindParent(PhpPresentation $parent)
@@ -344,7 +344,7 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
 
     /**
      * @param AbstractBackground $background
-     * @return \PhpOffice\PhpPresentation\Slide\AbstractSlide
+     * @return \TwilRoad\PhpPresentation\Slide\AbstractSlide
      */
     public function setBackground(AbstractBackground $background = null)
     {
@@ -354,7 +354,7 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
 
     /**
      *
-     * @return \PhpOffice\PhpPresentation\Slide\Transition
+     * @return \TwilRoad\PhpPresentation\Slide\Transition
      */
     public function getTransition()
     {
@@ -363,8 +363,8 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
 
     /**
      *
-     * @param \PhpOffice\PhpPresentation\Slide\Transition $transition
-     * @return \PhpOffice\PhpPresentation\Slide\AbstractSlide
+     * @param \TwilRoad\PhpPresentation\Slide\Transition $transition
+     * @return \TwilRoad\PhpPresentation\Slide\AbstractSlide
      */
     public function setTransition(Transition $transition = null)
     {

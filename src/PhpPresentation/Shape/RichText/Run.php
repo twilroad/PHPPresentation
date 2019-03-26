@@ -8,16 +8,16 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Shape\RichText;
+namespace TwilRoad\PhpPresentation\Shape\RichText;
 
-use PhpOffice\PhpPresentation\Style\Font;
+use TwilRoad\PhpPresentation\Style\Font;
 
 /**
  * Rich text run
@@ -27,12 +27,12 @@ class Run extends TextElement implements TextElementInterface
     /**
      * Font
      *
-     * @var \PhpOffice\PhpPresentation\Style\Font
+     * @var \TwilRoad\PhpPresentation\Style\Font
      */
     private $font;
 
     /**
-     * Create a new \PhpOffice\PhpPresentation\Shape\RichText\Run instance
+     * Create a new \TwilRoad\PhpPresentation\Shape\RichText\Run instance
      *
      * @param string $pText Text
      */
@@ -46,7 +46,7 @@ class Run extends TextElement implements TextElementInterface
     /**
      * Get font
      *
-     * @return \PhpOffice\PhpPresentation\Style\Font
+     * @return \TwilRoad\PhpPresentation\Style\Font
      */
     public function getFont()
     {
@@ -56,9 +56,9 @@ class Run extends TextElement implements TextElementInterface
     /**
      * Set font
      *
-     * @param  \PhpOffice\PhpPresentation\Style\Font                  $pFont Font
+     * @param  \TwilRoad\PhpPresentation\Style\Font                  $pFont Font
      * @throws \Exception
-     * @return \PhpOffice\PhpPresentation\Shape\RichText\TextElementInterface
+     * @return \TwilRoad\PhpPresentation\Shape\RichText\TextElementInterface
      */
     public function setFont(Font $pFont = null)
     {

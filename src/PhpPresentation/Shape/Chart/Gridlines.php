@@ -1,8 +1,8 @@
 <?php
 
-namespace PhpOffice\PhpPresentation\Shape\Chart;
+namespace TwilRoad\PhpPresentation\Shape\Chart;
 
-use PhpOffice\PhpPresentation\Style\Outline;
+use TwilRoad\PhpPresentation\Style\Outline;
 
 class Gridlines
 {

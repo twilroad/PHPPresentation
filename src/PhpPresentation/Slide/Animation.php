@@ -1,7 +1,7 @@
 <?php
-namespace PhpOffice\PhpPresentation\Slide;
+namespace TwilRoad\PhpPresentation\Slide;
 
-use PhpOffice\PhpPresentation\AbstractShape;
+use TwilRoad\PhpPresentation\AbstractShape;
 
 class Animation
 {

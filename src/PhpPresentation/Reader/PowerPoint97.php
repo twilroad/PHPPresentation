@@ -8,28 +8,28 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Reader;
+namespace TwilRoad\PhpPresentation\Reader;
 
-use PhpOffice\Common\Microsoft\OLERead;
-use PhpOffice\Common\Text;
-use PhpOffice\PhpPresentation\PhpPresentation;
-use PhpOffice\PhpPresentation\AbstractShape;
-use PhpOffice\PhpPresentation\Shape;
-use PhpOffice\PhpPresentation\Shape\Drawing;
-use PhpOffice\PhpPresentation\Shape\Group;
-use PhpOffice\PhpPresentation\Shape\Hyperlink;
-use PhpOffice\PhpPresentation\Shape\Line;
-use PhpOffice\PhpPresentation\Shape\RichText;
-use PhpOffice\PhpPresentation\Style\Alignment;
-use PhpOffice\PhpPresentation\Style\Color;
-use PhpOffice\PhpPresentation\Style\Bullet;
+use TwilRoad\Common\Microsoft\OLERead;
+use TwilRoad\Common\Text;
+use TwilRoad\PhpPresentation\PhpPresentation;
+use TwilRoad\PhpPresentation\AbstractShape;
+use TwilRoad\PhpPresentation\Shape;
+use TwilRoad\PhpPresentation\Shape\Drawing;
+use TwilRoad\PhpPresentation\Shape\Group;
+use TwilRoad\PhpPresentation\Shape\Hyperlink;
+use TwilRoad\PhpPresentation\Shape\Line;
+use TwilRoad\PhpPresentation\Shape\RichText;
+use TwilRoad\PhpPresentation\Style\Alignment;
+use TwilRoad\PhpPresentation\Style\Color;
+use TwilRoad\PhpPresentation\Style\Bullet;
 
 /**
  * Serialized format reader
@@ -365,7 +365,7 @@ class PowerPoint97 implements ReaderInterface
     private $currentNote;
 
     /**
-     * Can the current \PhpOffice\PhpPresentation\Reader\ReaderInterface read the file?
+     * Can the current \TwilRoad\PhpPresentation\Reader\ReaderInterface read the file?
      *
      * @param  string $pFilename
      * @throws \Exception
@@ -405,14 +405,14 @@ class PowerPoint97 implements ReaderInterface
      * Loads PhpPresentation Serialized file
      *
      * @param  string        $pFilename
-     * @return \PhpOffice\PhpPresentation\PhpPresentation
+     * @return \TwilRoad\PhpPresentation\PhpPresentation
      * @throws \Exception
      */
     public function load($pFilename)
     {
         // Unserialize... First make sure the file supports it!
         if (!$this->fileSupportsUnserializePhpPresentation($pFilename)) {
-            throw new \Exception("Invalid file format for PhpOffice\PhpPresentation\Reader\PowerPoint97: " . $pFilename . ".");
+            throw new \Exception("Invalid file format for TwilRoad\PhpPresentation\Reader\PowerPoint97: " . $pFilename . ".");
         }
 
         return $this->loadFile($pFilename);
@@ -422,7 +422,7 @@ class PowerPoint97 implements ReaderInterface
      * Load PhpPresentation Serialized file
      *
      * @param  string $pFilename
-     * @return \PhpOffice\PhpPresentation\PhpPresentation
+     * @return \TwilRoad\PhpPresentation\PhpPresentation
      * @throws \Exception
      */
     private function loadFile($pFilename)
@@ -1981,22 +1981,22 @@ class PowerPoint97 implements ReaderInterface
                     case 0x0081:
                         // Text : dxTextLeft
                         //@link : http://msdn.microsoft.com/en-us/library/dd953234(v=office.12).aspx
-                        $arrayReturn['insetLeft'] = \PhpOffice\Common\Drawing::emuToPixels($opt['op']);
+                        $arrayReturn['insetLeft'] = \TwilRoad\Common\Drawing::emuToPixels($opt['op']);
                         break;
                     case 0x0082:
                         // Text : dyTextTop
                         //@link : http://msdn.microsoft.com/en-us/library/dd925068(v=office.12).aspx
-                        $arrayReturn['insetTop'] = \PhpOffice\Common\Drawing::emuToPixels($opt['op']);
+                        $arrayReturn['insetTop'] = \TwilRoad\Common\Drawing::emuToPixels($opt['op']);
                         break;
                     case 0x0083:
                         // Text : dxTextRight
                         //@link : http://msdn.microsoft.com/en-us/library/dd906782(v=office.12).aspx
-                        $arrayReturn['insetRight'] = \PhpOffice\Common\Drawing::emuToPixels($opt['op']);
+                        $arrayReturn['insetRight'] = \TwilRoad\Common\Drawing::emuToPixels($opt['op']);
                         break;
                     case 0x0084:
                         // Text : dyTextBottom
                         //@link : http://msdn.microsoft.com/en-us/library/dd772858(v=office.12).aspx
-                        $arrayReturn['insetBottom'] = \PhpOffice\Common\Drawing::emuToPixels($opt['op']);
+                        $arrayReturn['insetBottom'] = \TwilRoad\Common\Drawing::emuToPixels($opt['op']);
                         break;
                     case 0x0085:
                         // Text : WrapText
@@ -2116,12 +2116,12 @@ class PowerPoint97 implements ReaderInterface
                     case 0x0193:
                         // Fill : fillRectRight
                         //@link : http://msdn.microsoft.com/en-us/library/dd951294(v=office.12).aspx
-                        // echo 'fillRectRight  : '.\PhpOffice\Common\Drawing::emuToPixels($opt['op']).EOL;
+                        // echo 'fillRectRight  : '.\TwilRoad\Common\Drawing::emuToPixels($opt['op']).EOL;
                         break;
                     case 0x0194:
                         // Fill : fillRectBottom
                         //@link : http://msdn.microsoft.com/en-us/library/dd910194(v=office.12).aspx
-                        // echo 'fillRectBottom   : '.\PhpOffice\Common\Drawing::emuToPixels($opt['op']).EOL;
+                        // echo 'fillRectBottom   : '.\TwilRoad\Common\Drawing::emuToPixels($opt['op']).EOL;
                         break;
                     case 0x01BF:
                         // Fill : Fill Style Boolean Properties
@@ -2147,7 +2147,7 @@ class PowerPoint97 implements ReaderInterface
                     case 0x01CB:
                         // Line Style : lineWidth
                         //@link : http://msdn.microsoft.com/en-us/library/dd926964(v=office.12).aspx
-                        $arrayReturn['lineWidth'] = \PhpOffice\Common\Drawing::emuToPixels($opt['op']);
+                        $arrayReturn['lineWidth'] = \TwilRoad\Common\Drawing::emuToPixels($opt['op']);
                         break;
                     case 0x01D6:
                         // Line Style : lineJoinStyle
@@ -2172,12 +2172,12 @@ class PowerPoint97 implements ReaderInterface
                     case 0x0205:
                         // Shadow Style : shadowOffsetX
                         //@link : http://msdn.microsoft.com/en-us/library/dd945280(v=office.12).aspx
-                        $arrayReturn['shadowOffsetX'] = \PhpOffice\Common\Drawing::emuToPixels($opt['op']);
+                        $arrayReturn['shadowOffsetX'] = \TwilRoad\Common\Drawing::emuToPixels($opt['op']);
                         break;
                     case 0x0206:
                         // Shadow Style : shadowOffsetY
                         //@link : http://msdn.microsoft.com/en-us/library/dd907855(v=office.12).aspx
-                        $arrayReturn['shadowOffsetY'] = \PhpOffice\Common\Drawing::emuToPixels($opt['op']);
+                        $arrayReturn['shadowOffsetY'] = \TwilRoad\Common\Drawing::emuToPixels($opt['op']);
                         break;
                     case 0x023F:
                         // Shadow Style : Shadow Style Boolean Properties

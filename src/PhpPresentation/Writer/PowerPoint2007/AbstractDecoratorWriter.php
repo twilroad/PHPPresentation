@@ -1,20 +1,20 @@
 <?php
 
-namespace PhpOffice\PhpPresentation\Writer\PowerPoint2007;
+namespace TwilRoad\PhpPresentation\Writer\PowerPoint2007;
 
-use PhpOffice\Common\Drawing as CommonDrawing;
-use PhpOffice\Common\XMLWriter;
-use PhpOffice\PhpPresentation\Style\Border;
-use PhpOffice\PhpPresentation\Style\Color;
-use PhpOffice\PhpPresentation\Style\Fill;
-use PhpOffice\PhpPresentation\Style\Outline;
+use TwilRoad\Common\Drawing as CommonDrawing;
+use TwilRoad\Common\XMLWriter;
+use TwilRoad\PhpPresentation\Style\Border;
+use TwilRoad\PhpPresentation\Style\Color;
+use TwilRoad\PhpPresentation\Style\Fill;
+use TwilRoad\PhpPresentation\Style\Outline;
 
-abstract class AbstractDecoratorWriter extends \PhpOffice\PhpPresentation\Writer\AbstractDecoratorWriter
+abstract class AbstractDecoratorWriter extends \TwilRoad\PhpPresentation\Writer\AbstractDecoratorWriter
 {
     /**
      * Write relationship
      *
-     * @param  \PhpOffice\Common\XMLWriter $objWriter   XML Writer
+     * @param  \TwilRoad\Common\XMLWriter $objWriter   XML Writer
      * @param  int                            $pId         Relationship ID. rId will be prepended!
      * @param  string                         $pType       Relationship type
      * @param  string                         $pTarget     Relationship target
@@ -46,8 +46,8 @@ abstract class AbstractDecoratorWriter extends \PhpOffice\PhpPresentation\Writer
     /**
      * Write Border
      *
-     * @param  \PhpOffice\Common\XMLWriter $objWriter    XML Writer
-     * @param  \PhpOffice\PhpPresentation\Style\Border     $pBorder      Border
+     * @param  \TwilRoad\Common\XMLWriter $objWriter    XML Writer
+     * @param  \TwilRoad\PhpPresentation\Style\Border     $pBorder      Border
      * @param  string                         $pElementName Element name
      * @throws \Exception
      */
@@ -139,8 +139,8 @@ abstract class AbstractDecoratorWriter extends \PhpOffice\PhpPresentation\Writer
     /**
      * Write Fill
      *
-     * @param  \PhpOffice\Common\XMLWriter $objWriter XML Writer
-     * @param  \PhpOffice\PhpPresentation\Style\Fill       $pFill     Fill style
+     * @param  \TwilRoad\Common\XMLWriter $objWriter XML Writer
+     * @param  \TwilRoad\PhpPresentation\Style\Fill       $pFill     Fill style
      * @throws \Exception
      */
     protected function writeFill(XMLWriter $objWriter, $pFill)
@@ -174,8 +174,8 @@ abstract class AbstractDecoratorWriter extends \PhpOffice\PhpPresentation\Writer
     /**
      * Write Solid Fill
      *
-     * @param  \PhpOffice\Common\XMLWriter $objWriter XML Writer
-     * @param  \PhpOffice\PhpPresentation\Style\Fill       $pFill     Fill style
+     * @param  \TwilRoad\Common\XMLWriter $objWriter XML Writer
+     * @param  \TwilRoad\PhpPresentation\Style\Fill       $pFill     Fill style
      * @throws \Exception
      */
     protected function writeSolidFill(XMLWriter $objWriter, Fill $pFill)
@@ -189,8 +189,8 @@ abstract class AbstractDecoratorWriter extends \PhpOffice\PhpPresentation\Writer
     /**
      * Write Gradient Fill
      *
-     * @param  \PhpOffice\Common\XMLWriter $objWriter XML Writer
-     * @param  \PhpOffice\PhpPresentation\Style\Fill       $pFill     Fill style
+     * @param  \TwilRoad\Common\XMLWriter $objWriter XML Writer
+     * @param  \TwilRoad\PhpPresentation\Style\Fill       $pFill     Fill style
      * @throws \Exception
      */
     protected function writeGradientFill(XMLWriter $objWriter, Fill $pFill)
@@ -226,8 +226,8 @@ abstract class AbstractDecoratorWriter extends \PhpOffice\PhpPresentation\Writer
     /**
      * Write Pattern Fill
      *
-     * @param  \PhpOffice\Common\XMLWriter $objWriter XML Writer
-     * @param  \PhpOffice\PhpPresentation\Style\Fill       $pFill     Fill style
+     * @param  \TwilRoad\Common\XMLWriter $objWriter XML Writer
+     * @param  \TwilRoad\PhpPresentation\Style\Fill       $pFill     Fill style
      * @throws \Exception
      */
     protected function writePatternFill(XMLWriter $objWriter, Fill $pFill)

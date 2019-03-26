@@ -1,27 +1,27 @@
 <?php
 
-namespace PhpOffice\PhpPresentation\Writer\PowerPoint2007;
+namespace TwilRoad\PhpPresentation\Writer\PowerPoint2007;
 
-use PhpOffice\Common\Drawing as CommonDrawing;
-use PhpOffice\Common\XMLWriter;
-use PhpOffice\PhpPresentation\Shape\Chart as ShapeChart;
-use PhpOffice\PhpPresentation\Shape\Comment;
-use PhpOffice\PhpPresentation\Shape\Drawing as ShapeDrawing;
-use PhpOffice\PhpPresentation\Shape\Group;
-use PhpOffice\PhpPresentation\Shape\Media;
-use PhpOffice\PhpPresentation\Shape\RichText;
-use PhpOffice\PhpPresentation\Shape\RichText\Run;
-use PhpOffice\PhpPresentation\Shape\RichText\TextElement;
-use PhpOffice\PhpPresentation\Shape\Table as ShapeTable;
-use PhpOffice\PhpPresentation\Slide;
-use PhpOffice\PhpPresentation\Slide\Background\Image;
-use PhpOffice\PhpPresentation\Slide\Note;
+use TwilRoad\Common\Drawing as CommonDrawing;
+use TwilRoad\Common\XMLWriter;
+use TwilRoad\PhpPresentation\Shape\Chart as ShapeChart;
+use TwilRoad\PhpPresentation\Shape\Comment;
+use TwilRoad\PhpPresentation\Shape\Drawing as ShapeDrawing;
+use TwilRoad\PhpPresentation\Shape\Group;
+use TwilRoad\PhpPresentation\Shape\Media;
+use TwilRoad\PhpPresentation\Shape\RichText;
+use TwilRoad\PhpPresentation\Shape\RichText\Run;
+use TwilRoad\PhpPresentation\Shape\RichText\TextElement;
+use TwilRoad\PhpPresentation\Shape\Table as ShapeTable;
+use TwilRoad\PhpPresentation\Slide;
+use TwilRoad\PhpPresentation\Slide\Background\Image;
+use TwilRoad\PhpPresentation\Slide\Note;
 
 class PptSlides extends AbstractSlide
 {
     /**
      * Add slides (drawings, ...) and slide relationships (drawings, ...)
-     * @return \PhpOffice\Common\Adapter\Zip\ZipInterface
+     * @return \TwilRoad\Common\Adapter\Zip\ZipInterface
      * @throws \Exception
      */
     public function render()
@@ -50,7 +50,7 @@ class PptSlides extends AbstractSlide
     /**
      * Write slide relationships to XML format
      *
-     * @param  \PhpOffice\PhpPresentation\Slide $pSlide
+     * @param  \TwilRoad\PhpPresentation\Slide $pSlide
      * @return string              XML Output
      * @throws \Exception
      */
@@ -348,7 +348,7 @@ class PptSlides extends AbstractSlide
     /**
      * Write slide to XML format
      *
-     * @param  \PhpOffice\PhpPresentation\Slide $pSlide
+     * @param  \TwilRoad\PhpPresentation\Slide $pSlide
      * @return string              XML Output
      * @throws \Exception
      */
@@ -750,8 +750,8 @@ class PptSlides extends AbstractSlide
     /**
      * Write pic
      *
-     * @param  \PhpOffice\Common\XMLWriter  $objWriter XML Writer
-     * @param  \PhpOffice\PhpPresentation\Shape\Drawing\AbstractDrawingAdapter $shape
+     * @param  \TwilRoad\Common\XMLWriter  $objWriter XML Writer
+     * @param  \TwilRoad\PhpPresentation\Shape\Drawing\AbstractDrawingAdapter $shape
      * @param  int $shapeId
      * @throws \Exception
      */

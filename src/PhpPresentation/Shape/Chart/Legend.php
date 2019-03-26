@@ -8,23 +8,23 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Shape\Chart;
+namespace TwilRoad\PhpPresentation\Shape\Chart;
 
-use PhpOffice\PhpPresentation\ComparableInterface;
-use PhpOffice\PhpPresentation\Style\Alignment;
-use PhpOffice\PhpPresentation\Style\Border;
-use PhpOffice\PhpPresentation\Style\Fill;
-use PhpOffice\PhpPresentation\Style\Font;
+use TwilRoad\PhpPresentation\ComparableInterface;
+use TwilRoad\PhpPresentation\Style\Alignment;
+use TwilRoad\PhpPresentation\Style\Border;
+use TwilRoad\PhpPresentation\Style\Fill;
+use TwilRoad\PhpPresentation\Style\Font;
 
 /**
- * \PhpOffice\PhpPresentation\Shape\Chart\Legend
+ * \TwilRoad\PhpPresentation\Shape\Chart\Legend
  */
 class Legend implements ComparableInterface
 {
@@ -80,33 +80,33 @@ class Legend implements ComparableInterface
     /**
      * Font
      *
-     * @var \PhpOffice\PhpPresentation\Style\Font
+     * @var \TwilRoad\PhpPresentation\Style\Font
      */
     private $font;
 
     /**
      * Border
      *
-     * @var \PhpOffice\PhpPresentation\Style\Border
+     * @var \TwilRoad\PhpPresentation\Style\Border
      */
     private $border;
 
     /**
      * Fill
      *
-     * @var \PhpOffice\PhpPresentation\Style\Fill
+     * @var \TwilRoad\PhpPresentation\Style\Fill
      */
     private $fill;
 
     /**
      * Alignment
      *
-     * @var \PhpOffice\PhpPresentation\Style\Alignment
+     * @var \TwilRoad\PhpPresentation\Style\Alignment
      */
     private $alignment;
 
     /**
-     * Create a new \PhpOffice\PhpPresentation\Shape\Chart\Legend instance
+     * Create a new \TwilRoad\PhpPresentation\Shape\Chart\Legend instance
      */
     public function __construct()
     {
@@ -130,7 +130,7 @@ class Legend implements ComparableInterface
      * Set Visible
      *
      * @param  boolean                          $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Legend
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Legend
      */
     public function setVisible($value = true)
     {
@@ -152,7 +152,7 @@ class Legend implements ComparableInterface
      * Set Position
      *
      * @param  string                          $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Legend
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Legend
      */
     public function setPosition($value = self::POSITION_RIGHT)
     {
@@ -174,7 +174,7 @@ class Legend implements ComparableInterface
      * Set OffsetX (as a fraction of the chart)
      *
      * @param float|int $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Legend
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Legend
      */
     public function setOffsetX($value = 0)
     {
@@ -196,7 +196,7 @@ class Legend implements ComparableInterface
      * Set OffsetY (as a fraction of the chart)
      *
      * @param float|int $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Legend
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Legend
      */
     public function setOffsetY($value = 0)
     {
@@ -218,7 +218,7 @@ class Legend implements ComparableInterface
      * Set Width (as a fraction of the chart)
      *
      * @param float|int $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Legend
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Legend
      */
     public function setWidth($value = 0)
     {
@@ -240,7 +240,7 @@ class Legend implements ComparableInterface
      * Set Height (as a fraction of the chart)
      *
      * @param float|int $value
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Legend
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Legend
      */
     public function setHeight($value = 0)
     {
@@ -251,7 +251,7 @@ class Legend implements ComparableInterface
     /**
      * Get font
      *
-     * @return \PhpOffice\PhpPresentation\Style\Font
+     * @return \TwilRoad\PhpPresentation\Style\Font
      */
     public function getFont()
     {
@@ -261,9 +261,9 @@ class Legend implements ComparableInterface
     /**
      * Set font
      *
-     * @param  \PhpOffice\PhpPresentation\Style\Font               $pFont Font
+     * @param  \TwilRoad\PhpPresentation\Style\Font               $pFont Font
      * @throws \Exception
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Legend
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Legend
      */
     public function setFont(Font $pFont = null)
     {
@@ -274,7 +274,7 @@ class Legend implements ComparableInterface
     /**
      * Get Border
      *
-     * @return \PhpOffice\PhpPresentation\Style\Border
+     * @return \TwilRoad\PhpPresentation\Style\Border
      */
     public function getBorder()
     {
@@ -284,8 +284,8 @@ class Legend implements ComparableInterface
     /**
      * Set Border
      *
-     * @param  \PhpOffice\PhpPresentation\Style\Border $border
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Legend
+     * @param  \TwilRoad\PhpPresentation\Style\Border $border
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Legend
      */
     public function setBorder(Border $border)
     {
@@ -296,7 +296,7 @@ class Legend implements ComparableInterface
     /**
      * Get Fill
      *
-     * @return \PhpOffice\PhpPresentation\Style\Fill
+     * @return \TwilRoad\PhpPresentation\Style\Fill
      */
     public function getFill()
     {
@@ -306,8 +306,8 @@ class Legend implements ComparableInterface
     /**
      * Set Fill
      *
-     * @param  \PhpOffice\PhpPresentation\Style\Fill $fill
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Legend
+     * @param  \TwilRoad\PhpPresentation\Style\Fill $fill
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Legend
      */
     public function setFill(Fill $fill)
     {
@@ -318,7 +318,7 @@ class Legend implements ComparableInterface
     /**
      * Get alignment
      *
-     * @return \PhpOffice\PhpPresentation\Style\Alignment
+     * @return \TwilRoad\PhpPresentation\Style\Alignment
      */
     public function getAlignment()
     {
@@ -328,8 +328,8 @@ class Legend implements ComparableInterface
     /**
      * Set alignment
      *
-     * @param  \PhpOffice\PhpPresentation\Style\Alignment          $alignment
-     * @return \PhpOffice\PhpPresentation\Shape\Chart\Legend
+     * @param  \TwilRoad\PhpPresentation\Style\Alignment          $alignment
+     * @return \TwilRoad\PhpPresentation\Shape\Chart\Legend
      */
     public function setAlignment(Alignment $alignment)
     {

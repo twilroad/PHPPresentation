@@ -1,13 +1,13 @@
 <?php
 
-namespace PhpOffice\PhpPresentation\Writer\ODPresentation;
+namespace TwilRoad\PhpPresentation\Writer\ODPresentation;
 
-use PhpOffice\Common\XMLWriter;
+use TwilRoad\Common\XMLWriter;
 
 class Meta extends AbstractDecoratorWriter
 {
     /**
-     * @return \PhpOffice\Common\Adapter\Zip\ZipInterface
+     * @return \TwilRoad\Common\Adapter\Zip\ZipInterface
      * @throws \Exception
      */
     public function render()

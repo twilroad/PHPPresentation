@@ -8,50 +8,50 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Shape\RichText;
+namespace TwilRoad\PhpPresentation\Shape\RichText;
 
-use PhpOffice\PhpPresentation\ComparableInterface;
-use PhpOffice\PhpPresentation\Style\Alignment;
-use PhpOffice\PhpPresentation\Style\Bullet;
-use PhpOffice\PhpPresentation\Style\Font;
+use TwilRoad\PhpPresentation\ComparableInterface;
+use TwilRoad\PhpPresentation\Style\Alignment;
+use TwilRoad\PhpPresentation\Style\Bullet;
+use TwilRoad\PhpPresentation\Style\Font;
 
 /**
- * \PhpOffice\PhpPresentation\Shape\RichText\Paragraph
+ * \TwilRoad\PhpPresentation\Shape\RichText\Paragraph
  */
 class Paragraph implements ComparableInterface
 {
     /**
      * Rich text elements
      *
-     * @var \PhpOffice\PhpPresentation\Shape\RichText\TextElementInterface[]
+     * @var \TwilRoad\PhpPresentation\Shape\RichText\TextElementInterface[]
      */
     private $richTextElements;
 
     /**
      * Alignment
      *
-     * @var \PhpOffice\PhpPresentation\Style\Alignment
+     * @var \TwilRoad\PhpPresentation\Style\Alignment
      */
     private $alignment;
 
     /**
      * Font
      *
-     * @var \PhpOffice\PhpPresentation\Style\Font
+     * @var \TwilRoad\PhpPresentation\Style\Font
      */
     private $font;
 
     /**
      * Bullet style
      *
-     * @var \PhpOffice\PhpPresentation\Style\Bullet
+     * @var \TwilRoad\PhpPresentation\Style\Bullet
      */
     private $bulletStyle;
 
@@ -68,7 +68,7 @@ class Paragraph implements ComparableInterface
     private $hashIndex;
 
     /**
-     * Create a new \PhpOffice\PhpPresentation\Shape\RichText\Paragraph instance
+     * Create a new \TwilRoad\PhpPresentation\Shape\RichText\Paragraph instance
      */
     public function __construct()
     {
@@ -82,7 +82,7 @@ class Paragraph implements ComparableInterface
     /**
      * Get alignment
      *
-     * @return \PhpOffice\PhpPresentation\Style\Alignment
+     * @return \TwilRoad\PhpPresentation\Style\Alignment
      */
     public function getAlignment()
     {
@@ -92,8 +92,8 @@ class Paragraph implements ComparableInterface
     /**
      * Set alignment
      *
-     * @param  \PhpOffice\PhpPresentation\Style\Alignment $alignment
-     * @return \PhpOffice\PhpPresentation\Shape\RichText\Paragraph
+     * @param  \TwilRoad\PhpPresentation\Style\Alignment $alignment
+     * @return \TwilRoad\PhpPresentation\Shape\RichText\Paragraph
      */
     public function setAlignment(Alignment $alignment)
     {
@@ -105,7 +105,7 @@ class Paragraph implements ComparableInterface
     /**
      * Get font
      *
-     * @return \PhpOffice\PhpPresentation\Style\Font
+     * @return \TwilRoad\PhpPresentation\Style\Font
      */
     public function getFont()
     {
@@ -115,9 +115,9 @@ class Paragraph implements ComparableInterface
     /**
      * Set font
      *
-     * @param  \PhpOffice\PhpPresentation\Style\Font $pFont Font
+     * @param  \TwilRoad\PhpPresentation\Style\Font $pFont Font
      * @throws \Exception
-     * @return \PhpOffice\PhpPresentation\Shape\RichText\Paragraph
+     * @return \TwilRoad\PhpPresentation\Shape\RichText\Paragraph
      */
     public function setFont(Font $pFont = null)
     {
@@ -129,7 +129,7 @@ class Paragraph implements ComparableInterface
     /**
      * Get bullet style
      *
-     * @return \PhpOffice\PhpPresentation\Style\Bullet
+     * @return \TwilRoad\PhpPresentation\Style\Bullet
      */
     public function getBulletStyle()
     {
@@ -139,9 +139,9 @@ class Paragraph implements ComparableInterface
     /**
      * Set bullet style
      *
-     * @param  \PhpOffice\PhpPresentation\Style\Bullet $style
+     * @param  \TwilRoad\PhpPresentation\Style\Bullet $style
      * @throws \Exception
-     * @return \PhpOffice\PhpPresentation\Shape\RichText\Paragraph
+     * @return \TwilRoad\PhpPresentation\Shape\RichText\Paragraph
      */
     public function setBulletStyle(Bullet $style = null)
     {
@@ -154,7 +154,7 @@ class Paragraph implements ComparableInterface
      * Create text (can not be formatted !)
      *
      * @param  string $pText Text
-     * @return \PhpOffice\PhpPresentation\Shape\RichText\TextElement
+     * @return \TwilRoad\PhpPresentation\Shape\RichText\TextElement
      * @throws \Exception
      */
     public function createText($pText = '')
@@ -168,9 +168,9 @@ class Paragraph implements ComparableInterface
     /**
      * Add text
      *
-     * @param  \PhpOffice\PhpPresentation\Shape\RichText\TextElementInterface $pText Rich text element
+     * @param  \TwilRoad\PhpPresentation\Shape\RichText\TextElementInterface $pText Rich text element
      * @throws \Exception
-     * @return \PhpOffice\PhpPresentation\Shape\RichText\Paragraph
+     * @return \TwilRoad\PhpPresentation\Shape\RichText\Paragraph
      */
     public function addText(TextElementInterface $pText = null)
     {
@@ -182,7 +182,7 @@ class Paragraph implements ComparableInterface
     /**
      * Create break
      *
-     * @return \PhpOffice\PhpPresentation\Shape\RichText\BreakElement
+     * @return \TwilRoad\PhpPresentation\Shape\RichText\BreakElement
      * @throws \Exception
      */
     public function createBreak()
@@ -197,7 +197,7 @@ class Paragraph implements ComparableInterface
      * Create text run (can be formatted)
      *
      * @param  string $pText Text
-     * @return \PhpOffice\PhpPresentation\Shape\RichText\Run
+     * @return \TwilRoad\PhpPresentation\Shape\RichText\Run
      * @throws \Exception
      */
     public function createTextRun($pText = '')
@@ -229,7 +229,7 @@ class Paragraph implements ComparableInterface
         // Return value
         $returnValue = '';
 
-        // Loop trough all \PhpOffice\PhpPresentation\Shape\RichText\TextElementInterface
+        // Loop trough all \TwilRoad\PhpPresentation\Shape\RichText\TextElementInterface
         foreach ($this->richTextElements as $text) {
             if ($text instanceof TextElementInterface) {
                 $returnValue .= $text->getText();
@@ -243,7 +243,7 @@ class Paragraph implements ComparableInterface
     /**
      * Get Rich Text elements
      *
-     * @return \PhpOffice\PhpPresentation\Shape\RichText\TextElementInterface[]
+     * @return \TwilRoad\PhpPresentation\Shape\RichText\TextElementInterface[]
      */
     public function getRichTextElements()
     {
@@ -253,14 +253,14 @@ class Paragraph implements ComparableInterface
     /**
      * Set Rich Text elements
      *
-     * @param  \PhpOffice\PhpPresentation\Shape\RichText\TextElementInterface[] $pElements Array of elements
+     * @param  \TwilRoad\PhpPresentation\Shape\RichText\TextElementInterface[] $pElements Array of elements
      * @throws \Exception
-     * @return \PhpOffice\PhpPresentation\Shape\RichText\Paragraph
+     * @return \TwilRoad\PhpPresentation\Shape\RichText\Paragraph
      */
     public function setRichTextElements($pElements = null)
     {
         if (!is_array($pElements)) {
-            throw new \Exception("Invalid \PhpOffice\PhpPresentation\Shape\RichText\TextElementInterface[] array passed.");
+            throw new \Exception("Invalid \TwilRoad\PhpPresentation\Shape\RichText\TextElementInterface[] array passed.");
         }
         $this->richTextElements = $pElements;
         return $this;

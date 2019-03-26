@@ -1,10 +1,10 @@
 <?php
 
-namespace PhpOffice\PhpPresentation\Writer\ODPresentation;
+namespace TwilRoad\PhpPresentation\Writer\ODPresentation;
 
-use PhpOffice\PhpPresentation\Shape\Chart;
+use TwilRoad\PhpPresentation\Shape\Chart;
 
-abstract class AbstractDecoratorWriter extends \PhpOffice\PhpPresentation\Writer\AbstractDecoratorWriter
+abstract class AbstractDecoratorWriter extends \TwilRoad\PhpPresentation\Writer\AbstractDecoratorWriter
 {
     /**
      * @var Chart[]
@@ -12,7 +12,7 @@ abstract class AbstractDecoratorWriter extends \PhpOffice\PhpPresentation\Writer
     protected $arrayChart;
 
     /**
-     * @return \PhpOffice\PhpPresentation\Shape\Chart[]
+     * @return \TwilRoad\PhpPresentation\Shape\Chart[]
      */
     public function getArrayChart()
     {
@@ -20,7 +20,7 @@ abstract class AbstractDecoratorWriter extends \PhpOffice\PhpPresentation\Writer
     }
 
     /**
-     * @param \PhpOffice\PhpPresentation\Shape\Chart[] $arrayChart
+     * @param \TwilRoad\PhpPresentation\Shape\Chart[] $arrayChart
      * @return AbstractDecoratorWriter
      */
     public function setArrayChart($arrayChart)

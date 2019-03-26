@@ -330,7 +330,7 @@ abstract class AbstractShape implements ComparableInterface
     /**
      * Set Fill
      * @param \TwilRoad\PhpPresentation\Style\Fill $pValue
-     * @return \PhpOffice\PhpPresentation\AbstractShape
+     * @return \TwilRoad\PhpPresentation\AbstractShape
      */
     public function setFill(Fill $pValue = null)
     {
@@ -341,7 +341,7 @@ abstract class AbstractShape implements ComparableInterface
     /**
      * Get Border
      *
-     * @return \PhpOffice\PhpPresentation\Style\Border
+     * @return \TwilRoad\PhpPresentation\Style\Border
      */
     public function getBorder()
     {
@@ -351,7 +351,7 @@ abstract class AbstractShape implements ComparableInterface
     /**
      * Get Shadow
      *
-     * @return \PhpOffice\PhpPresentation\Style\Shadow
+     * @return \TwilRoad\PhpPresentation\Style\Shadow
      */
     public function getShadow()
     {
@@ -361,7 +361,7 @@ abstract class AbstractShape implements ComparableInterface
     /**
      * Set Shadow
      *
-     * @param  \PhpOffice\PhpPresentation\Style\Shadow $pValue
+     * @param  \TwilRoad\PhpPresentation\Style\Shadow $pValue
      * @throws \Exception
      * @return self
      */
@@ -384,7 +384,7 @@ abstract class AbstractShape implements ComparableInterface
     /**
      * Get Hyperlink
      *
-     * @return \PhpOffice\PhpPresentation\Shape\Hyperlink
+     * @return \TwilRoad\PhpPresentation\Shape\Hyperlink
      * @throws \Exception
      */
     public function getHyperlink()
@@ -398,7 +398,7 @@ abstract class AbstractShape implements ComparableInterface
     /**
      * Set Hyperlink
      *
-     * @param  \PhpOffice\PhpPresentation\Shape\Hyperlink $pHyperlink
+     * @param  \TwilRoad\PhpPresentation\Shape\Hyperlink $pHyperlink
      * @throws \Exception
      * @return self
      */
@@ -458,7 +458,7 @@ abstract class AbstractShape implements ComparableInterface
     }
 
     /**
-     * @param \PhpOffice\PhpPresentation\Shape\Placeholder $placeholder
+     * @param \TwilRoad\PhpPresentation\Shape\Placeholder $placeholder
      * @return $this
      */
     public function setPlaceHolder(Placeholder $placeholder)
