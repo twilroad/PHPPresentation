@@ -8,19 +8,19 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Style;
+namespace TwilRoad\PhpPresentation\Style;
 
-use PhpOffice\PhpPresentation\ComparableInterface;
+use TwilRoad\PhpPresentation\ComparableInterface;
 
 /**
- * \PhpOffice\PhpPresentation\Style\Shadow
+ * \TwilRoad\PhpPresentation\Style\Shadow
  */
 class Shadow implements ComparableInterface
 {
@@ -76,7 +76,7 @@ class Shadow implements ComparableInterface
     /**
      * Color
      *
-     * @var \PhpOffice\PhpPresentation\Style\Color
+     * @var \TwilRoad\PhpPresentation\Style\Color
      */
     private $color;
 
@@ -95,7 +95,7 @@ class Shadow implements ComparableInterface
     private $hashIndex;
 
     /**
-     * Create a new \PhpOffice\PhpPresentation\Style\Shadow
+     * Create a new \TwilRoad\PhpPresentation\Style\Shadow
      */
     public function __construct()
     {
@@ -227,7 +227,7 @@ class Shadow implements ComparableInterface
     /**
      * Get Color
      *
-     * @return \PhpOffice\PhpPresentation\Style\Color
+     * @return \TwilRoad\PhpPresentation\Style\Color
      */
     public function getColor()
     {
@@ -237,7 +237,7 @@ class Shadow implements ComparableInterface
     /**
      * Set Color
      *
-     * @param  \PhpOffice\PhpPresentation\Style\Color  $pValue
+     * @param  \TwilRoad\PhpPresentation\Style\Color  $pValue
      * @throws \Exception
      * @return self
      */

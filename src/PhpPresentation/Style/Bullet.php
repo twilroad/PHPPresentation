@@ -8,19 +8,19 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Style;
+namespace TwilRoad\PhpPresentation\Style;
 
-use PhpOffice\PhpPresentation\ComparableInterface;
+use TwilRoad\PhpPresentation\ComparableInterface;
 
 /**
- * \PhpOffice\PhpPresentation\Style\Bullet
+ * \TwilRoad\PhpPresentation\Style\Bullet
  */
 class Bullet implements ComparableInterface
 {
@@ -123,7 +123,7 @@ class Bullet implements ComparableInterface
     private $hashIndex;
 
     /**
-     * Create a new \PhpOffice\PhpPresentation\Style\Bullet
+     * Create a new \TwilRoad\PhpPresentation\Style\Bullet
      */
     public function __construct()
     {
@@ -150,7 +150,7 @@ class Bullet implements ComparableInterface
      * Set bullet type
      *
      * @param  string                     $pValue
-     * @return \PhpOffice\PhpPresentation\Style\Bullet
+     * @return \TwilRoad\PhpPresentation\Style\Bullet
      */
     public function setBulletType($pValue = self::TYPE_NONE)
     {
@@ -173,7 +173,7 @@ class Bullet implements ComparableInterface
      * Set bullet font
      *
      * @param  string                     $pValue
-     * @return \PhpOffice\PhpPresentation\Style\Bullet
+     * @return \TwilRoad\PhpPresentation\Style\Bullet
      */
     public function setBulletFont($pValue = 'Calibri')
     {
@@ -199,7 +199,7 @@ class Bullet implements ComparableInterface
      * Set bullet char
      *
      * @param  string                     $pValue
-     * @return \PhpOffice\PhpPresentation\Style\Bullet
+     * @return \TwilRoad\PhpPresentation\Style\Bullet
      */
     public function setBulletChar($pValue = '-')
     {
@@ -222,7 +222,7 @@ class Bullet implements ComparableInterface
      * Set bullet numeric style
      *
      * @param  string                     $pValue
-     * @return \PhpOffice\PhpPresentation\Style\Bullet
+     * @return \TwilRoad\PhpPresentation\Style\Bullet
      */
     public function setBulletNumericStyle($pValue = self::NUMERIC_DEFAULT)
     {
@@ -245,7 +245,7 @@ class Bullet implements ComparableInterface
      * Set bullet numeric start at
      *
      * @param int|string $pValue
-     * @return \PhpOffice\PhpPresentation\Style\Bullet
+     * @return \TwilRoad\PhpPresentation\Style\Bullet
      */
     public function setBulletNumericStartAt($pValue = 1)
     {

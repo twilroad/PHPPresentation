@@ -1,9 +1,9 @@
 <?php
 
-namespace PhpOffice\PhpPresentation\Slide\Background;
+namespace TwilRoad\PhpPresentation\Slide\Background;
 
-use PhpOffice\PhpPresentation\Slide\AbstractBackground;
-use PhpOffice\PhpPresentation\Style\SchemeColor as StyleSchemeColor;
+use TwilRoad\PhpPresentation\Slide\AbstractBackground;
+use TwilRoad\PhpPresentation\Style\SchemeColor as StyleSchemeColor;
 
 class SchemeColor extends AbstractBackground
 {

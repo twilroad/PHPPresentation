@@ -8,19 +8,19 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation;
+namespace TwilRoad\PhpPresentation;
 
-use PhpOffice\PhpPresentation\Shape\Hyperlink;
-use PhpOffice\PhpPresentation\Shape\Placeholder;
-use PhpOffice\PhpPresentation\Style\Fill;
-use PhpOffice\PhpPresentation\Style\Shadow;
+use TwilRoad\PhpPresentation\Shape\Hyperlink;
+use TwilRoad\PhpPresentation\Shape\Placeholder;
+use TwilRoad\PhpPresentation\Style\Fill;
+use TwilRoad\PhpPresentation\Style\Shadow;
 
 /**
  * Abstract shape
@@ -30,7 +30,7 @@ abstract class AbstractShape implements ComparableInterface
     /**
      * Container
      *
-     * @var \PhpOffice\PhpPresentation\ShapeContainerInterface
+     * @var \TwilRoad\PhpPresentation\ShapeContainerInterface
      */
     protected $container;
 
@@ -65,14 +65,14 @@ abstract class AbstractShape implements ComparableInterface
     /**
      * Fill
      *
-     * @var \PhpOffice\PhpPresentation\Style\Fill
+     * @var \TwilRoad\PhpPresentation\Style\Fill
      */
     private $fill;
 
     /**
      * Border
      *
-     * @var \PhpOffice\PhpPresentation\Style\Border
+     * @var \TwilRoad\PhpPresentation\Style\Border
      */
     private $border;
 
@@ -86,20 +86,20 @@ abstract class AbstractShape implements ComparableInterface
     /**
      * Shadow
      *
-     * @var \PhpOffice\PhpPresentation\Style\Shadow
+     * @var \TwilRoad\PhpPresentation\Style\Shadow
      */
     protected $shadow;
 
     /**
      * Hyperlink
      *
-     * @var \PhpOffice\PhpPresentation\Shape\Hyperlink
+     * @var \TwilRoad\PhpPresentation\Shape\Hyperlink
      */
     protected $hyperlink;
 
     /**
      * PlaceHolder
-     * @var \PhpOffice\PhpPresentation\Shape\Placeholder
+     * @var \TwilRoad\PhpPresentation\Shape\Placeholder
      */
     protected $placeholder;
 
@@ -143,7 +143,7 @@ abstract class AbstractShape implements ComparableInterface
     /**
      * Get Container, Slide or Group
      *
-     * @return \PhpOffice\PhpPresentation\ShapeContainerInterface
+     * @return \TwilRoad\PhpPresentation\ShapeContainerInterface
      */
     public function getContainer()
     {
@@ -153,7 +153,7 @@ abstract class AbstractShape implements ComparableInterface
     /**
      * Set Container, Slide or Group
      *
-     * @param  \PhpOffice\PhpPresentation\ShapeContainerInterface $pValue
+     * @param  \TwilRoad\PhpPresentation\ShapeContainerInterface $pValue
      * @param  bool $pOverrideOld If a Slide has already been assigned, overwrite it and remove image from old Slide?
      * @throws \Exception
      * @return self
@@ -161,14 +161,14 @@ abstract class AbstractShape implements ComparableInterface
     public function setContainer(ShapeContainerInterface $pValue = null, $pOverrideOld = false)
     {
         if (is_null($this->container)) {
-            // Add drawing to \PhpOffice\PhpPresentation\ShapeContainerInterface
+            // Add drawing to \TwilRoad\PhpPresentation\ShapeContainerInterface
             $this->container = $pValue;
             if (!is_null($this->container)) {
                 $this->container->getShapeCollection()->append($this);
             }
         } else {
             if ($pOverrideOld) {
-                // Remove drawing from old \PhpOffice\PhpPresentation\ShapeContainerInterface
+                // Remove drawing from old \TwilRoad\PhpPresentation\ShapeContainerInterface
                 $iterator = $this->container->getShapeCollection()->getIterator();
 
                 while ($iterator->valid()) {
@@ -180,10 +180,10 @@ abstract class AbstractShape implements ComparableInterface
                     $iterator->next();
                 }
 
-                // Set new \PhpOffice\PhpPresentation\Slide
+                // Set new \TwilRoad\PhpPresentation\Slide
                 $this->setContainer($pValue);
             } else {
-                throw new \Exception("A \PhpOffice\PhpPresentation\ShapeContainerInterface has already been assigned. Shapes can only exist on one \PhpOffice\PhpPresentation\ShapeContainerInterface.");
+                throw new \Exception("A \TwilRoad\PhpPresentation\ShapeContainerInterface has already been assigned. Shapes can only exist on one \TwilRoad\PhpPresentation\ShapeContainerInterface.");
             }
         }
 
@@ -320,7 +320,7 @@ abstract class AbstractShape implements ComparableInterface
     /**
      * Get Fill
      *
-     * @return \PhpOffice\PhpPresentation\Style\Fill
+     * @return \TwilRoad\PhpPresentation\Style\Fill
      */
     public function getFill()
     {
@@ -329,7 +329,7 @@ abstract class AbstractShape implements ComparableInterface
 
     /**
      * Set Fill
-     * @param \PhpOffice\PhpPresentation\Style\Fill $pValue
+     * @param \TwilRoad\PhpPresentation\Style\Fill $pValue
      * @return \PhpOffice\PhpPresentation\AbstractShape
      */
     public function setFill(Fill $pValue = null)

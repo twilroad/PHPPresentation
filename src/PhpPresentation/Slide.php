@@ -15,14 +15,14 @@
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation;
+namespace TwilRoad\PhpPresentation;
 
-use PhpOffice\PhpPresentation\Shape\Chart;
-use PhpOffice\PhpPresentation\Shape\RichText;
-use PhpOffice\PhpPresentation\Shape\Table;
-use PhpOffice\PhpPresentation\Slide\AbstractSlide;
-use PhpOffice\PhpPresentation\Slide\Note;
-use PhpOffice\PhpPresentation\Slide\SlideLayout;
+use TwilRoad\PhpPresentation\Shape\Chart;
+use TwilRoad\PhpPresentation\Shape\RichText;
+use TwilRoad\PhpPresentation\Shape\Table;
+use TwilRoad\PhpPresentation\Slide\AbstractSlide;
+use TwilRoad\PhpPresentation\Slide\Note;
+use TwilRoad\PhpPresentation\Slide\SlideLayout;
 
 /**
  * Slide class
@@ -51,13 +51,13 @@ class Slide extends AbstractSlide implements ComparableInterface, ShapeContainer
 
     /**
      *
-     * @var \PhpOffice\PhpPresentation\Slide\Note
+     * @var \TwilRoad\PhpPresentation\Slide\Note
      */
     private $slideNote;
 
     /**
      *
-     * @var \PhpOffice\PhpPresentation\Slide\Animation[]
+     * @var \TwilRoad\PhpPresentation\Slide\Animation[]
      */
     protected $animations = array();
 
@@ -105,7 +105,7 @@ class Slide extends AbstractSlide implements ComparableInterface, ShapeContainer
      * Set slide layout
      *
      * @param  SlideLayout $layout
-     * @return \PhpOffice\PhpPresentation\Slide
+     * @return \TwilRoad\PhpPresentation\Slide
      */
     public function setSlideLayout(SlideLayout $layout)
     {
@@ -127,7 +127,7 @@ class Slide extends AbstractSlide implements ComparableInterface, ShapeContainer
      * Set slide master id
      *
      * @param  int $masterId
-     * @return \PhpOffice\PhpPresentation\Slide
+     * @return \TwilRoad\PhpPresentation\Slide
      */
     public function setSlideMasterId($masterId = 1)
     {
@@ -139,7 +139,7 @@ class Slide extends AbstractSlide implements ComparableInterface, ShapeContainer
     /**
      * Copy slide (!= clone!)
      *
-     * @return \PhpOffice\PhpPresentation\Slide
+     * @return \TwilRoad\PhpPresentation\Slide
      */
     public function copy()
     {
@@ -150,7 +150,7 @@ class Slide extends AbstractSlide implements ComparableInterface, ShapeContainer
 
     /**
      *
-     * @return \PhpOffice\PhpPresentation\Slide\Note
+     * @return \TwilRoad\PhpPresentation\Slide\Note
      */
     public function getNote()
     {
@@ -162,8 +162,8 @@ class Slide extends AbstractSlide implements ComparableInterface, ShapeContainer
 
     /**
      *
-     * @param \PhpOffice\PhpPresentation\Slide\Note $note
-     * @return \PhpOffice\PhpPresentation\Slide
+     * @param \TwilRoad\PhpPresentation\Slide\Note $note
+     * @return \TwilRoad\PhpPresentation\Slide
      */
     public function setNote(Note $note = null)
     {
@@ -214,7 +214,7 @@ class Slide extends AbstractSlide implements ComparableInterface, ShapeContainer
     /**
      * Add an animation to the slide
      *
-     * @param  \PhpOffice\PhpPresentation\Slide\Animation
+     * @param  \TwilRoad\PhpPresentation\Slide\Animation
      * @return Slide
      */
     public function addAnimation($animation)
@@ -226,7 +226,7 @@ class Slide extends AbstractSlide implements ComparableInterface, ShapeContainer
     /**
      * Get collection of animations
      *
-     * @return \PhpOffice\PhpPresentation\Slide\Animation[]
+     * @return \TwilRoad\PhpPresentation\Slide\Animation[]
      */
     public function getAnimations()
     {
@@ -235,7 +235,7 @@ class Slide extends AbstractSlide implements ComparableInterface, ShapeContainer
 
     /**
      * Set collection of animations
-     * @param \PhpOffice\PhpPresentation\Slide\Animation[] $array
+     * @param \TwilRoad\PhpPresentation\Slide\Animation[] $array
      * @return Slide
      */
     public function setAnimations(array $array = array())

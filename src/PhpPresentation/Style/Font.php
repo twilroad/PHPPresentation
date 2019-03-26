@@ -8,19 +8,19 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation\Style;
+namespace TwilRoad\PhpPresentation\Style;
 
-use PhpOffice\PhpPresentation\ComparableInterface;
+use TwilRoad\PhpPresentation\ComparableInterface;
 
 /**
- * \PhpOffice\PhpPresentation\Style\Font
+ * \TwilRoad\PhpPresentation\Style\Font
  */
 class Font implements ComparableInterface
 {
@@ -50,14 +50,14 @@ class Font implements ComparableInterface
      * @var string
      */
     private $name;
-    
+
     /**
      * Font Size
      *
      * @var float|int
      */
     private $size;
-    
+
     /**
      * Bold
      *
@@ -103,7 +103,7 @@ class Font implements ComparableInterface
     /**
      * Foreground color
      *
-     * @var \PhpOffice\PhpPresentation\Style\Color
+     * @var \TwilRoad\PhpPresentation\Style\Color
      */
     private $color;
 
@@ -122,7 +122,7 @@ class Font implements ComparableInterface
     private $hashIndex;
 
     /**
-     * Create a new \PhpOffice\PhpPresentation\Style\Font
+     * Create a new \TwilRoad\PhpPresentation\Style\Font
      */
     public function __construct()
     {
@@ -153,7 +153,7 @@ class Font implements ComparableInterface
      * Set Name
      *
      * @param  string                   $pValue
-     * @return \PhpOffice\PhpPresentation\Style\Font
+     * @return \TwilRoad\PhpPresentation\Style\Font
      */
     public function setName($pValue = 'Calibri')
     {
@@ -164,7 +164,7 @@ class Font implements ComparableInterface
 
         return $this;
     }
-    
+
     /**
      * Get Character Spacing
      *
@@ -174,12 +174,12 @@ class Font implements ComparableInterface
     {
         return $this->characterSpacing;
     }
-    
+
     /**
      * Set Character Spacing
      * Value in pt
      * @param float|int $pValue
-     * @return \PhpOffice\PhpPresentation\Style\Font
+     * @return \TwilRoad\PhpPresentation\Style\Font
      */
     public function setCharacterSpacing($pValue = 0)
     {
@@ -187,7 +187,7 @@ class Font implements ComparableInterface
             $pValue = 0;
         }
         $this->characterSpacing = $pValue * 100;
-    
+
         return $this;
     }
 
@@ -205,7 +205,7 @@ class Font implements ComparableInterface
      * Set Size
      *
      * @param float|int $pValue
-     * @return \PhpOffice\PhpPresentation\Style\Font
+     * @return \TwilRoad\PhpPresentation\Style\Font
      */
     public function setSize($pValue = 10)
     {
@@ -231,7 +231,7 @@ class Font implements ComparableInterface
      * Set Bold
      *
      * @param  boolean                  $pValue
-     * @return \PhpOffice\PhpPresentation\Style\Font
+     * @return \TwilRoad\PhpPresentation\Style\Font
      */
     public function setBold($pValue = false)
     {
@@ -257,7 +257,7 @@ class Font implements ComparableInterface
      * Set Italic
      *
      * @param  boolean                  $pValue
-     * @return \PhpOffice\PhpPresentation\Style\Font
+     * @return \TwilRoad\PhpPresentation\Style\Font
      */
     public function setItalic($pValue = false)
     {
@@ -283,7 +283,7 @@ class Font implements ComparableInterface
      * Set SuperScript
      *
      * @param  boolean                  $pValue
-     * @return \PhpOffice\PhpPresentation\Style\Font
+     * @return \TwilRoad\PhpPresentation\Style\Font
      */
     public function setSuperScript($pValue = false)
     {
@@ -315,7 +315,7 @@ class Font implements ComparableInterface
      * Set SubScript
      *
      * @param  boolean                  $pValue
-     * @return \PhpOffice\PhpPresentation\Style\Font
+     * @return \TwilRoad\PhpPresentation\Style\Font
      */
     public function setSubScript($pValue = false)
     {
@@ -346,8 +346,8 @@ class Font implements ComparableInterface
     /**
      * Set Underline
      *
-     * @param  string                   $pValue \PhpOffice\PhpPresentation\Style\Font underline type
-     * @return \PhpOffice\PhpPresentation\Style\Font
+     * @param  string                   $pValue \TwilRoad\PhpPresentation\Style\Font underline type
+     * @return \TwilRoad\PhpPresentation\Style\Font
      */
     public function setUnderline($pValue = self::UNDERLINE_NONE)
     {
@@ -373,7 +373,7 @@ class Font implements ComparableInterface
      * Set Strikethrough
      *
      * @param  boolean                  $pValue
-     * @return \PhpOffice\PhpPresentation\Style\Font
+     * @return \TwilRoad\PhpPresentation\Style\Font
      */
     public function setStrikethrough($pValue = false)
     {
@@ -388,7 +388,7 @@ class Font implements ComparableInterface
     /**
      * Get Color
      *
-     * @return \PhpOffice\PhpPresentation\Style\Color|\PhpOffice\PhpPresentation\Style\SchemeColor
+     * @return \TwilRoad\PhpPresentation\Style\Color|\TwilRoad\PhpPresentation\Style\SchemeColor
      */
     public function getColor()
     {
@@ -398,14 +398,14 @@ class Font implements ComparableInterface
     /**
      * Set Color
      *
-     * @param  \PhpOffice\PhpPresentation\Style\Color|\PhpOffice\PhpPresentation\Style\SchemeColor $pValue
+     * @param  \TwilRoad\PhpPresentation\Style\Color|\TwilRoad\PhpPresentation\Style\SchemeColor $pValue
      * @throws \Exception
-     * @return \PhpOffice\PhpPresentation\Style\Font
+     * @return \TwilRoad\PhpPresentation\Style\Font
      */
     public function setColor($pValue = null)
     {
         if (!$pValue instanceof Color) {
-            throw new \Exception('$pValue must be an instance of \PhpOffice\PhpPresentation\Style\Color');
+            throw new \Exception('$pValue must be an instance of \TwilRoad\PhpPresentation\Style\Color');
         }
         $this->color = $pValue;
 

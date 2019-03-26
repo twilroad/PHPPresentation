@@ -1,9 +1,9 @@
 <?php
 
-namespace PhpOffice\PhpPresentation\Slide\Background;
+namespace TwilRoad\PhpPresentation\Slide\Background;
 
-use PhpOffice\PhpPresentation\Slide\AbstractBackground;
-use PhpOffice\PhpPresentation\Style\Color as StyleColor;
+use TwilRoad\PhpPresentation\Slide\AbstractBackground;
+use TwilRoad\PhpPresentation\Style\Color as StyleColor;
 
 class Color extends AbstractBackground
 {
