@@ -8,17 +8,17 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation;
+namespace TwilRoad\PhpPresentation;
 
 /**
- * PhpOffice\PhpPresentation\GeometryCalculator
+ * TwilRoad\PhpPresentation\GeometryCalculator
  */
 class GeometryCalculator
 {
@@ -28,7 +28,7 @@ class GeometryCalculator
     /**
     * Calculate X and Y offsets for a set of shapes within a container such as a slide or group.
     *
-    * @param  \PhpOffice\PhpPresentation\ShapeContainerInterface $container
+    * @param  \TwilRoad\PhpPresentation\ShapeContainerInterface $container
     * @return array
     */
     public static function calculateOffsets(ShapeContainerInterface $container)
@@ -61,7 +61,7 @@ class GeometryCalculator
     /**
     * Calculate X and Y extents for a set of shapes within a container such as a slide or group.
     *
-    * @param  \PhpOffice\PhpPresentation\ShapeContainerInterface $container
+    * @param  \TwilRoad\PhpPresentation\ShapeContainerInterface $container
     * @return array
     */
     public static function calculateExtents(ShapeContainerInterface $container)

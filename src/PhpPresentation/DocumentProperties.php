@@ -8,17 +8,17 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation;
+namespace TwilRoad\PhpPresentation;
 
 /**
- * \PhpOffice\PhpPresentation\DocumentProperties
+ * \TwilRoad\PhpPresentation\DocumentProperties
  */
 class DocumentProperties
 {
@@ -93,7 +93,7 @@ class DocumentProperties
     private $company;
 
     /**
-     * Create a new \PhpOffice\PhpPresentation\DocumentProperties
+     * Create a new \TwilRoad\PhpPresentation\DocumentProperties
      */
     public function __construct()
     {
@@ -124,7 +124,7 @@ class DocumentProperties
      * Set Creator
      *
      * @param  string                           $pValue
-     * @return \PhpOffice\PhpPresentation\DocumentProperties
+     * @return \TwilRoad\PhpPresentation\DocumentProperties
      */
     public function setCreator($pValue = '')
     {
@@ -147,7 +147,7 @@ class DocumentProperties
      * Set Last Modified By
      *
      * @param  string                           $pValue
-     * @return \PhpOffice\PhpPresentation\DocumentProperties
+     * @return \TwilRoad\PhpPresentation\DocumentProperties
      */
     public function setLastModifiedBy($pValue = '')
     {
@@ -170,7 +170,7 @@ class DocumentProperties
      * Set Created
      *
      * @param int $pValue
-     * @return \PhpOffice\PhpPresentation\DocumentProperties
+     * @return \TwilRoad\PhpPresentation\DocumentProperties
      */
     public function setCreated($pValue = null)
     {
@@ -196,7 +196,7 @@ class DocumentProperties
      * Set Modified
      *
      * @param  int                         $pValue
-     * @return \PhpOffice\PhpPresentation\DocumentProperties
+     * @return \TwilRoad\PhpPresentation\DocumentProperties
      */
     public function setModified($pValue = null)
     {
@@ -222,7 +222,7 @@ class DocumentProperties
      * Set Title
      *
      * @param  string                           $pValue
-     * @return \PhpOffice\PhpPresentation\DocumentProperties
+     * @return \TwilRoad\PhpPresentation\DocumentProperties
      */
     public function setTitle($pValue = '')
     {
@@ -245,7 +245,7 @@ class DocumentProperties
      * Set Description
      *
      * @param  string                           $pValue
-     * @return \PhpOffice\PhpPresentation\DocumentProperties
+     * @return \TwilRoad\PhpPresentation\DocumentProperties
      */
     public function setDescription($pValue = '')
     {
@@ -268,7 +268,7 @@ class DocumentProperties
      * Set Subject
      *
      * @param  string                           $pValue
-     * @return \PhpOffice\PhpPresentation\DocumentProperties
+     * @return \TwilRoad\PhpPresentation\DocumentProperties
      */
     public function setSubject($pValue = '')
     {
@@ -291,7 +291,7 @@ class DocumentProperties
      * Set Keywords
      *
      * @param  string                           $pValue
-     * @return \PhpOffice\PhpPresentation\DocumentProperties
+     * @return \TwilRoad\PhpPresentation\DocumentProperties
      */
     public function setKeywords($pValue = '')
     {
@@ -314,7 +314,7 @@ class DocumentProperties
      * Set Category
      *
      * @param  string                           $pValue
-     * @return \PhpOffice\PhpPresentation\DocumentProperties
+     * @return \TwilRoad\PhpPresentation\DocumentProperties
      */
     public function setCategory($pValue = '')
     {
@@ -337,7 +337,7 @@ class DocumentProperties
      * Set Company
      *
      * @param  string                           $pValue
-     * @return \PhpOffice\PhpPresentation\DocumentProperties
+     * @return \TwilRoad\PhpPresentation\DocumentProperties
      */
     public function setCompany($pValue = '')
     {

@@ -8,19 +8,19 @@
  *
  * For the full copyright and license information, please read the LICENSE
  * file that was distributed with this source code. For the full list of
- * contributors, visit https://github.com/PHPOffice/PHPPresentation/contributors.
+ * contributors, visit https://github.com/TwilRoad/PHPPresentation/contributors.
  *
- * @link        https://github.com/PHPOffice/PHPPresentation
+ * @link        https://github.com/TwilRoad/PHPPresentation
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpPresentation;
+namespace TwilRoad\PhpPresentation;
 
-use PhpOffice\Common\Drawing;
+use TwilRoad\Common\Drawing;
 
 /**
- * \PhpOffice\PhpPresentation\DocumentLayout
+ * \TwilRoad\PhpPresentation\DocumentLayout
  */
 class DocumentLayout
 {
@@ -86,7 +86,7 @@ class DocumentLayout
     private $dimensionY;
 
     /**
-     * Create a new \PhpOffice\PhpPresentation\DocumentLayout
+     * Create a new \TwilRoad\PhpPresentation\DocumentLayout
      */
     public function __construct()
     {
@@ -108,7 +108,7 @@ class DocumentLayout
      *
      * @param array|string $pValue
      * @param  boolean $isLandscape
-     * @return \PhpOffice\PhpPresentation\DocumentLayout
+     * @return \TwilRoad\PhpPresentation\DocumentLayout
      */
     public function setDocumentLayout($pValue = self::LAYOUT_SCREEN_4X3, $isLandscape = true)
     {
