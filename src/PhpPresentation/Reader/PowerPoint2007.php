@@ -17,6 +17,8 @@
 
 namespace TwilRoad\PhpPresentation\Reader;
 
+use Illuminate\Support\Facades\Cache;
+use Symfony\Component\VarDumper\VarDumper;
 use TwilRoad\PhpPresentation\DocumentLayout;
 use TwilRoad\PhpPresentation\PhpPresentation;
 use TwilRoad\PhpPresentation\Shape\Placeholder;
@@ -44,28 +46,34 @@ use ZipArchive;
  */
 class PowerPoint2007 implements ReaderInterface
 {
+
     /**
      * Output Object
      * @var PhpPresentation
      */
     protected $oPhpPresentation;
+
     /**
      * Output Object
      * @var \ZipArchive
      */
     protected $oZip;
+
     /**
      * @var array[]
      */
-    protected $arrayRels = array();
+    protected $arrayRels = [];
+
     /**
      * @var SlideLayout[]
      */
-    protected $arraySlideLayouts = array();
+    protected $arraySlideLayouts = [];
+
     /*
      * @var string
      */
     protected $filename;
+
     /*
      * @var string
      */
@@ -75,6 +83,7 @@ class PowerPoint2007 implements ReaderInterface
      * Can the current \TwilRoad\PhpPresentation\Reader\ReaderInterface read the file?
      *
      * @param  string $pFilename
+     *
      * @throws \Exception
      * @return boolean
      */
@@ -87,6 +96,7 @@ class PowerPoint2007 implements ReaderInterface
      * Does a file support UnserializePhpPresentation ?
      *
      * @param  string $pFilename
+     *
      * @throws \Exception
      * @return boolean
      */
@@ -106,6 +116,7 @@ class PowerPoint2007 implements ReaderInterface
                 return true;
             }
         }
+
         return false;
     }
 
@@ -113,6 +124,7 @@ class PowerPoint2007 implements ReaderInterface
      * Loads PhpPresentation Serialized file
      *
      * @param  string $pFilename
+     *
      * @return \TwilRoad\PhpPresentation\PhpPresentation
      * @throws \Exception
      */
@@ -130,6 +142,7 @@ class PowerPoint2007 implements ReaderInterface
      * Load PhpPresentation Serialized file
      *
      * @param  string $pFilename
+     *
      * @return \TwilRoad\PhpPresentation\PhpPresentation
      * @throws \Exception
      */
@@ -137,7 +150,7 @@ class PowerPoint2007 implements ReaderInterface
     {
         $this->oPhpPresentation = new PhpPresentation();
         $this->oPhpPresentation->removeSlideByIndex();
-        $this->oPhpPresentation->setAllMasterSlides(array());
+        $this->oPhpPresentation->setAllMasterSlides([]);
         $this->filename = $pFilename;
 
         $this->oZip = new ZipArchive();
@@ -168,6 +181,7 @@ class PowerPoint2007 implements ReaderInterface
 
     /**
      * Read Document Layout
+     *
      * @param $sPart
      */
     protected function loadDocumentLayout($sPart)
@@ -195,23 +209,24 @@ class PowerPoint2007 implements ReaderInterface
 
     /**
      * Read Document Properties
+     *
      * @param string $sPart
      */
     protected function loadDocumentProperties($sPart)
     {
         $xmlReader = new XMLReader();
         if ($xmlReader->getDomFromString($sPart)) {
-            $arrayProperties = array(
-                '/cp:coreProperties/dc:creator' => 'setCreator',
+            $arrayProperties = [
+                '/cp:coreProperties/dc:creator'        => 'setCreator',
                 '/cp:coreProperties/cp:lastModifiedBy' => 'setLastModifiedBy',
-                '/cp:coreProperties/dc:title' => 'setTitle',
-                '/cp:coreProperties/dc:description' => 'setDescription',
-                '/cp:coreProperties/dc:subject' => 'setSubject',
-                '/cp:coreProperties/cp:keywords' => 'setKeywords',
-                '/cp:coreProperties/cp:category' => 'setCategory',
-                '/cp:coreProperties/dcterms:created' => 'setCreated',
-                '/cp:coreProperties/dcterms:modified' => 'setModified',
-            );
+                '/cp:coreProperties/dc:title'          => 'setTitle',
+                '/cp:coreProperties/dc:description'    => 'setDescription',
+                '/cp:coreProperties/dc:subject'        => 'setSubject',
+                '/cp:coreProperties/cp:keywords'       => 'setKeywords',
+                '/cp:coreProperties/cp:category'       => 'setCategory',
+                '/cp:coreProperties/dcterms:created'   => 'setCreated',
+                '/cp:coreProperties/dcterms:modified'  => 'setModified',
+            ];
             $oProperties = $this->oPhpPresentation->getDocumentProperties();
             foreach ($arrayProperties as $path => $property) {
                 $oElement = $xmlReader->getElement($path);
@@ -230,6 +245,7 @@ class PowerPoint2007 implements ReaderInterface
 
     /**
      * Read Custom Properties
+     *
      * @param string $sPart
      */
     protected function loadCustomProperties($sPart)
@@ -248,6 +264,7 @@ class PowerPoint2007 implements ReaderInterface
 
     /**
      * Read View Properties
+     *
      * @param string $sPart
      */
     protected function loadViewProperties($sPart)
@@ -266,7 +283,9 @@ class PowerPoint2007 implements ReaderInterface
 
     /**
      * Extract all slides
+     *
      * @param $sPart
+     *
      * @throws \Exception
      */
     protected function loadSlides($sPart)
@@ -303,8 +322,10 @@ class PowerPoint2007 implements ReaderInterface
 
     /**
      * Extract all MasterSlides
+     *
      * @param XMLReader $xmlReader
-     * @param string $fileRels
+     * @param string    $fileRels
+     *
      * @throws \Exception
      */
     protected function loadMasterSlides(XMLReader $xmlReader, $fileRels)
@@ -330,8 +351,10 @@ class PowerPoint2007 implements ReaderInterface
 
     /**
      * Extract data from slide
+     *
      * @param string $sPart
      * @param string $baseFile
+     *
      * @throws \Exception
      */
     protected function loadSlide($sPart, $baseFile)
@@ -421,6 +444,7 @@ class PowerPoint2007 implements ReaderInterface
     /**
      * @param string $sPart
      * @param string $baseFile
+     *
      * @throws \Exception
      */
     protected function loadMasterSlide($sPart, $baseFile)
@@ -446,7 +470,7 @@ class PowerPoint2007 implements ReaderInterface
             // Header & Footer
 
             // ColorMapping
-            $colorMap = array();
+            $colorMap = [];
             $oElement = $xmlReader->getElement('/p:sldMaster/p:clrMap');
             if ($oElement->hasAttributes()) {
                 foreach ($oElement->attributes as $attr) {
@@ -561,9 +585,10 @@ class PowerPoint2007 implements ReaderInterface
     }
 
     /**
-     * @param string $sPart
-     * @param string $baseFile
+     * @param string      $sPart
+     * @param string      $baseFile
      * @param SlideMaster $oSlideMaster
+     *
      * @return SlideLayout|null
      * @throws \Exception
      */
@@ -590,7 +615,7 @@ class PowerPoint2007 implements ReaderInterface
             // ColorMapping
             $oElement = $xmlReader->getElement('/p:sldLayout/p:clrMapOvr/a:overrideClrMapping');
             if ($oElement instanceof \DOMElement && $oElement->hasAttributes()) {
-                $colorMap = array();
+                $colorMap = [];
                 foreach ($oElement->attributes as $attr) {
                     $colorMap[$attr->nodeName] = $attr->nodeValue;
                 }
@@ -603,13 +628,15 @@ class PowerPoint2007 implements ReaderInterface
                 $this->loadSlideShapes($oSlideLayout, $oElements, $xmlReader);
             }
             $this->arraySlideLayouts[$baseFile] = &$oSlideLayout;
+
             return $oSlideLayout;
         }
+
         return null;
     }
 
     /**
-     * @param string $sPart
+     * @param string      $sPart
      * @param SlideMaster $oSlideMaster
      */
     protected function loadTheme($sPart, SlideMaster $oSlideMaster)
@@ -625,7 +652,7 @@ class PowerPoint2007 implements ReaderInterface
                     if ($colorElement instanceof \DOMElement) {
                         if ($colorElement->hasAttribute('lastClr')) {
                             $oSchemeColor->setRGB($colorElement->getAttribute('lastClr'));
-                        } elseif ($colorElement->hasAttribute('val')) {
+                        } else if ($colorElement->hasAttribute('val')) {
                             $oSchemeColor->setRGB($colorElement->getAttribute('val'));
                         }
                     }
@@ -636,9 +663,10 @@ class PowerPoint2007 implements ReaderInterface
     }
 
     /**
-     * @param XMLReader $xmlReader
-     * @param \DOMElement $oElement
+     * @param XMLReader     $xmlReader
+     * @param \DOMElement   $oElement
      * @param AbstractSlide $oSlide
+     *
      * @throws \Exception
      */
     protected function loadSlideBackground(XMLReader $xmlReader, \DOMElement $oElement, AbstractSlide $oSlide)
@@ -699,7 +727,8 @@ class PowerPoint2007 implements ReaderInterface
 
     /**
      * @param string $baseFile
-     * @param Slide $oSlide
+     * @param Slide  $oSlide
+     *
      * @throws \Exception
      */
     protected function loadSlideNote($baseFile, Slide $oSlide)
@@ -717,9 +746,10 @@ class PowerPoint2007 implements ReaderInterface
     }
 
     /**
-     * @param XMLReader $document
-     * @param \DOMElement $node
+     * @param XMLReader     $document
+     * @param \DOMElement   $node
      * @param AbstractSlide $oSlide
+     *
      * @throws \Exception
      */
     protected function loadShapeDrawing(XMLReader $document, \DOMElement $node, AbstractSlide $oSlide)
@@ -829,9 +859,10 @@ class PowerPoint2007 implements ReaderInterface
     }
 
     /**
-     * @param XMLReader $document
-     * @param \DOMElement $node
+     * @param XMLReader     $document
+     * @param \DOMElement   $node
      * @param AbstractSlide $oSlide
+     *
      * @throws \Exception
      */
     protected function loadShapeRichText(XMLReader $document, \DOMElement $node, $oSlide)
@@ -841,7 +872,7 @@ class PowerPoint2007 implements ReaderInterface
         }
         // Core
         $oShape = $oSlide->createRichTextShape();
-        $oShape->setParagraphs(array());
+        $oShape->setParagraphs([]);
         // Variables
         if ($oSlide instanceof AbstractSlide) {
             $this->fileRels = $oSlide->getRelsIndex();
@@ -891,9 +922,10 @@ class PowerPoint2007 implements ReaderInterface
     }
 
     /**
-     * @param XMLReader $document
-     * @param \DOMElement $node
+     * @param XMLReader     $document
+     * @param \DOMElement   $node
      * @param AbstractSlide $oSlide
+     *
      * @throws \Exception
      */
     protected function loadShapeTable(XMLReader $document, \DOMElement $node, AbstractSlide $oSlide)
@@ -959,7 +991,7 @@ class PowerPoint2007 implements ReaderInterface
                     continue;
                 }
                 $oCell = $oRow->getCell($keyCell);
-                $oCell->setParagraphs(array());
+                $oCell->setParagraphs([]);
                 if ($oElementCell->hasAttribute('gridSpan')) {
                     $oCell->setColSpan($oElementCell->getAttribute('gridSpan'));
                 }
@@ -1032,16 +1064,17 @@ class PowerPoint2007 implements ReaderInterface
     }
 
     /**
-     * @param XMLReader $document
-     * @param \DOMElement $oElement
+     * @param XMLReader     $document
+     * @param \DOMElement   $oElement
      * @param Cell|RichText $oShape
+     *
      * @throws \Exception
      */
     protected function loadParagraph(XMLReader $document, \DOMElement $oElement, $oShape)
     {
         // Core
         $oParagraph = $oShape->createParagraph();
-        $oParagraph->setRichTextElements(array());
+        $oParagraph->setRichTextElements([]);
 
         $oSubElement = $document->getElement('a:pPr', $oElement);
         if ($oSubElement instanceof \DOMElement) {
@@ -1157,9 +1190,10 @@ class PowerPoint2007 implements ReaderInterface
     }
 
     /**
-     * @param XMLReader $xmlReader
+     * @param XMLReader   $xmlReader
      * @param \DOMElement $oElement
-     * @param Border $oBorder
+     * @param Border      $oBorder
+     *
      * @throws \Exception
      */
     protected function loadStyleBorder(XMLReader $xmlReader, \DOMElement $oElement, Border $oBorder)
@@ -1188,8 +1222,9 @@ class PowerPoint2007 implements ReaderInterface
     }
 
     /**
-     * @param XMLReader $xmlReader
+     * @param XMLReader   $xmlReader
      * @param \DOMElement $oElement
+     *
      * @return Color
      */
     protected function loadStyleColor(XMLReader $xmlReader, \DOMElement $oElement)
@@ -1201,12 +1236,14 @@ class PowerPoint2007 implements ReaderInterface
             $alpha = strtoupper(dechex((($oElementAlpha->getAttribute('val') / 1000) / 100) * 255));
             $oColor->setRGB($oElement->getAttribute('val'), $alpha);
         }
+
         return $oColor;
     }
 
     /**
-     * @param XMLReader $xmlReader
+     * @param XMLReader   $xmlReader
      * @param \DOMElement $oElement
+     *
      * @return null|Fill
      * @throws \Exception
      */
@@ -1232,6 +1269,7 @@ class PowerPoint2007 implements ReaderInterface
             if ($oRotation instanceof \DOMElement && $oRotation->hasAttribute('ang')) {
                 $oFill->setRotation(CommonDrawing::angleToDegrees($oRotation->getAttribute('ang')));
             }
+
             return $oFill;
         }
 
@@ -1245,8 +1283,10 @@ class PowerPoint2007 implements ReaderInterface
             if ($oElementColor instanceof \DOMElement) {
                 $oFill->setStartColor($this->loadStyleColor($xmlReader, $oElementColor));
             }
+
             return $oFill;
         }
+
         return null;
     }
 
@@ -1263,25 +1303,26 @@ class PowerPoint2007 implements ReaderInterface
                     if (!($oNode instanceof \DOMElement)) {
                         continue;
                     }
-                    $this->arrayRels[$fileRels][$oNode->getAttribute('Id')] = array(
+                    $this->arrayRels[$fileRels][$oNode->getAttribute('Id')] = [
                         'Target' => $oNode->getAttribute('Target'),
-                        'Type' => $oNode->getAttribute('Type'),
-                    );
+                        'Type'   => $oNode->getAttribute('Type'),
+                    ];
                 }
             }
         }
     }
 
     /**
-     * @param $oSlide
+     * @param              $oSlide
      * @param \DOMNodeList $oElements
-     * @param XMLReader $xmlReader
+     * @param XMLReader    $xmlReader
+     *
      * @throws \Exception
      * @internal param $baseFile
      */
     protected function loadSlideShapes($oSlide, $oElements, $xmlReader)
     {
-        foreach ($oElements as $oNode) {
+        foreach ($oElements as $key => $oNode) {
             switch ($oNode->tagName) {
                 case 'p:graphicFrame':
                     $this->loadShapeTable($xmlReader, $oNode, $oSlide);
@@ -1292,8 +1333,17 @@ class PowerPoint2007 implements ReaderInterface
                 case 'p:sp':
                     $this->loadShapeRichText($xmlReader, $oNode, $oSlide);
                     break;
+                case 'p:nvGrpSpPr':
+                    $this->loadShapeRichText($xmlReader, $oNode, $oSlide);
+                    break;
+                case 'p:grpSpPr':
+                    break;
+                case 'p:grpSp':
+                    break;
+                case 'p:cxnSp':
+                    break;
                 default:
-                    //var_export($oNode->tagName);
+                //var_export($oNode->tagName);
             }
         }
     }
