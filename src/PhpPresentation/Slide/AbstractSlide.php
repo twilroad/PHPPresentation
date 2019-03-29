@@ -14,6 +14,7 @@
  * @copyright   2009-2015 PHPPresentation contributors
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
+
 namespace TwilRoad\PhpPresentation\Slide;
 
 use TwilRoad\PhpPresentation\AbstractShape;
@@ -22,6 +23,7 @@ use TwilRoad\PhpPresentation\GeometryCalculator;
 use TwilRoad\PhpPresentation\PhpPresentation;
 use TwilRoad\PhpPresentation\Shape\Chart;
 use TwilRoad\PhpPresentation\Shape\Drawing\File;
+use TwilRoad\PhpPresentation\Shape\Graph;
 use TwilRoad\PhpPresentation\Shape\Group;
 use TwilRoad\PhpPresentation\Shape\Line;
 use TwilRoad\PhpPresentation\Shape\RichText;
@@ -31,10 +33,12 @@ use TwilRoad\PhpPresentation\Slide;
 
 abstract class AbstractSlide implements ComparableInterface, ShapeContainerInterface
 {
+
     /**
      * @var string
      */
     protected $relsIndex;
+
     /**
      *
      * @var \TwilRoad\PhpPresentation\Slide\Transition
@@ -47,48 +51,56 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
      * @var \ArrayObject|\TwilRoad\PhpPresentation\AbstractShape[]
      */
     protected $shapeCollection = null;
+
     /**
      * Extent Y
      *
      * @var int
      */
     protected $extentY;
+
     /**
      * Extent X
      *
      * @var int
      */
     protected $extentX;
+
     /**
      * Offset X
      *
      * @var int
      */
     protected $offsetX;
+
     /**
      * Offset Y
      *
      * @var int
      */
     protected $offsetY;
+
     /**
      * Slide identifier
      *
      * @var string
      */
     protected $identifier;
+
     /**
      * Hash index
      *
      * @var string
      */
     protected $hashIndex;
+
     /**
      * Parent presentation
      *
      * @var PhpPresentation
      */
     protected $parent;
+
     /**
      * Background of the slide
      *
@@ -110,11 +122,13 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
      * Get collection of shapes
      *
      * @param array $shapeCollection
+     *
      * @return AbstractSlide
      */
-    public function setShapeCollection($shapeCollection = array())
+    public function setShapeCollection($shapeCollection = [])
     {
         $this->shapeCollection = $shapeCollection;
+
         return $this;
     }
 
@@ -122,12 +136,14 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
      * Add shape to slide
      *
      * @param  \TwilRoad\PhpPresentation\AbstractShape $shape
+     *
      * @return \TwilRoad\PhpPresentation\AbstractShape
      * @throws \Exception
      */
     public function addShape(AbstractShape $shape)
     {
         $shape->setContainer($this);
+
         return $shape;
     }
 
@@ -143,6 +159,7 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
             $this->offsetX = $offsets[GeometryCalculator::X];
             $this->offsetY = $offsets[GeometryCalculator::Y];
         }
+
         return $this->offsetX;
     }
 
@@ -158,6 +175,7 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
             $this->offsetX = $offsets[GeometryCalculator::X];
             $this->offsetY = $offsets[GeometryCalculator::Y];
         }
+
         return $this->offsetY;
     }
 
@@ -173,6 +191,7 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
             $this->extentX = $extents[GeometryCalculator::X];
             $this->extentY = $extents[GeometryCalculator::Y];
         }
+
         return $this->extentX;
     }
 
@@ -188,6 +207,7 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
             $this->extentX = $extents[GeometryCalculator::X];
             $this->extentY = $extents[GeometryCalculator::Y];
         }
+
         return $this->extentY;
     }
 
@@ -227,6 +247,14 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
         $this->hashIndex = $value;
     }
 
+    public function createGraph()
+    {
+        $shape = new Graph();
+        $this->addShape($shape);
+
+        return $shape;
+    }
+
     /**
      * Create rich text shape
      *
@@ -237,6 +265,7 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
     {
         $shape = new RichText();
         $this->addShape($shape);
+
         return $shape;
     }
 
@@ -247,6 +276,7 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
      * @param  int $fromY Starting point y offset
      * @param  int $toX Ending point x offset
      * @param  int $toY Ending point y offset
+     *
      * @return \TwilRoad\PhpPresentation\Shape\Line
      * @throws \Exception
      */
@@ -254,6 +284,7 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
     {
         $shape = new Line($fromX, $fromY, $toX, $toY);
         $this->addShape($shape);
+
         return $shape;
     }
 
@@ -267,6 +298,7 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
     {
         $shape = new Chart();
         $this->addShape($shape);
+
         return $shape;
     }
 
@@ -280,6 +312,7 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
     {
         $shape = new File();
         $this->addShape($shape);
+
         return $shape;
     }
 
@@ -287,6 +320,7 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
      * Create table shape
      *
      * @param  int $columns Number of columns
+     *
      * @return \TwilRoad\PhpPresentation\Shape\Table
      * @throws \Exception
      */
@@ -294,6 +328,7 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
     {
         $shape = new Table($columns);
         $this->addShape($shape);
+
         return $shape;
     }
 
@@ -307,6 +342,7 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
     {
         $shape = new Group();
         $this->addShape($shape);
+
         return $shape;
     }
 
@@ -324,6 +360,7 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
      * Re-bind parent
      *
      * @param  \TwilRoad\PhpPresentation\PhpPresentation $parent
+     *
      * @return \TwilRoad\PhpPresentation\Slide\AbstractSlide
      * @throws \Exception
      */
@@ -331,6 +368,7 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
     {
         $this->parent->removeSlideByIndex($this->parent->getIndex($this));
         $this->parent = $parent;
+
         return $this;
     }
 
@@ -344,11 +382,13 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
 
     /**
      * @param AbstractBackground $background
+     *
      * @return \TwilRoad\PhpPresentation\Slide\AbstractSlide
      */
     public function setBackground(AbstractBackground $background = null)
     {
         $this->background = $background;
+
         return $this;
     }
 
@@ -364,11 +404,13 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
     /**
      *
      * @param \TwilRoad\PhpPresentation\Slide\Transition $transition
+     *
      * @return \TwilRoad\PhpPresentation\Slide\AbstractSlide
      */
     public function setTransition(Transition $transition = null)
     {
         $this->slideTransition = $transition;
+
         return $this;
     }
 

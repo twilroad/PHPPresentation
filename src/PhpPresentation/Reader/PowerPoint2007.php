@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Cache;
 use Symfony\Component\VarDumper\VarDumper;
 use TwilRoad\PhpPresentation\DocumentLayout;
 use TwilRoad\PhpPresentation\PhpPresentation;
+use TwilRoad\PhpPresentation\Shape\Group;
 use TwilRoad\PhpPresentation\Shape\Placeholder;
 use TwilRoad\PhpPresentation\Shape\RichText;
 use TwilRoad\PhpPresentation\Shape\RichText\Paragraph;
@@ -30,6 +31,7 @@ use TwilRoad\PhpPresentation\Slide\AbstractSlide;
 use TwilRoad\PhpPresentation\Slide\SlideLayout;
 use TwilRoad\PhpPresentation\Slide\SlideMaster;
 use TwilRoad\PhpPresentation\Shape\Drawing\Gd;
+use TwilRoad\PhpPresentation\ShapeContainerInterface;
 use TwilRoad\PhpPresentation\Style\Bullet;
 use TwilRoad\PhpPresentation\Style\Border;
 use TwilRoad\PhpPresentation\Style\Borders;
@@ -858,6 +860,19 @@ class PowerPoint2007 implements ReaderInterface
         $oSlide->addShape($oShape);
     }
 
+    protected function loadShapeGraph(XMLReader $document, \DOMElement $node, $oSlide)
+    {
+        if ($oSlide instanceof AbstractSlide || $oSlide instanceof Group) {
+            $oShape = $oSlide->createGraph();
+        }
+    }
+
+    protected function loadShapeGroup(XMLReader $document, \DOMElement $node, AbstractSlide $oSlide)
+    {
+        $group = $oSlide->createGroup();
+        $this->loadSlideShapes($group, $document->getElements('p:sp', $node), $document);
+    }
+
     /**
      * @param XMLReader     $document
      * @param \DOMElement   $node
@@ -1322,7 +1337,7 @@ class PowerPoint2007 implements ReaderInterface
      */
     protected function loadSlideShapes($oSlide, $oElements, $xmlReader)
     {
-        foreach ($oElements as $key => $oNode) {
+        foreach ($oElements as $oNode) {
             switch ($oNode->tagName) {
                 case 'p:graphicFrame':
                     $this->loadShapeTable($xmlReader, $oNode, $oSlide);
@@ -1331,7 +1346,11 @@ class PowerPoint2007 implements ReaderInterface
                     $this->loadShapeDrawing($xmlReader, $oNode, $oSlide);
                     break;
                 case 'p:sp':
-                    $this->loadShapeRichText($xmlReader, $oNode, $oSlide);
+                    if ($xmlReader->elementExists('p:txBody/a:p/a:r', $oNode)) {
+                        $this->loadShapeRichText($xmlReader, $oNode, $oSlide);
+                    } else {
+                        $this->loadShapeGraph($xmlReader, $oNode, $oSlide);
+                    }
                     break;
                 case 'p:nvGrpSpPr':
                     $this->loadShapeRichText($xmlReader, $oNode, $oSlide);
@@ -1339,6 +1358,7 @@ class PowerPoint2007 implements ReaderInterface
                 case 'p:grpSpPr':
                     break;
                 case 'p:grpSp':
+                    $this->loadShapeGroup($xmlReader, $oNode, $oSlide);
                     break;
                 case 'p:cxnSp':
                     break;

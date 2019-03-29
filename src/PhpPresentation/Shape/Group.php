@@ -21,6 +21,7 @@ use TwilRoad\PhpPresentation\AbstractShape;
 use TwilRoad\PhpPresentation\GeometryCalculator;
 use TwilRoad\PhpPresentation\ShapeContainerInterface;
 use TwilRoad\PhpPresentation\Shape\Drawing;
+use TwilRoad\PhpPresentation\Shape\Graph;
 use TwilRoad\PhpPresentation\Shape\RichText;
 use TwilRoad\PhpPresentation\Shape\Table;
 
@@ -189,6 +190,14 @@ class Group extends AbstractShape implements ShapeContainerInterface
     public function setHeight($pValue = 0)
     {
         return $this;
+    }
+
+    public function createGraph()
+    {
+        $shape = new Graph();
+        $this->addShape($shape);
+
+        return $shape;
     }
 
     /**
