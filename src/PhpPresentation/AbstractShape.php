@@ -27,6 +27,7 @@ use TwilRoad\PhpPresentation\Style\Shadow;
  */
 abstract class AbstractShape implements ComparableInterface
 {
+
     /**
      * Container
      *
@@ -154,7 +155,8 @@ abstract class AbstractShape implements ComparableInterface
      * Set Container, Slide or Group
      *
      * @param  \TwilRoad\PhpPresentation\ShapeContainerInterface $pValue
-     * @param  bool $pOverrideOld If a Slide has already been assigned, overwrite it and remove image from old Slide?
+     * @param  bool                                              $pOverrideOld If a Slide has already been assigned, overwrite it and remove image from old Slide?
+     *
      * @throws \Exception
      * @return self
      */
@@ -204,6 +206,7 @@ abstract class AbstractShape implements ComparableInterface
      * Set OffsetX
      *
      * @param  int $pValue
+     *
      * @return self
      */
     public function setOffsetX($pValue = 0)
@@ -227,6 +230,7 @@ abstract class AbstractShape implements ComparableInterface
      * Set OffsetY
      *
      * @param  int $pValue
+     *
      * @return self
      */
     public function setOffsetY($pValue = 0)
@@ -250,11 +254,13 @@ abstract class AbstractShape implements ComparableInterface
      * Set Width
      *
      * @param  int $pValue
+     *
      * @return self
      */
     public function setWidth($pValue = 0)
     {
         $this->width = $pValue;
+
         return $this;
     }
 
@@ -272,11 +278,13 @@ abstract class AbstractShape implements ComparableInterface
      * Set Height
      *
      * @param  int $pValue
+     *
      * @return self
      */
     public function setHeight($pValue = 0)
     {
         $this->height = $pValue;
+
         return $this;
     }
 
@@ -285,6 +293,7 @@ abstract class AbstractShape implements ComparableInterface
      *
      * @param  int $width
      * @param  int $height
+     *
      * @example $objDrawing->setWidthAndHeight(160,120);
      * @return self
      */
@@ -292,6 +301,7 @@ abstract class AbstractShape implements ComparableInterface
     {
         $this->width = $width;
         $this->height = $height;
+
         return $this;
     }
 
@@ -309,11 +319,13 @@ abstract class AbstractShape implements ComparableInterface
      * Set Rotation
      *
      * @param  int $pValue
+     *
      * @return self
      */
     public function setRotation($pValue = 0)
     {
         $this->rotation = $pValue;
+
         return $this;
     }
 
@@ -329,12 +341,15 @@ abstract class AbstractShape implements ComparableInterface
 
     /**
      * Set Fill
+     *
      * @param \TwilRoad\PhpPresentation\Style\Fill $pValue
+     *
      * @return \TwilRoad\PhpPresentation\AbstractShape
      */
     public function setFill(Fill $pValue = null)
     {
         $this->fill = $pValue;
+
         return $this;
     }
 
@@ -362,12 +377,14 @@ abstract class AbstractShape implements ComparableInterface
      * Set Shadow
      *
      * @param  \TwilRoad\PhpPresentation\Style\Shadow $pValue
+     *
      * @throws \Exception
      * @return self
      */
     public function setShadow(Shadow $pValue = null)
     {
         $this->shadow = $pValue;
+
         return $this;
     }
 
@@ -392,6 +409,7 @@ abstract class AbstractShape implements ComparableInterface
         if (is_null($this->hyperlink)) {
             $this->hyperlink = new Hyperlink();
         }
+
         return $this->hyperlink;
     }
 
@@ -399,12 +417,14 @@ abstract class AbstractShape implements ComparableInterface
      * Set Hyperlink
      *
      * @param  \TwilRoad\PhpPresentation\Shape\Hyperlink $pHyperlink
+     *
      * @throws \Exception
      * @return self
      */
     public function setHyperlink(Hyperlink $pHyperlink = null)
     {
         $this->hyperlink = $pHyperlink;
+
         return $this;
     }
 
@@ -454,16 +474,19 @@ abstract class AbstractShape implements ComparableInterface
         if (!$this->isPlaceholder()) {
             return null;
         }
+
         return $this->placeholder;
     }
 
     /**
      * @param \TwilRoad\PhpPresentation\Shape\Placeholder $placeholder
+     *
      * @return $this
      */
     public function setPlaceHolder(Placeholder $placeholder)
     {
         $this->placeholder = $placeholder;
+
         return $this;
     }
 }

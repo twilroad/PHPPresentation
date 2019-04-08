@@ -17,7 +17,6 @@
 
 namespace TwilRoad\PhpPresentation\Reader;
 
-use Symfony\Component\VarDumper\VarDumper;
 use TwilRoad\PhpPresentation\DocumentLayout;
 use TwilRoad\PhpPresentation\PhpPresentation;
 use TwilRoad\PhpPresentation\PreDefindedData;
@@ -873,10 +872,12 @@ class PowerPoint2007 implements ReaderInterface
         if (!$oSlide instanceof AbstractSlide && !$oSlide instanceof Group) {
             return;
         }
+
         $oShape = $oSlide->createGeometry();
-        if ($document->elementExists('p:spPr/a:prstGeom', $node)) {
-            $geometryNode = $document->getElement('p:spPr/a:prstGeom', $node);
-            $preset = $document->getAttribute('prst', $geometryNode);
+
+        $oElement = $document->getElement('p:spPr/a:prstGeom', $node);
+        if ($oElement instanceof \DOMElement) {
+            $preset = $document->getAttribute('prst', $oElement);
             $presetData = PreDefindedData::getShape($preset);
             if ($presetData) {
                 $dom = new \DOMDocument();
@@ -891,10 +892,11 @@ class PowerPoint2007 implements ReaderInterface
                 }
             }
         }
-        $customPathNode = $document->getElements('p:spPr/a:custGeom/a:pathLst/a:path', $node);
-        if ($customPathNode->count()) {
+
+        $oElement = $document->getElements('p:spPr/a:custGeom/a:pathLst/a:path', $node);
+        if ($oElement->count()) {
             $pathString = '';
-            foreach ($customPathNode as $customPath) {
+            foreach ($oElement as $customPath) {
                 $pathString .= $document->saveXML($customPath);
             }
             $pathString = str_replace('<a:', '<', $pathString);
@@ -943,8 +945,40 @@ class PowerPoint2007 implements ReaderInterface
      */
     protected function loadShapeGroup(XMLReader $document, \DOMElement $node, AbstractSlide $oSlide)
     {
-        $group = $oSlide->createGroup();
-        $this->loadSlideShapes($group, $document->getElements('p:sp', $node), $document);
+        $oShape = $oSlide->createGroup();
+
+        $oElement = $document->getElement('p:grpSpPr/a:solidFill', $node);
+        if ($oElement instanceof \DOMElement) {
+            $oFill = $this->loadStyleFill($document, $oElement);
+            $oShape->setFill($oFill);
+        }
+
+        $oElement = $document->getElement('p:grpSpPr/a:xfrm', $node);
+        if ($oElement instanceof \DOMElement && $oElement->hasAttribute('rot')) {
+            $oShape->setRotation(CommonDrawing::angleToDegrees($oElement->getAttribute('rot')));
+        }
+
+        $oElement = $document->getElement('p:grpSpPr/a:xfrm/a:off', $node);
+        if ($oElement instanceof \DOMElement) {
+            if ($oElement->hasAttribute('x')) {
+                $oShape->setOffsetX(CommonDrawing::emuToPixels($oElement->getAttribute('x')));
+            }
+            if ($oElement->hasAttribute('y')) {
+                $oShape->setOffsetY(CommonDrawing::emuToPixels($oElement->getAttribute('y')));
+            }
+        }
+
+        $oElement = $document->getElement('p:grpSpPr/a:xfrm/a:ext', $node);
+        if ($oElement instanceof \DOMElement) {
+            if ($oElement->hasAttribute('cx')) {
+                $oShape->setWidth(CommonDrawing::emuToPixels($oElement->getAttribute('cx')));
+            }
+            if ($oElement->hasAttribute('cy')) {
+                $oShape->setHeight(CommonDrawing::emuToPixels($oElement->getAttribute('cy')));
+            }
+        }
+
+        $this->loadSlideShapes($oShape, $document->getElements('p:sp', $node), $document);
     }
 
     /**
