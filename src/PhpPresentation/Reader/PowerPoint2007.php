@@ -891,8 +891,46 @@ class PowerPoint2007 implements ReaderInterface
                 }
             }
         }
-        if ($document->elementExists('p:spPr/a:custGeom/a:pathLst/a:path', $node)) {
-            dd($node);
+        $customPathNode = $document->getElements('p:spPr/a:custGeom/a:pathLst/a:path', $node);
+        if ($customPathNode->count()) {
+            $pathString = '';
+            foreach ($customPathNode as $customPath) {
+                $pathString .= $document->saveXML($customPath);
+            }
+            $pathString = str_replace('<a:', '<', $pathString);
+            $pathString = str_replace('</a:', '</', $pathString);
+            $pathString && $oShape->setPathString($pathString);
+        }
+
+        $oElement = $document->getElement('p:spPr', $node);
+        if ($oElement instanceof \DOMElement) {
+            $oFill = $this->loadStyleFill($document, $oElement);
+            $oShape->setFill($oFill);
+        }
+
+        $oElement = $document->getElement('p:spPr/a:xfrm', $node);
+        if ($oElement instanceof \DOMElement && $oElement->hasAttribute('rot')) {
+            $oShape->setRotation(CommonDrawing::angleToDegrees($oElement->getAttribute('rot')));
+        }
+
+        $oElement = $document->getElement('p:spPr/a:xfrm/a:off', $node);
+        if ($oElement instanceof \DOMElement) {
+            if ($oElement->hasAttribute('x')) {
+                $oShape->setOffsetX(CommonDrawing::emuToPixels($oElement->getAttribute('x')));
+            }
+            if ($oElement->hasAttribute('y')) {
+                $oShape->setOffsetY(CommonDrawing::emuToPixels($oElement->getAttribute('y')));
+            }
+        }
+
+        $oElement = $document->getElement('p:spPr/a:xfrm/a:ext', $node);
+        if ($oElement instanceof \DOMElement) {
+            if ($oElement->hasAttribute('cx')) {
+                $oShape->setWidth(CommonDrawing::emuToPixels($oElement->getAttribute('cx')));
+            }
+            if ($oElement->hasAttribute('cy')) {
+                $oShape->setHeight(CommonDrawing::emuToPixels($oElement->getAttribute('cy')));
+            }
         }
     }
 
@@ -1403,7 +1441,7 @@ class PowerPoint2007 implements ReaderInterface
                 case 'p:cxnSp':
                     break;
                 default:
-                //var_export($oNode->tagName);
+                    //var_export($oNode->tagName);
             }
         }
     }
