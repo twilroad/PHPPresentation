@@ -20,32 +20,29 @@ namespace TwilRoad\PhpPresentation\Shape;
 use TwilRoad\PhpPresentation\AbstractShape;
 use TwilRoad\PhpPresentation\GeometryCalculator;
 use TwilRoad\PhpPresentation\ShapeContainerInterface;
-use TwilRoad\PhpPresentation\Shape\Drawing;
-use TwilRoad\PhpPresentation\Shape\Graph;
-use TwilRoad\PhpPresentation\Shape\RichText;
-use TwilRoad\PhpPresentation\Shape\Table;
 
 class Group extends AbstractShape implements ShapeContainerInterface
 {
+
     /**
-    * Collection of shapes
-    *
-    * @var \ArrayObject|\TwilRoad\PhpPresentation\AbstractShape[]
-    */
+     * Collection of shapes
+     *
+     * @var \ArrayObject|\TwilRoad\PhpPresentation\AbstractShape[]
+     */
     private $shapeCollection = null;
 
     /**
-    * Extent X
-    *
-    * @var int
-    */
+     * Extent X
+     *
+     * @var int
+     */
     protected $extentX;
 
     /**
-    * Extent Y
-    *
-    * @var int
-    */
+     * Extent Y
+     *
+     * @var int
+     */
     protected $extentY;
 
     public function __construct()
@@ -61,10 +58,10 @@ class Group extends AbstractShape implements ShapeContainerInterface
     }
 
     /**
-    * Get collection of shapes
-    *
+     * Get collection of shapes
+     *
      * @return \ArrayObject|AbstractShape[]
-    */
+     */
     public function getShapeCollection()
     {
         return $this->shapeCollection;
@@ -74,6 +71,7 @@ class Group extends AbstractShape implements ShapeContainerInterface
      * Add shape to slide
      *
      * @param  \TwilRoad\PhpPresentation\AbstractShape $shape
+     *
      * @return \TwilRoad\PhpPresentation\AbstractShape
      * @throws \Exception
      */
@@ -85,10 +83,10 @@ class Group extends AbstractShape implements ShapeContainerInterface
     }
 
     /**
-    * Get X Offset
-    *
-    * @return int
-    */
+     * Get X Offset
+     *
+     * @return int
+     */
     public function getOffsetX()
     {
         if ($this->offsetX === null) {
@@ -101,21 +99,22 @@ class Group extends AbstractShape implements ShapeContainerInterface
     }
 
     /**
-    * Ignores setting the X Offset, preserving the default behavior.
-    *
-    * @param  int                 $pValue
-    * @return self
-    */
+     * Ignores setting the X Offset, preserving the default behavior.
+     *
+     * @param  int $pValue
+     *
+     * @return self
+     */
     public function setOffsetX($pValue = 0)
     {
         return $this;
     }
 
     /**
-    * Get Y Offset
-    *
-    * @return int
-    */
+     * Get Y Offset
+     *
+     * @return int
+     */
     public function getOffsetY()
     {
         if ($this->offsetY === null) {
@@ -128,21 +127,22 @@ class Group extends AbstractShape implements ShapeContainerInterface
     }
 
     /**
-    * Ignores setting the Y Offset, preserving the default behavior.
-    *
-    * @param  int                 $pValue
-    * @return self
-    */
+     * Ignores setting the Y Offset, preserving the default behavior.
+     *
+     * @param  int $pValue
+     *
+     * @return self
+     */
     public function setOffsetY($pValue = 0)
     {
         return $this;
     }
 
     /**
-    * Get X Extent
-    *
-    * @return int
-    */
+     * Get X Extent
+     *
+     * @return int
+     */
     public function getExtentX()
     {
         if ($this->extentX === null) {
@@ -155,10 +155,10 @@ class Group extends AbstractShape implements ShapeContainerInterface
     }
 
     /**
-    * Get Y Extent
-    *
-    * @return int
-    */
+     * Get Y Extent
+     *
+     * @return int
+     */
     public function getExtentY()
     {
         if ($this->extentY === null) {
@@ -171,30 +171,36 @@ class Group extends AbstractShape implements ShapeContainerInterface
     }
 
     /**
-    * Ignores setting the width, preserving the default behavior.
-    *
-    * @param  int                 $pValue
-    * @return self
-    */
+     * Ignores setting the width, preserving the default behavior.
+     *
+     * @param  int $pValue
+     *
+     * @return self
+     */
     public function setWidth($pValue = 0)
     {
         return $this;
     }
 
     /**
-    * Ignores setting the height, preserving the default behavior.
-    *
-    * @param  int                 $pValue
-    * @return self
-    */
+     * Ignores setting the height, preserving the default behavior.
+     *
+     * @param  int $pValue
+     *
+     * @return self
+     */
     public function setHeight($pValue = 0)
     {
         return $this;
     }
 
-    public function createGraph()
+    /**
+     * @return \TwilRoad\PhpPresentation\Shape\Geometry
+     * @throws \Exception
+     */
+    public function createGeometry()
     {
-        $shape = new Graph();
+        $shape = new Geometry();
         $this->addShape($shape);
 
         return $shape;
@@ -221,6 +227,7 @@ class Group extends AbstractShape implements ShapeContainerInterface
      * @param  int $fromY Starting point y offset
      * @param  int $toX Ending point x offset
      * @param  int $toY Ending point y offset
+     *
      * @return \TwilRoad\PhpPresentation\Shape\Line
      * @throws \Exception
      */
@@ -264,6 +271,7 @@ class Group extends AbstractShape implements ShapeContainerInterface
      * Create table shape
      *
      * @param  int $columns Number of columns
+     *
      * @return \TwilRoad\PhpPresentation\Shape\Table
      * @throws \Exception
      */

@@ -23,7 +23,7 @@ use TwilRoad\PhpPresentation\GeometryCalculator;
 use TwilRoad\PhpPresentation\PhpPresentation;
 use TwilRoad\PhpPresentation\Shape\Chart;
 use TwilRoad\PhpPresentation\Shape\Drawing\File;
-use TwilRoad\PhpPresentation\Shape\Graph;
+use TwilRoad\PhpPresentation\Shape\Geometry;
 use TwilRoad\PhpPresentation\Shape\Group;
 use TwilRoad\PhpPresentation\Shape\Line;
 use TwilRoad\PhpPresentation\Shape\RichText;
@@ -247,9 +247,13 @@ abstract class AbstractSlide implements ComparableInterface, ShapeContainerInter
         $this->hashIndex = $value;
     }
 
-    public function createGraph()
+    /**
+     * @return \TwilRoad\PhpPresentation\Shape\Geometry
+     * @throws \Exception
+     */
+    public function createGeometry()
     {
-        $shape = new Graph();
+        $shape = new Geometry();
         $this->addShape($shape);
 
         return $shape;

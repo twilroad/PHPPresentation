@@ -28,6 +28,7 @@ use TwilRoad\PhpPresentation\Shape\Chart\View3D;
  */
 class Chart extends AbstractGraphic implements ComparableInterface
 {
+
     /**
      * Title
      *
@@ -69,10 +70,10 @@ class Chart extends AbstractGraphic implements ComparableInterface
     public function __construct()
     {
         // Initialize
-        $this->title    = new Title();
-        $this->legend   = new Legend();
+        $this->title = new Title();
+        $this->legend = new Legend();
         $this->plotArea = new PlotArea();
-        $this->view3D   = new View3D();
+        $this->view3D = new View3D();
 
         // Initialize parent
         parent::__construct();
@@ -82,10 +83,10 @@ class Chart extends AbstractGraphic implements ComparableInterface
     {
         parent::__clone();
 
-        $this->title     = clone $this->title;
-        $this->legend    = clone $this->legend;
-        $this->plotArea  = clone $this->plotArea;
-        $this->view3D    = clone $this->view3D;
+        $this->title = clone $this->title;
+        $this->legend = clone $this->legend;
+        $this->plotArea = clone $this->plotArea;
+        $this->view3D = clone $this->view3D;
     }
 
     /**
@@ -141,12 +142,14 @@ class Chart extends AbstractGraphic implements ComparableInterface
     /**
      * Include spreadsheet for editing data? Requires PHPExcel in the same folder as PhpPresentation
      *
-     * @param  boolean                   $value
+     * @param  boolean $value
+     *
      * @return \TwilRoad\PhpPresentation\Shape\Chart
      */
     public function setIncludeSpreadsheet($value = false)
     {
         $this->includeSpreadsheet = $value;
+
         return $this;
     }
 

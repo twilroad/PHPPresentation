@@ -27,18 +27,24 @@ use TwilRoad\PhpPresentation\Shape\RichText\TextElementInterface;
  */
 class RichText extends AbstractShape implements ComparableInterface
 {
+
     /** Wrapping */
     const WRAP_NONE = 'none';
+
     const WRAP_SQUARE = 'square';
 
     /** Autofit */
     const AUTOFIT_DEFAULT = 'spAutoFit';
+
     const AUTOFIT_SHAPE = 'spAutoFit';
+
     const AUTOFIT_NOAUTOFIT = 'noAutofit';
+
     const AUTOFIT_NORMAL = 'normAutofit';
 
     /** Overflow */
     const OVERFLOW_CLIP = 'clip';
+
     const OVERFLOW_OVERFLOW = 'overflow';
 
     /**
@@ -162,10 +168,10 @@ class RichText extends AbstractShape implements ComparableInterface
     public function __construct()
     {
         // Initialise variables
-        $this->richTextParagraphs = array(
-            new Paragraph()
-        );
-        $this->activeParagraph    = 0;
+        $this->richTextParagraphs = [
+            new Paragraph(),
+        ];
+        $this->activeParagraph = 0;
 
         // Initialize parent
         parent::__construct();
@@ -195,6 +201,7 @@ class RichText extends AbstractShape implements ComparableInterface
      * Set active paragraph
      *
      * @param  int $index
+     *
      * @throws \Exception
      * @return \TwilRoad\PhpPresentation\Shape\RichText\Paragraph
      */
@@ -213,6 +220,7 @@ class RichText extends AbstractShape implements ComparableInterface
      * Get paragraph
      *
      * @param  int $index
+     *
      * @throws \Exception
      * @return \TwilRoad\PhpPresentation\Shape\RichText\Paragraph
      */
@@ -235,13 +243,13 @@ class RichText extends AbstractShape implements ComparableInterface
     {
         $numParagraphs = count($this->richTextParagraphs);
         if ($numParagraphs > 0) {
-            $alignment   = clone $this->getActiveParagraph()->getAlignment();
-            $font        = clone $this->getActiveParagraph()->getFont();
+            $alignment = clone $this->getActiveParagraph()->getAlignment();
+            $font = clone $this->getActiveParagraph()->getFont();
             $bulletStyle = clone $this->getActiveParagraph()->getBulletStyle();
         }
 
         $this->richTextParagraphs[] = new Paragraph();
-        $this->activeParagraph      = count($this->richTextParagraphs) - 1;
+        $this->activeParagraph = count($this->richTextParagraphs) - 1;
 
         if (isset($alignment)) {
             $this->getActiveParagraph()->setAlignment($alignment);
@@ -252,6 +260,7 @@ class RichText extends AbstractShape implements ComparableInterface
         if (isset($bulletStyle)) {
             $this->getActiveParagraph()->setBulletStyle($bulletStyle);
         }
+
         return $this->getActiveParagraph();
     }
 
@@ -259,6 +268,7 @@ class RichText extends AbstractShape implements ComparableInterface
      * Add text
      *
      * @param  \TwilRoad\PhpPresentation\Shape\RichText\TextElementInterface $pText Rich text element
+     *
      * @throws \Exception
      * @return \TwilRoad\PhpPresentation\Shape\RichText
      */
@@ -272,7 +282,8 @@ class RichText extends AbstractShape implements ComparableInterface
     /**
      * Create text (can not be formatted !)
      *
-     * @param  string                                   $pText Text
+     * @param  string $pText Text
+     *
      * @return \TwilRoad\PhpPresentation\Shape\RichText\TextElement
      * @throws \Exception
      */
@@ -295,7 +306,8 @@ class RichText extends AbstractShape implements ComparableInterface
     /**
      * Create text run (can be formatted)
      *
-     * @param  string                           $pText Text
+     * @param  string $pText Text
+     *
      * @return \TwilRoad\PhpPresentation\Shape\RichText\Run
      * @throws \Exception
      */
@@ -347,6 +359,7 @@ class RichText extends AbstractShape implements ComparableInterface
      * Set paragraphs
      *
      * @param  \TwilRoad\PhpPresentation\Shape\RichText\Paragraph[] $paragraphs Array of paragraphs
+     *
      * @throws \Exception
      * @return \TwilRoad\PhpPresentation\Shape\RichText
      */
@@ -357,7 +370,8 @@ class RichText extends AbstractShape implements ComparableInterface
         }
 
         $this->richTextParagraphs = $paragraphs;
-        $this->activeParagraph    = count($this->richTextParagraphs) - 1;
+        $this->activeParagraph = count($this->richTextParagraphs) - 1;
+
         return $this;
     }
 
@@ -375,6 +389,7 @@ class RichText extends AbstractShape implements ComparableInterface
      * Set text wrapping
      *
      * @param $value string
+     *
      * @return \TwilRoad\PhpPresentation\Shape\RichText
      */
     public function setWrap($value = self::WRAP_SQUARE)
@@ -420,6 +435,7 @@ class RichText extends AbstractShape implements ComparableInterface
      * @param $value string
      * @param $fontScale float
      * @param $lnSpcReduction float
+     *
      * @return \TwilRoad\PhpPresentation\Shape\RichText
      */
     public function setAutoFit($value = self::AUTOFIT_DEFAULT, $fontScale = null, $lnSpcReduction = null)
@@ -451,6 +467,7 @@ class RichText extends AbstractShape implements ComparableInterface
      * Set horizontal overflow
      *
      * @param $value string
+     *
      * @return \TwilRoad\PhpPresentation\Shape\RichText
      */
     public function setHorizontalOverflow($value = self::OVERFLOW_OVERFLOW)
@@ -474,6 +491,7 @@ class RichText extends AbstractShape implements ComparableInterface
      * Set vertical overflow
      *
      * @param $value string
+     *
      * @return \TwilRoad\PhpPresentation\Shape\RichText
      */
     public function setVerticalOverflow($value = self::OVERFLOW_OVERFLOW)
@@ -497,6 +515,7 @@ class RichText extends AbstractShape implements ComparableInterface
      * Set vertical
      *
      * @param $value boolean
+     *
      * @return \TwilRoad\PhpPresentation\Shape\RichText
      */
     public function setUpright($value = false)
@@ -520,6 +539,7 @@ class RichText extends AbstractShape implements ComparableInterface
      * Set vertical
      *
      * @param $value boolean
+     *
      * @return \TwilRoad\PhpPresentation\Shape\RichText
      */
     public function setVertical($value = false)
@@ -543,6 +563,7 @@ class RichText extends AbstractShape implements ComparableInterface
      * Set columns
      *
      * @param $value int
+     *
      * @throws \Exception
      * @return \TwilRoad\PhpPresentation\Shape\RichText
      */
@@ -571,6 +592,7 @@ class RichText extends AbstractShape implements ComparableInterface
      * Set bottom inset
      *
      * @param $value float
+     *
      * @return \TwilRoad\PhpPresentation\Shape\RichText
      */
     public function setInsetBottom($value = 4.8)
@@ -594,6 +616,7 @@ class RichText extends AbstractShape implements ComparableInterface
      * Set left inset
      *
      * @param $value float
+     *
      * @return \TwilRoad\PhpPresentation\Shape\RichText
      */
     public function setInsetLeft($value = 9.6)
@@ -617,6 +640,7 @@ class RichText extends AbstractShape implements ComparableInterface
      * Set left inset
      *
      * @param $value float
+     *
      * @return \TwilRoad\PhpPresentation\Shape\RichText
      */
     public function setInsetRight($value = 9.6)
@@ -640,6 +664,7 @@ class RichText extends AbstractShape implements ComparableInterface
      * Set top inset
      *
      * @param $value float
+     *
      * @return \TwilRoad\PhpPresentation\Shape\RichText
      */
     public function setInsetTop($value = 4.8)
@@ -651,7 +676,9 @@ class RichText extends AbstractShape implements ComparableInterface
 
     /**
      * Set horizontal auto shrink
+     *
      * @param bool $value
+     *
      * @return RichText
      */
     public function setAutoShrinkHorizontal($value = null)
@@ -659,6 +686,7 @@ class RichText extends AbstractShape implements ComparableInterface
         if (is_bool($value)) {
             $this->autoShrinkHorizontal = $value;
         }
+
         return $this;
     }
 
@@ -673,7 +701,9 @@ class RichText extends AbstractShape implements ComparableInterface
 
     /**
      * Set vertical auto shrink
+     *
      * @param bool $value
+     *
      * @return RichText
      */
     public function setAutoShrinkVertical($value = null)
@@ -681,6 +711,7 @@ class RichText extends AbstractShape implements ComparableInterface
         if (is_bool($value)) {
             $this->autoShrinkVertical = $value;
         }
+
         return $this;
     }
 

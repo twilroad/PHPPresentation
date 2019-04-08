@@ -17,10 +17,10 @@
 
 namespace TwilRoad\PhpPresentation\Reader;
 
-use Illuminate\Support\Facades\Cache;
 use Symfony\Component\VarDumper\VarDumper;
 use TwilRoad\PhpPresentation\DocumentLayout;
 use TwilRoad\PhpPresentation\PhpPresentation;
+use TwilRoad\PhpPresentation\PreDefindedData;
 use TwilRoad\PhpPresentation\Shape\Group;
 use TwilRoad\PhpPresentation\Shape\Placeholder;
 use TwilRoad\PhpPresentation\Shape\RichText;
@@ -31,7 +31,6 @@ use TwilRoad\PhpPresentation\Slide\AbstractSlide;
 use TwilRoad\PhpPresentation\Slide\SlideLayout;
 use TwilRoad\PhpPresentation\Slide\SlideMaster;
 use TwilRoad\PhpPresentation\Shape\Drawing\Gd;
-use TwilRoad\PhpPresentation\ShapeContainerInterface;
 use TwilRoad\PhpPresentation\Style\Bullet;
 use TwilRoad\PhpPresentation\Style\Border;
 use TwilRoad\PhpPresentation\Style\Borders;
@@ -213,6 +212,8 @@ class PowerPoint2007 implements ReaderInterface
      * Read Document Properties
      *
      * @param string $sPart
+     *
+     * @throws \Exception
      */
     protected function loadDocumentProperties($sPart)
     {
@@ -860,13 +861,48 @@ class PowerPoint2007 implements ReaderInterface
         $oSlide->addShape($oShape);
     }
 
+    /**
+     * @param \TwilRoad\Common\XMLReader $document
+     * @param \DOMElement                $node
+     * @param                            $oSlide
+     *
+     * @throws \Exception
+     */
     protected function loadShapeGraph(XMLReader $document, \DOMElement $node, $oSlide)
     {
-        if ($oSlide instanceof AbstractSlide || $oSlide instanceof Group) {
-            $oShape = $oSlide->createGraph();
+        if (!$oSlide instanceof AbstractSlide && !$oSlide instanceof Group) {
+            return;
+        }
+        $oShape = $oSlide->createGeometry();
+        if ($document->elementExists('p:spPr/a:prstGeom', $node)) {
+            $geometryNode = $document->getElement('p:spPr/a:prstGeom', $node);
+            $preset = $document->getAttribute('prst', $geometryNode);
+            $presetData = PreDefindedData::getShape($preset);
+            if ($presetData) {
+                $dom = new \DOMDocument();
+                $dom->loadXML("<shape>{$presetData}</shape>");
+                $pathList = $dom->getElementsByTagName('pathLst');
+                if ($pathList->length == 1) {
+                    $pathString = '';
+                    foreach ($pathList->item(0)->childNodes as $child) {
+                        $pathString .= $dom->saveXML($child);
+                    }
+                    $pathString && $oShape->setPathString($pathString);
+                }
+            }
+        }
+        if ($document->elementExists('p:spPr/a:custGeom/a:pathLst/a:path', $node)) {
+            dd($node);
         }
     }
 
+    /**
+     * @param \TwilRoad\Common\XMLReader                    $document
+     * @param \DOMElement                                   $node
+     * @param \TwilRoad\PhpPresentation\Slide\AbstractSlide $oSlide
+     *
+     * @throws \Exception
+     */
     protected function loadShapeGroup(XMLReader $document, \DOMElement $node, AbstractSlide $oSlide)
     {
         $group = $oSlide->createGroup();
@@ -1348,7 +1384,11 @@ class PowerPoint2007 implements ReaderInterface
                 case 'p:sp':
                     if ($xmlReader->elementExists('p:txBody/a:p/a:r', $oNode)) {
                         $this->loadShapeRichText($xmlReader, $oNode, $oSlide);
-                    } else {
+                    }
+                    if (
+                        $xmlReader->elementExists('p:spPr/a:custGeom/a:pathLst/a:path', $oNode)
+                        || $xmlReader->elementExists('p:spPr/a:prstGeom', $oNode)
+                    ) {
                         $this->loadShapeGraph($xmlReader, $oNode, $oSlide);
                     }
                     break;
