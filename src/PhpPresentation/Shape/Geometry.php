@@ -12,9 +12,23 @@ use TwilRoad\PhpPresentation\ComparableInterface;
 class Geometry extends AbstractShape implements ComparableInterface
 {
 
+    /**
+     * @var string
+     */
     protected $pathString;
 
-    public function setPathString($pathString)
+    /**
+     * @return string
+     */
+    public function getPathString()
+    {
+        return $this->pathString;
+    }
+
+    /**
+     * @param string $pathString
+     */
+    public function setPathString($pathString = '')
     {
         $this->pathString = $pathString;
     }

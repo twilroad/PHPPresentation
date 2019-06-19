@@ -17,11 +17,21 @@ class Gd extends AbstractDrawingAdapter
     const MIMETYPE_JPEG = 'image/jpeg';
 
     /**
+     * @var string
+     */
+    protected $imageFile;
+
+    /**
      * Image resource
      *
      * @var resource
      */
     protected $imageResource;
+
+    /**
+     * @var int
+     */
+    protected $imageType;
 
     /**
      * Rendering function
@@ -54,6 +64,14 @@ class Gd extends AbstractDrawingAdapter
     }
 
     /**
+     * @return string
+     */
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
+    /**
      * Get image resource
      *
      * @return resource
@@ -61,6 +79,24 @@ class Gd extends AbstractDrawingAdapter
     public function getImageResource()
     {
         return $this->imageResource;
+    }
+
+    /**
+     * @param string $content
+     */
+    public function setImageFile($content = '')
+    {
+        $this->imageFile = $content;
+
+        if (!is_null($this->imageFile)) {
+            list($width, $height, $type) = getimagesizefromstring($this->imageFile);
+            $this->width = $width;
+            $this->height = $height;
+            $this->imageType = $type;
+            $this->mimeType = image_type_to_mime_type($type);
+        }
+
+        return $this;
     }
 
     /**
@@ -147,10 +183,10 @@ class Gd extends AbstractDrawingAdapter
      */
     public function getExtension()
     {
-        $extension = strtolower($this->getMimeType());
-        $extension = explode('/', $extension);
-        $extension = $extension[1];
-        return $extension;
+//        $extension = strtolower($this->getMimeType());
+//        $extension = explode('/', $extension);
+//        $extension = $extension[1];
+        return image_type_to_extension($this->imageType, false);
     }
 
     /**

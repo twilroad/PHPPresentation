@@ -132,7 +132,7 @@ class Color implements ComparableInterface
         if (strlen($this->argb) == 6) {
             return $this->argb;
         } else {
-            return substr($this->argb, 2);
+            return substr($this->argb, strlen($this->argb) - 6);
         }
     }
 
