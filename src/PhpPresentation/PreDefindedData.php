@@ -195,6 +195,19 @@ class PreDefindedData
         'wedgeRoundRectCallout' => '<avLst xmlns="http://schemas.openxmlformats.org/drawingml/2006/main"><gd name="adj1" fmla="val -20833" /><gd name="adj2" fmla="val 62500" /><gd name="adj3" fmla="val 16667" /></avLst><gdLst xmlns="http://schemas.openxmlformats.org/drawingml/2006/main"><gd name="dxPos" fmla="*/ w adj1 100000" /><gd name="dyPos" fmla="*/ h adj2 100000" /><gd name="xPos" fmla="+- hc dxPos 0" /><gd name="yPos" fmla="+- vc dyPos 0" /><gd name="dq" fmla="*/ dxPos h w" /><gd name="ady" fmla="abs dyPos" /><gd name="adq" fmla="abs dq" /><gd name="dz" fmla="+- ady 0 adq" /><gd name="xg1" fmla="?: dxPos 7 2" /><gd name="xg2" fmla="?: dxPos 10 5" /><gd name="x1" fmla="*/ w xg1 12" /><gd name="x2" fmla="*/ w xg2 12" /><gd name="yg1" fmla="?: dyPos 7 2" /><gd name="yg2" fmla="?: dyPos 10 5" /><gd name="y1" fmla="*/ h yg1 12" /><gd name="y2" fmla="*/ h yg2 12" /><gd name="t1" fmla="?: dxPos l xPos" /><gd name="xl" fmla="?: dz l t1" /><gd name="t2" fmla="?: dyPos x1 xPos" /><gd name="xt" fmla="?: dz t2 x1" /><gd name="t3" fmla="?: dxPos xPos r" /><gd name="xr" fmla="?: dz r t3" /><gd name="t4" fmla="?: dyPos xPos x1" /><gd name="xb" fmla="?: dz t4 x1" /><gd name="t5" fmla="?: dxPos y1 yPos" /><gd name="yl" fmla="?: dz y1 t5" /><gd name="t6" fmla="?: dyPos t yPos" /><gd name="yt" fmla="?: dz t6 t" /><gd name="t7" fmla="?: dxPos yPos y1" /><gd name="yr" fmla="?: dz y1 t7" /><gd name="t8" fmla="?: dyPos yPos b" /><gd name="yb" fmla="?: dz t8 b" /><gd name="u1" fmla="*/ ss adj3 100000" /><gd name="u2" fmla="+- r 0 u1" /><gd name="v2" fmla="+- b 0 u1" /><gd name="il" fmla="*/ u1 29289 100000" /><gd name="ir" fmla="+- r 0 il" /><gd name="ib" fmla="+- b 0 il" /></gdLst><ahLst xmlns="http://schemas.openxmlformats.org/drawingml/2006/main"><ahXY gdRefX="adj1" minX="-2147483647" maxX="2147483647" gdRefY="adj2" minY="-2147483647" maxY="2147483647"><pos x="xPos" y="yPos" /></ahXY></ahLst><cxnLst xmlns="http://schemas.openxmlformats.org/drawingml/2006/main"><cxn ang="3cd4"><pos x="hc" y="t" /></cxn><cxn ang="cd2"><pos x="l" y="vc" /></cxn><cxn ang="cd4"><pos x="hc" y="b" /></cxn><cxn ang="0"><pos x="r" y="vc" /></cxn><cxn ang="cd4"><pos x="xPos" y="yPos" /></cxn></cxnLst><rect l="il" t="il" r="ir" b="ib" xmlns="http://schemas.openxmlformats.org/drawingml/2006/main" /><pathLst xmlns="http://schemas.openxmlformats.org/drawingml/2006/main"><path><moveTo><pt x="l" y="u1" /></moveTo><arcTo wR="u1" hR="u1" stAng="cd2" swAng="cd4" /><lnTo><pt x="x1" y="t" /></lnTo><lnTo><pt x="xt" y="yt" /></lnTo><lnTo><pt x="x2" y="t" /></lnTo><lnTo><pt x="u2" y="t" /></lnTo><arcTo wR="u1" hR="u1" stAng="3cd4" swAng="cd4" /><lnTo><pt x="r" y="y1" /></lnTo><lnTo><pt x="xr" y="yr" /></lnTo><lnTo><pt x="r" y="y2" /></lnTo><lnTo><pt x="r" y="v2" /></lnTo><arcTo wR="u1" hR="u1" stAng="0" swAng="cd4" /><lnTo><pt x="x2" y="b" /></lnTo><lnTo><pt x="xb" y="yb" /></lnTo><lnTo><pt x="x1" y="b" /></lnTo><lnTo><pt x="u1" y="b" /></lnTo><arcTo wR="u1" hR="u1" stAng="cd4" swAng="cd4" /><lnTo><pt x="l" y="y2" /></lnTo><lnTo><pt x="xl" y="yl" /></lnTo><lnTo><pt x="l" y="y1" /></lnTo><close /></path></pathLst>',
     ];
 
+    /**
+     * @return array
+     */
+    public static function all()
+    {
+        return static::$preDefinedShapes;
+    }
+
+    /**
+     * @param $key
+     *
+     * @return mixed|string
+     */
     public static function getShape($key) {
         return static::$preDefinedShapes[$key] ?? '';
     }
